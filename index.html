@@ -724,57 +724,61 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact">
-      <div class="container">
-        <div class="section-header">
-          <h2>Get In Touch</h2>
+   <!-- Contact Section -->
+<section id="contact">
+  <div class="container">
+    <div class="section-header">
+      <h2>Get In Touch</h2>
+    </div>
+    <div class="contact-grid">
+      <!-- Contact Info Card (Unchanged) -->
+      <div class="contact-info fade-up">
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <div><a href="mailto:hasib.contact.bd@gmail.com">hasib.contact.bd@gmail.com</a><br><a href="mailto:hasib.insights@gmail.com">hasib.insights@gmail.com</a></div>
         </div>
-        <div class="contact-grid">
-          <div class="contact-info fade-up">
-            <div class="contact-item">
-              <i class="fas fa-envelope"></i>
-              <div><a href="mailto:hasib.contact.bd@gmail.com">hasib.contact.bd@gmail.com</a><br><a href="mailto:hasib.insights@gmail.com">hasib.insights@gmail.com</a></div>
-            </div>
-            <div class="contact-item">
-              <i class="fab fa-linkedin"></i>
-              <a href="https://www.linkedin.com/in/md-hasib-hossain-053460390" target="_blank" rel="noopener noreferrer" class="linkedin-btn"><i class="fab fa-linkedin"></i> Connect on LinkedIn</a>
-            </div>
-            <div class="contact-item">
-              <i class="fas fa-map-marker-alt"></i>
-              <span>Dhaka, Bangladesh</span>
-            </div>
-            <div style="margin-top: 2rem; border-top: 1px solid #2A2A2A; padding-top: 1.2rem;">
-              <i class="fas fa-paper-plane" style="color: var(--accent);"></i>
-              <p style="margin-top: 0.5rem;">Open to networking, data discussions, and internship opportunities.</p>
-            </div>
-          </div>
-          <div class="fade-up">
-            <form id="contactForm" class="card" style="background: #111;">
-              <div class="form-group">
-                <input type="text" placeholder="Your Name" id="name" required>
-              </div>
-              <div class="form-group">
-                <input type="email" placeholder="Email Address" id="email" required>
-              </div>
-              <div class="form-group">
-                <textarea rows="4" placeholder="Your message..." id="message" required></textarea>
-              </div>
-              <button type="submit" id="submitFormBtn"><i class="fas fa-paper-plane"></i> Send Message</button>
-              <p id="formFeedback" style="margin-top: 0.8rem; font-size: 0.85rem; text-align: center;"></p>
-            </form>
-          </div>
+        <div class="contact-item">
+          <i class="fab fa-linkedin"></i>
+          <a href="https://www.linkedin.com/in/md-hasib-hossain-053460390" target="_blank" rel="noopener noreferrer" class="linkedin-btn"><i class="fab fa-linkedin"></i> Connect on LinkedIn</a>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Dhaka, Bangladesh</span>
+        </div>
+        <div style="margin-top: 2rem; border-top: 1px solid #2A2A2A; padding-top: 1.2rem;">
+          <i class="fas fa-paper-plane" style="color: var(--accent);"></i>
+          <p style="margin-top: 0.5rem;">Open to networking, data discussions, and internship opportunities.</p>
         </div>
       </div>
-    </section>
-  </main>
 
-  <footer>
-    <div class="container">
-      <p>© 2026 MD Hasib Hossain – Aspiring Data Analyst | Built with <i class="fas fa-heart" style="color: #BFFF00;"></i> for data excellence</p>
+      <!-- Updated Formspree Form (Vanilla JS + AJAX) -->
+      <div class="fade-up">
+        <!-- Success & Error message containers -->
+        <div data-fs-success style="background: rgba(191,255,0,0.1); border-left: 3px solid #BFFF00; padding: 1rem; border-radius: 16px; margin-bottom: 1rem; display: none;"></div>
+        <div data-fs-error style="background: rgba(255,100,100,0.1); border-left: 3px solid #ff6b6b; padding: 1rem; border-radius: 16px; margin-bottom: 1rem; display: none;"></div>
+
+        <form id="contact-form" class="card" style="background: #111;">
+          <div class="form-group">
+            <input type="text" id="name" name="name" placeholder="Your Name" data-fs-field required>
+            <span data-fs-error="name" style="color: #ff6b6b; font-size: 0.75rem;"></span>
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" name="email" placeholder="Email Address" data-fs-field required>
+            <span data-fs-error="email" style="color: #ff6b6b; font-size: 0.75rem;"></span>
+          </div>
+          <div class="form-group">
+            <textarea id="message" name="message" rows="4" placeholder="Your message..." data-fs-field required></textarea>
+            <span data-fs-error="message" style="color: #ff6b6b; font-size: 0.75rem;"></span>
+          </div>
+          <button type="submit" data-fs-submit-btn style="background: var(--accent); color: black; font-weight: bold; border: none; width: 100%; padding: 14px; border-radius: 40px; font-size: 1rem; cursor: pointer; transition: 0.2s;">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+        </form>
+      </div>
     </div>
-  </footer>
-  <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
-
+  </div>
+</section>
+    
   <script>
     // Mobile menu toggle
     const mobileBtn = document.getElementById('mobileMenuBtn');
@@ -849,5 +853,11 @@
     setTimeout(() => { animateProgress(); }, 300);
     // make sure shape background remains behind
   </script>
+    <!-- Formspree AJAX Integration -->
+<script>
+  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+  formspree('initForm', { formElement: '#contact-form', formId: 'xjglbnqg' });
+</script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </body>
 </html>
