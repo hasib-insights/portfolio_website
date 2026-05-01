@@ -591,23 +591,71 @@
       </div>
     </section>
 
-    <!-- Education Section -->
+   <!-- Education Section -->
     <section id="education">
       <div class="container">
         <div class="section-header">
           <h2>Education</h2>
         </div>
-        <div class="card education-card fade-up" style="text-align: center;">
+        
+        <!-- Existing Card (BBA Summary) -->
+        <div class="card education-card fade-up" style="text-align: center; margin-bottom: 2rem;">
           <i class="fas fa-graduation-cap" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem; display: inline-block;"></i>
           <h3>Bachelor of Business Administration (BBA)</h3>
           <p style="font-size: 1.2rem; margin: 0.5rem 0;">World University of Bangladesh</p>
           <p><strong>2nd Year</strong> | Expected Graduation: 2029</p>
           <div class="timeline">
-            <div class="timeline-step"><i class="fas fa-calendar-alt"></i> 2025 - Started BBA</div>
+            <div class="timeline-step"><i class="fas fa-calendar-alt"></i> 2024 - Started BBA</div>
             <div class="timeline-step"><i class="fas fa-chart-line"></i> 2nd Year (Current)</div>
             <div class="timeline-step"><i class="fas fa-trophy"></i> 2029 - Graduation</div>
           </div>
         </div>
+
+        <!-- New Education Details Table -->
+        <div class="card fade-up" style="overflow-x: auto; padding: 0; background: transparent; box-shadow: none;">
+          <table style="width: 100%; border-collapse: collapse; background: var(--card-dark); border-radius: 24px; overflow: hidden; box-shadow: 0 10px 20px -5px rgba(0,0,0,0.3);">
+            <thead>
+              <tr style="background: #0A0A0A; border-bottom: 2px solid var(--accent);">
+                <th style="padding: 1rem; text-align: left; color: var(--accent); font-weight: 700;">Degree</th>
+                <th style="padding: 1rem; text-align: left; color: var(--accent); font-weight: 700;">Board / University</th>
+                <th style="padding: 1rem; text-align: left; color: var(--accent); font-weight: 700;">Institution</th>
+                <th style="padding: 1rem; text-align: left; color: var(--accent); font-weight: 700;">Year</th>
+                <th style="padding: 1rem; text-align: left; color: var(--accent); font-weight: 700;">Result / GPA</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- BBA Row -->
+              <tr style="border-bottom: 1px solid #2A2A2A; transition: background 0.2s;" onmouseover="this.style.background='#1E1E1E'" onmouseout="this.style.background='transparent'">
+                <td style="padding: 1rem; font-weight: 600;">BBA</td>
+                <td style="padding: 1rem;">University of Dhaka</td>
+                <td style="padding: 1rem;">World University of Bangladesh</td>
+                <td style="padding: 1rem;">2025 - Present</td>
+                <td style="padding: 1rem; color: var(--accent);">Course Complete (Expected 2029)<br><span style="color: #aaa; font-size: 0.8rem;">CGPA will be updated after graduation</span></td>
+              </tr>
+              <!-- HSC Row -->
+              <tr style="border-bottom: 1px solid #2A2A2A; transition: background 0.2s;" onmouseover="this.style.background='#1E1E1E'" onmouseout="this.style.background='transparent'">
+                <td style="padding: 1rem; font-weight: 600;">HSC</td>
+                <td style="padding: 1rem;">Dhaka</td>
+                <td style="padding: 1rem;">Tongi Govt. College</td>
+                <td style="padding: 1rem;">2024</td>
+                <td style="padding: 1rem;"><strong style="color: var(--accent);">GPA 4.67</strong> / 5.00</td>
+              </tr>
+              <!-- SSC Row -->
+              <tr style="transition: background 0.2s;" onmouseover="this.style.background='#1E1E1E'" onmouseout="this.style.background='transparent'">
+                <td style="padding: 1rem; font-weight: 600;">SSC</td>
+                <td style="padding: 1rem;">Dhaka</td>
+                <td style="padding: 1rem;">Shahees Ahsanullah Master High School</td>
+                <td style="padding: 1rem;">2022</td>
+                <td style="padding: 1rem;"><strong style="color: var(--accent);">GPA 4.96</strong> / 5.00</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <!-- Optional note for BBA -->
+        <p style="text-align: center; margin-top: 1.5rem; font-size: 0.85rem; color: var(--text-muted);">
+          <i class="fas fa-info-circle" style="color: var(--accent);"></i> BBA program in progress — expected completion in 2029. CGPA will be updated after course completion.
+        </p>
       </div>
     </section>
 
