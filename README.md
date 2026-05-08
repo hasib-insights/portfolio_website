@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>MD Hasib Hossain | Aspiring Data Analyst</title>
+  <!-- Google Fonts & Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0A0A0A;
+      color: #F0F0F0;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    /* Custom scroll */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #1E1E1E;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #BFFF00;
+      border-radius: 10px;
+    }
+
+    :root {
+      --bg-dark: #0A0A0A;
+      --card-bg: #111111;
+      --card-dark: #1E1E1E;
+      --accent: #BFFF00;
+      --accent-hover: #D4FF4D;
+      --text-light: #F5F5F5;
+      --text-muted: #B0B0B0;
+      --border-light: #2A2A2A;
+    }
+
+    /* global container */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    section {
+      padding: 6rem 0;
+    }
+
+    /* Typography */
+    h1, h2, h3 {
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 2.5rem;
+      position: relative;
+      display: inline-block;
+    }
+    h2:after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: var(--accent);
+      border-radius: 3px;
+    }
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .section-header h2:after {
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+    }
+
+    /* Buttons & links */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 28px;
+      border-radius: 40px;
+      font-weight: 600;
+      transition: all 0.25s ease;
+      text-decoration: none;
+      font-size: 1rem;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #0A0A0A;
+      box-shadow: 0 4px 12px rgba(191, 255, 0, 0.2);
+    }
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(191, 255, 0, 0.3);
+    }
+    .btn-outline {
+      border: 1.5px solid var(--accent);
+      background: transparent;
+      color: var(--accent);
+    }
+    .btn-outline:hover {
+      background: rgba(191, 255, 0, 0.1);
+      transform: translateY(-2px);
+      border-color: var(--accent-hover);
+      color: var(--accent-hover);
+    }
+
+    /* Header & Nav */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(10, 10, 10, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(191, 255, 0, 0.15);
+      padding: 0.9rem 0;
+    }
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .logo a {
+      font-size: 1.8rem;
+      font-weight: 800;
+      text-decoration: none;
+      background: linear-gradient(135deg, #FFFFFF 30%, var(--accent) 80%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      letter-spacing: -0.5px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #E0E0E0;
+      font-weight: 500;
+      transition: 0.2s;
+      font-size: 1rem;
+    }
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+    .mobile-menu-btn {
+      display: none;
+      font-size: 1.8rem;
+      background: none;
+      border: none;
+      color: var(--accent);
+      cursor: pointer;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    .hero-content h1 {
+      font-size: 3.5rem;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .hero-content .highlight {
+      color: var(--accent);
+    }
+    .hero-sub {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      margin: 1.2rem 0 2rem;
+      max-width: 90%;
+    }
+    .btn-group {
+      display: flex;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+    .profile-img {
+      display: flex;
+      justify-content: center;
+    }
+    .profile-placeholder {
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid var(--accent);
+      box-shadow: 0 20px 35px -10px rgba(0,0,0,0.5);
+      transition: transform 0.3s ease;
+      background: #1E1E1E;
+    }
+    .profile-placeholder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .profile-placeholder:hover {
+      transform: scale(1.02);
+    }
+
+    /* animated background shapes */
+    .shape-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+    .shape {
+      position: absolute;
+      background: rgba(191, 255, 0, 0.08);
+      border-radius: 50%;
+      filter: blur(70px);
+      animation: float 20s infinite alternate;
+    }
+    .shape1 { width: 400px; height: 400px; top: -100px; right: -100px; }
+    .shape2 { width: 300px; height: 300px; bottom: 0; left: -50px; animation-duration: 18s; }
+    .shape3 { width: 250px; height: 250px; bottom: 30%; right: 20%; animation-duration: 25s; }
+
+    @keyframes float {
+      0% { transform: translateY(0px) translateX(0px); }
+      100% { transform: translateY(40px) translateX(20px); }
+    }
+
+    /* Cards & layout */
+    .card {
+      background: var(--card-bg);
+      border-radius: 24px;
+      padding: 1.8rem;
+      border: 1px solid #2A2A2A;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 20px -5px rgba(0,0,0,0.3);
+    }
+    .card:hover {
+      border-color: var(--accent);
+      transform: translateY(-6px);
+    }
+    .education-card, .skill-card {
+      background: var(--card-dark);
+    }
+    .timeline {
+      margin-top: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #1a1a1a;
+      padding: 1rem 1.5rem;
+      border-radius: 60px;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .timeline-step {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 500;
+    }
+    .timeline-step i {
+      color: var(--accent);
+    }
+
+    /* Skills grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+    .skill-card i {
+      font-size: 2.5rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    .skill-card h3 {
+      margin-bottom: 0.5rem;
+    }
+    .skill-progress {
+      margin: 1rem 0;
+      height: 6px;
+      background: #2D2D2D;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      width: 0%;
+      height: 100%;
+      background: var(--accent);
+      border-radius: 10px;
+      transition: width 1s ease;
+    }
+    .skill-note {
+      font-size: 0.8rem;
+      color: var(--accent);
+      margin-top: 0.7rem;
+      display: inline-block;
+    }
+
+    /* Projects placeholder */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .project-card {
+      background: #111;
+      text-align: center;
+      position: relative;
+    }
+    .coming-badge {
+      background: rgba(191, 255, 0, 0.15);
+      color: var(--accent);
+      padding: 0.3rem 1rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 1rem;
+      border: 1px solid rgba(191,255,0,0.4);
+    }
+
+    /* Contact Section */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 3rem;
+    }
+    .contact-info {
+      background: var(--card-dark);
+      border-radius: 28px;
+      padding: 2rem;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.8rem;
+    }
+    .contact-item i {
+      font-size: 1.6rem;
+      color: var(--accent);
+      width: 40px;
+    }
+    .contact-item a {
+      color: #ddd;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+    .contact-item a:hover {
+      color: var(--accent);
+    }
+    .linkedin-btn {
+      background: #0077b5;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 40px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 500;
+    }
+    .linkedin-btn:hover {
+      background: #005582;
+      color: white;
+    }
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+    input, textarea {
+      width: 100%;
+      background: #1E1E1E;
+      border: 1px solid #333;
+      padding: 14px 18px;
+      border-radius: 20px;
+      font-family: 'Inter', sans-serif;
+      color: white;
+      transition: 0.2s;
+    }
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 2px rgba(191, 255, 0, 0.2);
+    }
+    button[type="submit"] {
+      background: var(--accent);
+      color: black;
+      font-weight: bold;
+      border: none;
+      width: 100%;
+      padding: 14px;
+      border-radius: 40px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    button[type="submit"]:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+    }
+
+    footer {
+      background: #050505;
+      text-align: center;
+      padding: 2rem;
+      border-top: 1px solid #222;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: var(--accent);
+      color: #0A0A0A;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 1.4rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.2s;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      z-index: 99;
+    }
+    .back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+    .back-to-top:hover {
+      background: var(--accent-hover);
+      transform: translateY(-3px);
+    }
+
+    /* responsive */
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .hero-content h1 {
+        font-size: 2.6rem;
+      }
+      .btn-group {
+        justify-content: center;
+      }
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: #0F0F0F;
+        padding: 1.2rem;
+        border-radius: 24px;
+        margin-top: 1rem;
+        gap: 1rem;
+      }
+      .nav-links.active {
+        display: flex;
+      }
+      .mobile-menu-btn {
+        display: block;
+      }
+      .profile-placeholder {
+        width: 260px;
+        height: 260px;
+        margin: 0 auto;
+      }
+      .container {
+        padding: 0 1.5rem;
+      }
+      h2 {
+        font-size: 2rem;
+      }
+    }
+    @media (max-width: 480px) {
+      .btn-group {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .btn {
+        text-align: center;
+        justify-content: center;
+      }
+      .timeline {
+        flex-direction: column;
+        align-items: flex-start;
+        border-radius: 28px;
+      }
+    }
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.7s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav-container">
+      <div class="logo"><a href="#">Hasib<span style="color:#BFFF00;">.</span></a></div>
+      <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="shape-bg">
+        <div class="shape shape1"></div>
+        <div class="shape shape2"></div>
+        <div class="shape shape3"></div>
+      </div>
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <h1>Hi, I’m MD Hasib Hossain</h1>
+          <p class="hero-sub">Aspiring Business Intelligence & Data Analyst | BBA Student | Python, SQL, Excel, Machine Learning</p>
+          <div class="btn-group">
+            <button class="btn btn-primary" id="skillsBtn"><i class="fas fa-code"></i> View Skills</button>
+            <button class="btn btn-outline" id="contactBtn"><i class="fas fa-envelope"></i> Get in Touch</button>
+          </div>
+        </div>
+        <div class="profile-img">
+          <div class="profile-placeholder">
+            <!-- placeholder image – user will replace with actual photo -->
+            <img src="1774684981820.png">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+      <div class="container">
+        <div class="section-header">
+          <h2>About Me</h2>
+        </div>
+        <div class="card fade-up" style="max-width: 900px; margin: 0 auto; text-align: center;">
+          <p style="font-size: 1.2rem; margin-bottom: 1rem;">I am a university student pursuing a Bachelor of Business Administration at <strong>World University of Bangladesh</strong>. Passionate about data, I am building my analytical toolkit with Python, SQL, Excel, and machine learning. My goal is to become a Business Intelligence Analyst or Data Analyst, helping organizations turn raw data into actionable insights.</p>
+          <p style="color: var(--text-muted);">🎓 Currently in my 2nd year — expected graduation: 2029. I’m actively sharpening my skills and preparing for real‑world data challenges.</p>
+        </div>
+      </div>
+    </section>
+
+   <!-- Education Section -->
+      <section id="education">
+      <div class="container">
+        <div class="section-header">
+          <h2>Education</h2>
+        </div>
+        
+        <!-- BBA Summary Card -->
+        <div class="card education-card fade-up" style="text-align: center; margin-bottom: 2rem;">
+          <i class="fas fa-graduation-cap" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem; display: inline-block;"></i>
+          <h3>Bachelor of Business Administration (BBA)</h3>
+          <p style="font-size: 1.2rem; margin: 0.5rem 0;">World University of Bangladesh</p>
+          <p><strong>2nd Year</strong> | Expected Graduation: 2029</p>
+          <div class="timeline">
+            <div class="timeline-step"><i class="fas fa-calendar-alt"></i> 2024 - Started BBA</div>
+            <div class="timeline-step"><i class="fas fa-chart-line"></i> 2nd Year (Current)</div>
+            <div class="timeline-step"><i class="fas fa-trophy"></i> 2029 - Graduation</div>
+          </div>
+        </div>
+
+        <!-- Small Table with Background/Group Column -->
+        <div class="card fade-up" style="max-width: 650px; margin: 0 auto; padding: 0; overflow-x: auto; background: var(--card-dark); border-radius: 20px;">
+          <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem; min-width: 500px;">
+            <thead>
+              <tr style="background: #0A0A0A; border-bottom: 2px solid var(--accent);">
+                <th style="padding: 0.75rem; text-align: center; color: var(--accent); font-weight: 600;">Exam</th>
+                <th style="padding: 0.75rem; text-align: center; color: var(--accent); font-weight: 600;">Board</th>
+                <th style="padding: 0.75rem; text-align: center; color: var(--accent); font-weight: 600;">Institution</th>
+                <th style="padding: 0.75rem; text-align: center; color: var(--accent); font-weight: 600;">Group/Background</th>
+                <th style="padding: 0.75rem; text-align: center; color: var(--accent); font-weight: 600;">Year</th>
+                <th style="padding: 0.75rem; text-align: center; color: var(--accent); font-weight: 600;">GPA</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- HSC Row -->
+              <tr style="border-bottom: 1px solid #2A2A2A;">
+                <td style="padding: 0.7rem; text-align: center; font-weight: 500;">HSC</td>
+                <td style="padding: 0.7rem; text-align: center;">Dhaka</td>
+                <td style="padding: 0.7rem; text-align: center;">Tongi Govt. College</td>
+                <td style="padding: 0.7rem; text-align: center;">Business Studies</td>
+                <td style="padding: 0.7rem; text-align: center;">2024</td>
+                <td style="padding: 0.7rem; text-align: center; color: var(--accent); font-weight: 600;">4.67</td>
+              </tr>
+              <!-- SSC Row -->
+              <tr style="border-bottom: 1px solid #2A2A2A;">
+                <td style="padding: 0.7rem; text-align: center; font-weight: 500;">SSC</td>
+                <td style="padding: 0.7rem; text-align: center;">Dhaka</td>
+                <td style="padding: 0.7rem; text-align: center;">Shahees Ahsanullah Master High School</td>
+                <td style="padding: 0.7rem; text-align: center; color:">Business Studies</td>
+                <td style="padding: 0.7rem; text-align: center;">2022</td>
+                <td style="padding: 0.7rem; text-align: center; color: var(--accent); font-weight: 600;">4.94</td>
+               </tr>
+            </tbody>
+           </table>
+        </div>
+        
+        <p style="text-align: center; margin-top: 1rem; font-size: 0.8rem; color: var(--text-muted);">
+          <i class="fas fa-info-circle" style="color: var(--accent);"></i> BBA program in progress — expected completion in 2029
+        </p>
+      </div>
+    </section>
+    
+
+  <!-- Skills Section -->
+<section id="skills">
+  <div class="container">
+    <div class="section-header">
+      <h2>Technical & Professional Skills</h2>
+      <p style="color: var(--text-muted); margin-top: 0.8rem;">Continuously building expertise through courses and self‑study.</p>
+    </div>
+    
+    <!-- Technical Skills Grid -->
+    <div class="skills-grid">
+      <!-- Python -->
+      <div class="card skill-card fade-up">
+        <i class="fab fa-python"></i>
+        <h3>Python</h3>
+        <p>Pandas, NumPy, Matplotlib, Scikit-learn, data analysis & ML basics.</p>
+        <div class="skill-progress"><div class="progress-fill" data-progress="70"></div></div>
+        <span class="skill-note"><i class="fas fa-chalkboard-user"></i> Building proficiency</span>
+      </div>
+      <!-- SQL -->
+      <div class="card skill-card fade-up">
+        <i class="fas fa-database"></i>
+        <h3>SQL</h3>
+        <p>Complex queries, joins, aggregations, database design, CTEs.</p>
+        <div class="skill-progress"><div class="progress-fill" data-progress="50"></div></div>
+        <span class="skill-note"><i class="fas fa-chart-simple"></i> Intermediate</span>
+      </div>
+      <!-- Excel -->
+      <div class="card skill-card fade-up">
+        <i class="fas fa-file-excel"></i>
+        <h3>Excel & Power Query</h3>
+        <p>Pivot tables, advanced formulas, dashboards, Power Pivot.</p>
+        <div class="skill-progress"><div class="progress-fill" data-progress="75"></div></div>
+        <span class="skill-note"><i class="fas fa-chart-line"></i> Strong foundation</span>
+      </div>
+      <!-- Power BI -->
+      <div class="card skill-card fade-up">
+        <i class="fas fa-chart-pie"></i>
+        <h3>Power BI</h3>
+        <p>DAX, data modeling, interactive dashboards, report publishing.</p>
+        <div class="skill-progress"><div class="progress-fill" data-progress="1"></div></div>
+        <span class="skill-note"><i class="fas fa-chart-simple"></i> Learning & practicing</span>
+      </div>
+      <!-- Machine Learning -->
+      <div class="card skill-card fade-up">
+        <i class="fas fa-brain"></i>
+        <h3>Machine Learning</h3>
+        <p>Regression, classification, model evaluation, feature engineering.</p>
+        <div class="skill-progress"><div class="progress-fill" data-progress="1"></div></div>
+        <span class="skill-note"><i class="fas fa-microchip"></i> Actively learning</span>
+      </div>
+      <!-- Statistics -->
+      <div class="card skill-card fade-up">
+        <i class="fas fa-chart-line"></i>
+        <h3>Statistics</h3>
+        <p>Hypothesis testing, distributions, A/B testing, descriptive stats.</p>
+        <div class="skill-progress"><div class="progress-fill" data-progress="75"></div></div>
+        <span class="skill-note"><i class="fas fa-calculator"></i> Core understanding</span>
+      </div>
+    </div>
+
+    <!-- Soft Skills Section (NEW) -->
+    <div class="section-header" style="margin-top: 3rem;">
+      <h2>Soft Skills</h2>
+      <p style="color: var(--text-muted); margin-top: 0.8rem;">Core competencies that drive effective data analysis & teamwork</p>
+    </div>
+    
+    <div class="soft-skills-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem;">
+      <div class="card soft-skill-card fade-up" style="text-align: center; padding: 1rem 0.8rem; background: var(--card-dark);">
+        <i class="fas fa-puzzle-piece" style="font-size: 1.8rem; color: var(--accent); margin-bottom: 0.5rem; display: inline-block;"></i>
+        <p style="font-weight: 600; margin: 0;">Problem Solving</p>
+      </div>
+      <div class="card soft-skill-card fade-up" style="text-align: center; padding: 1rem 0.8rem; background: var(--card-dark);">
+        <i class="fas fa-lightbulb" style="font-size: 1.8rem; color: var(--accent); margin-bottom: 0.5rem; display: inline-block;"></i>
+        <p style="font-weight: 600; margin: 0;">Analytical Thinking</p>
+      </div>
+      <div class="card soft-skill-card fade-up" style="text-align: center; padding: 1rem 0.8rem; background: var(--card-dark);">
+        <i class="fas fa-comment-dots" style="font-size: 1.8rem; color: var(--accent); margin-bottom: 0.5rem; display: inline-block;"></i>
+        <p style="font-weight: 600; margin: 0;">Critical Thinking</p>
+      </div>
+      <div class="card soft-skill-card fade-up" style="text-align: center; padding: 1rem 0.8rem; background: var(--card-dark);">
+        <i class="fas fa-graduation-cap" style="font-size: 1.8rem; color: var(--accent); margin-bottom: 0.5rem; display: inline-block;"></i>
+        <p style="font-weight: 600; margin: 0;">Self-Learning</p>
+      </div>
+      <div class="card soft-skill-card fade-up" style="text-align: center; padding: 1rem 0.8rem; background: var(--card-dark);">
+        <i class="fas fa-users" style="font-size: 1.8rem; color: var(--accent); margin-bottom: 0.5rem; display: inline-block;"></i>
+        <p style="font-weight: 600; margin: 0;">Teamwork & Collaboration</p>
+      </div>
+      <div class="card soft-skill-card fade-up" style="text-align: center; padding: 1rem 0.8rem; background: var(--card-dark);">
+        <i class="fas fa-clock" style="font-size: 1.8rem; color: var(--accent); margin-bottom: 0.5rem; display: inline-block;"></i>
+        <p style="font-weight: 600; margin: 0;">Time Management</p>
+      </div>
+      <div class="card soft-skill-card fade-up" style="text-align: center; padding: 1rem 0.8rem; background: var(--card-dark);">
+        <i class="fas fa-search" style="font-size: 1.8rem; color: var(--accent); margin-bottom: 0.5rem; display: inline-block;"></i>
+        <p style="font-weight: 600; margin: 0;">Attention to Detail</p>
+      </div>
+      <div class="card soft-skill-card fade-up" style="text-align: center; padding: 1rem 0.8rem; background: var(--card-dark);">
+        <i class="fas fa-chalkboard-user" style="font-size: 1.8rem; color: var(--accent); margin-bottom: 0.5rem; display: inline-block;"></i>
+        <p style="font-weight: 600; margin: 0;">Communication Skills</p>
+      </div>
+    </div>
+
+    <div class="card" style="background: #111; margin-top: 2rem; text-align: center; border: 1px solid #2A2A2A;">
+      <i class="fas fa-book-open" style="color: var(--accent); font-size: 1.8rem;"></i>
+      <p style="margin-top: 0.5rem;">📚 Daily learning: online courses, data challenges, and building a strong portfolio. Next step: real‑world BI projects and advanced analytics.</p>
+    </div>
+  </div>
+</section>
+    <!-- Projects Placeholder Section -->
+    <section id="projects">
+      <div class="container">
+        <div class="section-header">
+          <h2>Projects</h2>
+          <p style="color: #ccc;">First data projects are in the works — dashboards, Python analysis & ML models coming soon.</p>
+        </div>
+        <div class="projects-grid">
+          <div class="card project-card fade-up">
+            <div class="coming-badge"><i class="fas fa-hourglass-half"></i> Coming Soon</div>
+            <i class="fas fa-chart-bar" style="font-size: 2.8rem; color: var(--accent);"></i>
+            <h3 style="margin: 1rem 0;">Sales Dashboard (BI)</h3>
+            <p>Interactive dashboard with Python/Streamlit or Power BI – transforming raw sales data.</p>
+          </div>
+          <div class="card project-card fade-up">
+            <div class="coming-badge"><i class="fas fa-hourglass-half"></i> In Progress</div>
+            <i class="fas fa-database" style="font-size: 2.8rem; color: var(--accent);"></i>
+            <h3>SQL Data Exploration</h3>
+            <p>Advanced SQL queries on real datasets, uncovering business insights.</p>
+          </div>
+          <div class="card project-card fade-up">
+            <div class="coming-badge"><i class="fas fa-flask"></i> Concept Phase</div>
+            <i class="fas fa-chart-line" style="font-size: 2.8rem; color: var(--accent);"></i>
+            <h3>ML Predictive Model</h3>
+            <p>Regression analysis & classification using scikit-learn, showcasing predictive analytics.</p>
+          </div>
+        </div>
+        <div style="text-align: center; margin-top: 2rem;">
+          <p style="background: #1E1E1E; display: inline-block; padding: 0.5rem 1.5rem; border-radius: 40px;"><i class="fas fa-code-branch"></i> I'm currently working on my first data projects. Check back soon for real‑world dashboards, Python analyses, and machine learning models.</p>
+        </div>
+      </div>
+    </section>
+
+   <!-- Contact Section -->
+<div class="card" style="text-align: center; background: var(--card-dark); border-radius: 24px; padding: 1.5rem;">
+  <h3 style="margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+    <i class="fas fa-link" style="color: var(--accent);"></i> 
+    Find Me Online
+  </h3>
+  <div style="display: flex; justify-content: center;">
+    <a href="https://www.kaggle.com/hasibhossain18" target="_blank" rel="noopener noreferrer" 
+       style="display: inline-flex; align-items: center; gap: 12px; background: #0A0A0A; padding: 12px 28px; border-radius: 50px; text-decoration: none; color: white; border: 1px solid #2A2A2A; transition: all 0.3s ease;"
+       onmouseover="this.style.borderColor='#BFFF00'; this.style.transform='translateY(-3px)'" 
+       onmouseout="this.style.borderColor='#2A2A2A'; this.style.transform='translateY(0)'">
+      <i class="fab fa-kaggle" style="font-size: 1.8rem; color: #20BEFF;"></i>
+      <span style="font-weight: 600;">Kaggle Profile</span>
+      <i class="fas fa-external-link-alt" style="font-size: 0.8rem; color: var(--accent);"></i>
+    </a>
+  </div>
+</div>
+    
+<section id="contact">
+  <div class="container">
+    <div class="section-header">
+      <h2>Get In Touch</h2>
+    </div>
+    <div class="contact-grid">
+      <!-- Contact Info Card (Unchanged) -->
+      <div class="contact-info fade-up">
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <div><a href="mailto:hasib.contact.bd@gmail.com">hasib.contact.bd@gmail.com</a><br><a href="mailto:hasib.insights@gmail.com">hasib.insights@gmail.com</a></div>
+        </div>
+        <div class="contact-item">
+          <i class="fab fa-linkedin"></i>
+          <a href="https://www.linkedin.com/in/md-hasib-hossain-053460390" target="_blank" rel="noopener noreferrer" class="linkedin-btn"><i class="fab fa-linkedin"></i> Connect on LinkedIn</a>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Dhaka, Bangladesh</span>
+        </div>
+        <div style="margin-top: 2rem; border-top: 1px solid #2A2A2A; padding-top: 1.2rem;">
+          <i class="fas fa-paper-plane" style="color: var(--accent);"></i>
+          <p style="margin-top: 0.5rem;">Open to networking, data discussions, and internship opportunities.</p>
+        </div>
+      </div>
+
+      <!-- Updated Formspree Form (Vanilla JS + AJAX) -->
+      <div class="fade-up">
+        <!-- Success & Error message containers -->
+        <div data-fs-success style="background: rgba(191,255,0,0.1); border-left: 3px solid #BFFF00; padding: 1rem; border-radius: 16px; margin-bottom: 1rem; display: none;"></div>
+        <div data-fs-error style="background: rgba(255,100,100,0.1); border-left: 3px solid #ff6b6b; padding: 1rem; border-radius: 16px; margin-bottom: 1rem; display: none;"></div>
+
+        <form id="contact-form" class="card" style="background: #111;">
+          <div class="form-group">
+            <input type="text" id="name" name="name" placeholder="Your Name" data-fs-field required>
+            <span data-fs-error="name" style="color: #ff6b6b; font-size: 0.75rem;"></span>
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" name="email" placeholder="Email Address" data-fs-field required>
+            <span data-fs-error="email" style="color: #ff6b6b; font-size: 0.75rem;"></span>
+          </div>
+          <div class="form-group">
+            <textarea id="message" name="message" rows="4" placeholder="Your message..." data-fs-field required></textarea>
+            <span data-fs-error="message" style="color: #ff6b6b; font-size: 0.75rem;"></span>
+          </div>
+          <button type="submit" data-fs-submit-btn style="background: var(--accent); color: black; font-weight: bold; border: none; width: 100%; padding: 14px; border-radius: 40px; font-size: 1rem; cursor: pointer; transition: 0.2s;">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+    
+  <script>
+    // Mobile menu toggle
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('navLinks');
+    mobileBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+    // close mobile menu on link click
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('active'));
+    });
+
+    // smooth scroll for buttons
+    document.getElementById('skillsBtn').addEventListener('click', () => {
+      document.getElementById('skills').scrollIntoView({ behavior: 'smooth' });
+    });
+    document.getElementById('contactBtn').addEventListener('click', () => {
+      document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Back to top
+    const backTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) backTop.classList.add('show');
+      else backTop.classList.remove('show');
+    });
+
+    // Progress bars animation on scroll (fill widths)
+    const progressBars = document.querySelectorAll('.progress-fill');
+    function animateProgress() {
+      progressBars.forEach(bar => {
+        const progressValue = bar.getAttribute('data-progress');
+        const rect = bar.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100 && !bar.style.width) {
+          bar.style.width = progressValue + '%';
+        }
+      });
+    }
+    window.addEventListener('scroll', animateProgress);
+    window.addEventListener('load', animateProgress);
+
+    // Intersection Observer for fade-up elements
+    const fadeElements = document.querySelectorAll('.fade-up');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    fadeElements.forEach(el => observer.observe(el));
+
+    // Contact form simulation
+    const form = document.getElementById('contactForm');
+    const feedback = document.getElementById('formFeedback');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      if (name && email && message) {
+        feedback.innerHTML = '<span style="color:#BFFF00;"><i class="fas fa-check-circle"></i> Thanks for reaching out! I’ll get back to you soon.</span>';
+        form.reset();
+        setTimeout(() => { feedback.innerHTML = ''; }, 4000);
+      } else {
+        feedback.innerHTML = '<span style="color:#ff6b6b;">Please fill all fields.</span>';
+        setTimeout(() => { feedback.innerHTML = ''; }, 2500);
+      }
+    });
+
+    // small preload fix for progress fill initial visible check
+    setTimeout(() => { animateProgress(); }, 300);
+    // make sure shape background remains behind
+  </script>
+    <!-- Formspree AJAX Integration -->
+<script>
+  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+  formspree('initForm', { formElement: '#contact-form', formId: 'xjglbnqg' });
+</script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+</body>
+</html>
