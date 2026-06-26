@@ -2,928 +2,786 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>MD Hasib Hossain | Aspiring Data Analyst</title>
-  <!-- Google Fonts & Font Awesome -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MD Hasib Hossain – Aspiring Data Analyst</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            lime: { 
+              accent: '#BFFF00',
+              light: '#D4FF4D',
+              subtle: 'rgba(191,255,0,0.06)',
+              border: 'rgba(191,255,0,0.12)',
+            },
+            dark: { 900: '#0A0A0A', 800: '#111111', 700: '#1E1E1E', 600: '#2D2D2D', 500: '#3A3A3A' }
+          },
+          fontFamily: { inter: ['Inter', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+    ::selection { background: rgba(191,255,0,0.15); color: #BFFF00; }
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #0A0A0A;
-      color: #F0F0F0;
-      line-height: 1.5;
-      scroll-behavior: smooth;
-    }
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: #0A0A0A; }
+    ::-webkit-scrollbar-thumb { background: rgba(191,255,0,0.3); border-radius: 2px; }
+    ::-webkit-scrollbar-thumb:hover { background: #BFFF00; }
 
-    /* Custom scroll */
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #1E1E1E;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #BFFF00;
-      border-radius: 10px;
-    }
-
-    :root {
-      --bg-dark: #0A0A0A;
-      --card-bg: #111111;
-      --card-dark: #1E1E1E;
-      --accent: #BFFF00;
-      --accent-hover: #D4FF4D;
-      --text-light: #F5F5F5;
-      --text-muted: #B0B0B0;
-      --border-light: #2A2A2A;
-    }
-
-    /* global container */
-    .container {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    section {
-      padding: 6rem 0;
-    }
-
-    /* Typography */
-    h1, h2, h3 {
-      font-weight: 700;
-      letter-spacing: -0.02em;
-    }
-    h2 {
-      font-size: 2.5rem;
-      margin-bottom: 2.5rem;
-      position: relative;
-      display: inline-block;
-    }
-    h2:after {
-      content: '';
-      position: absolute;
-      bottom: -12px;
-      left: 0;
-      width: 60px;
-      height: 3px;
-      background: var(--accent);
-      border-radius: 3px;
-    }
-    .section-header {
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-    .section-header h2:after {
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px;
-    }
-
-    /* Buttons & links */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 12px 28px;
-      border-radius: 40px;
-      font-weight: 600;
-      transition: all 0.25s ease;
-      text-decoration: none;
-      font-size: 1rem;
-      cursor: pointer;
-      border: none;
-    }
-    .btn-primary {
-      background: var(--accent);
-      color: #0A0A0A;
-      box-shadow: 0 4px 12px rgba(191, 255, 0, 0.2);
-    }
-    .btn-primary:hover {
-      background: var(--accent-hover);
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(191, 255, 0, 0.3);
-    }
-    .btn-outline {
-      border: 1.5px solid var(--accent);
-      background: transparent;
-      color: var(--accent);
-    }
-    .btn-outline:hover {
-      background: rgba(191, 255, 0, 0.1);
-      transform: translateY(-2px);
-      border-color: var(--accent-hover);
-      color: var(--accent-hover);
-    }
-
-    /* Header & Nav */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(10, 10, 10, 0.92);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(191, 255, 0, 0.15);
-      padding: 0.9rem 0;
-    }
-    .nav-container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
-    .logo a {
-      font-size: 1.8rem;
-      font-weight: 800;
-      text-decoration: none;
-      background: linear-gradient(135deg, #FFFFFF 30%, var(--accent) 80%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      letter-spacing: -0.5px;
-    }
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
-    .nav-links a {
-      text-decoration: none;
-      color: #E0E0E0;
-      font-weight: 500;
-      transition: 0.2s;
-      font-size: 1rem;
-    }
-    .nav-links a:hover {
-      color: var(--accent);
-    }
-    .mobile-menu-btn {
-      display: none;
-      font-size: 1.8rem;
-      background: none;
-      border: none;
-      color: var(--accent);
-      cursor: pointer;
-    }
-
-    /* Hero */
-    .hero {
-      min-height: 90vh;
-      display: flex;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-    }
+    /* Subtle grid background - lightweight */
     .hero-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: center;
-    }
-    .hero-content h1 {
-      font-size: 3.5rem;
-      line-height: 1.2;
-      margin-bottom: 1rem;
-    }
-    .hero-content .highlight {
-      color: var(--accent);
-    }
-    .hero-sub {
-      font-size: 1.2rem;
-      color: var(--text-muted);
-      margin: 1.2rem 0 2rem;
-      max-width: 90%;
-    }
-    .btn-group {
-      display: flex;
-      gap: 1.2rem;
-      flex-wrap: wrap;
-    }
-    .profile-img {
-      display: flex;
-      justify-content: center;
-    }
-    .profile-placeholder {
-      width: 320px;
-      height: 320px;
-      border-radius: 50%;
-      overflow: hidden;
-      border: 3px solid var(--accent);
-      box-shadow: 0 20px 35px -10px rgba(0,0,0,0.5);
-      transition: transform 0.3s ease;
-      background: #1E1E1E;
-    }
-    .profile-placeholder img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .profile-placeholder:hover {
-      transform: scale(1.02);
+      background-image:
+        linear-gradient(rgba(191,255,0,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(191,255,0,0.02) 1px, transparent 1px);
+      background-size: 60px 60px;
     }
 
-    /* animated background shapes */
-    .shape-bg {
+    /* Floating shapes - very subtle */
+    .float-shape {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      overflow: hidden;
+      border: 1px solid rgba(191,255,0,0.04);
+      animation: floatShape 12s ease-in-out infinite;
     }
-    .shape {
-      position: absolute;
-      background: rgba(191, 255, 0, 0.08);
-      border-radius: 50%;
-      filter: blur(70px);
-      animation: float 20s infinite alternate;
-    }
-    .shape1 { width: 400px; height: 400px; top: -100px; right: -100px; }
-    .shape2 { width: 300px; height: 300px; bottom: 0; left: -50px; animation-duration: 18s; }
-    .shape3 { width: 250px; height: 250px; bottom: 30%; right: 20%; animation-duration: 25s; }
-
-    @keyframes float {
-      0% { transform: translateY(0px) translateX(0px); }
-      100% { transform: translateY(40px) translateX(20px); }
+    .float-shape:nth-child(2) { animation-delay: -3s; animation-duration: 14s; }
+    .float-shape:nth-child(3) { animation-delay: -6s; animation-duration: 10s; }
+    .float-shape:nth-child(4) { animation-delay: -2s; animation-duration: 16s; }
+    .float-shape:nth-child(5) { animation-delay: -8s; animation-duration: 11s; }
+    @keyframes floatShape {
+      0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.2; }
+      50% { transform: translateY(-20px) rotate(90deg); opacity: 0.5; }
     }
 
-    /* Cards & layout */
-    .card {
-      background: var(--card-bg);
-      border-radius: 24px;
-      padding: 1.8rem;
-      border: 1px solid #2A2A2A;
-      transition: all 0.3s ease;
-      box-shadow: 0 10px 20px -5px rgba(0,0,0,0.3);
-    }
-    .card:hover {
-      border-color: var(--accent);
-      transform: translateY(-6px);
-    }
-    .education-card, .skill-card {
-      background: var(--card-dark);
-    }
-    .timeline {
-      margin-top: 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: #1a1a1a;
-      padding: 1rem 1.5rem;
-      border-radius: 60px;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-    .timeline-step {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-weight: 500;
-    }
-    .timeline-step i {
-      color: var(--accent);
-    }
-
-    /* Skills grid */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 2rem;
-      margin-top: 1rem;
-    }
-    .skill-card i {
-      font-size: 2.5rem;
-      color: var(--accent);
-      margin-bottom: 1rem;
-    }
-    .skill-card h3 {
-      margin-bottom: 0.5rem;
-    }
-    .skill-progress {
-      margin: 1rem 0;
-      height: 6px;
-      background: #2D2D2D;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-    .progress-fill {
-      width: 0%;
-      height: 100%;
-      background: var(--accent);
-      border-radius: 10px;
-      transition: width 1s ease;
-    }
-    .skill-note {
-      font-size: 0.8rem;
-      color: var(--accent);
-      margin-top: 0.7rem;
-      display: inline-block;
-    }
-
-    /* Projects placeholder */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-    }
-    .project-card {
-      background: #111;
-      text-align: center;
-      position: relative;
-    }
-    .coming-badge {
-      background: rgba(191, 255, 0, 0.15);
-      color: var(--accent);
-      padding: 0.3rem 1rem;
-      border-radius: 30px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      display: inline-block;
-      margin-bottom: 1rem;
-      border: 1px solid rgba(191,255,0,0.4);
-    }
-
-    /* Contact Section */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 3rem;
-    }
-    .contact-info {
-      background: var(--card-dark);
-      border-radius: 28px;
-      padding: 2rem;
-    }
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 1.8rem;
-    }
-    .contact-item i {
-      font-size: 1.6rem;
-      color: var(--accent);
-      width: 40px;
-    }
-    .contact-item a {
-      color: #ddd;
-      text-decoration: none;
-      transition: 0.2s;
-    }
-    .contact-item a:hover {
-      color: var(--accent);
-    }
-    .linkedin-btn {
-      background: #0077b5;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 40px;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 500;
-    }
-    .linkedin-btn:hover {
-      background: #005582;
-      color: white;
-    }
-    .form-group {
-      margin-bottom: 1.2rem;
-    }
-    input, textarea {
-      width: 100%;
-      background: #1E1E1E;
-      border: 1px solid #333;
-      padding: 14px 18px;
-      border-radius: 20px;
-      font-family: 'Inter', sans-serif;
-      color: white;
-      transition: 0.2s;
-    }
-    input:focus, textarea:focus {
-      outline: none;
-      border-color: var(--accent);
-      box-shadow: 0 0 0 2px rgba(191, 255, 0, 0.2);
-    }
-    button[type="submit"] {
-      background: var(--accent);
-      color: black;
-      font-weight: bold;
-      border: none;
-      width: 100%;
-      padding: 14px;
-      border-radius: 40px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: 0.2s;
-    }
-    button[type="submit"]:hover {
-      background: var(--accent-hover);
-      transform: translateY(-2px);
-    }
-
-    footer {
-      background: #050505;
-      text-align: center;
-      padding: 2rem;
-      border-top: 1px solid #222;
-      font-size: 0.9rem;
-      color: #aaa;
-    }
-    .back-to-top {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background: var(--accent);
-      color: #0A0A0A;
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      font-size: 1.4rem;
+    /* Fade in on scroll */
+    .reveal {
       opacity: 0;
-      visibility: hidden;
-      transition: 0.2s;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-      z-index: 99;
+      transform: translateY(24px);
+      transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .back-to-top.show {
-      opacity: 1;
-      visibility: visible;
-    }
-    .back-to-top:hover {
-      background: var(--accent-hover);
-      transform: translateY(-3px);
-    }
-
-    /* responsive */
-    @media (max-width: 900px) {
-      .hero-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-      .hero-content h1 {
-        font-size: 2.6rem;
-      }
-      .btn-group {
-        justify-content: center;
-      }
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background: #0F0F0F;
-        padding: 1.2rem;
-        border-radius: 24px;
-        margin-top: 1rem;
-        gap: 1rem;
-      }
-      .nav-links.active {
-        display: flex;
-      }
-      .mobile-menu-btn {
-        display: block;
-      }
-      .profile-placeholder {
-        width: 260px;
-        height: 260px;
-        margin: 0 auto;
-      }
-      .container {
-        padding: 0 1.5rem;
-      }
-      h2 {
-        font-size: 2rem;
-      }
-    }
-    @media (max-width: 480px) {
-      .btn-group {
-        flex-direction: column;
-        align-items: stretch;
-      }
-      .btn {
-        text-align: center;
-        justify-content: center;
-      }
-      .timeline {
-        flex-direction: column;
-        align-items: flex-start;
-        border-radius: 28px;
-      }
-    }
-    .fade-up {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.7s ease;
-    }
-    .fade-up.visible {
+    .reveal.active {
       opacity: 1;
       transform: translateY(0);
     }
+
+    /* Skill progress */
+    .skill-bar-fill {
+      transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+      width: 0%;
+    }
+
+    /* Subtle glow on hover */
+    .glow-hover:hover {
+      box-shadow: 0 0 20px rgba(191,255,0,0.06), 0 0 40px rgba(191,255,0,0.02);
+    }
+
+    /* Profile ring - subtle pulse */
+    .profile-ring {
+      animation: profilePulse 4s ease-in-out infinite;
+    }
+    @keyframes profilePulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(191,255,0,0.15); }
+      50% { box-shadow: 0 0 0 8px rgba(191,255,0,0); }
+    }
+
+    /* Shimmer */
+    .shimmer {
+      background: linear-gradient(90deg, transparent 0%, rgba(191,255,0,0.04) 50%, transparent 100%);
+      background-size: 200% 100%;
+      animation: shimmer 3s infinite;
+    }
+    @keyframes shimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+
+    /* Toast */
+    .toast {
+      transform: translateX(100%);
+      opacity: 0;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .toast.show {
+      transform: translateX(0);
+      opacity: 1;
+    }
+
+    /* Timeline */
+    .timeline-line {
+      background: linear-gradient(to bottom, rgba(191,255,0,0.3), rgba(191,255,0,0.03));
+    }
   </style>
 </head>
-<body>
-  <header>
-    <div class="container nav-container">
-      <div class="logo"><a href="#">Hasib<span style="color:#BFFF00;">.</span></a></div>
-      <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+<body class="bg-dark-900 text-white antialiased overflow-x-hidden">
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" style="background: rgba(10,10,10,0.85); backdrop-filter: blur(10px);">
+    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-2 group">
+        <div class="w-8 h-8 rounded-lg bg-lime-accent/10 border border-lime-accent/20 flex items-center justify-center group-hover:bg-lime-accent/20 transition-colors">
+          <span class="text-lime-accent font-bold text-sm">H</span>
+        </div>
+        <span class="font-semibold text-gray-200 group-hover:text-lime-accent transition-colors">Hasib</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <div class="hidden md:flex items-center gap-6">
+        <a href="#home" class="text-sm text-gray-400 hover:text-lime-accent transition-colors">Home</a>
+        <a href="#about" class="text-sm text-gray-400 hover:text-lime-accent transition-colors">About</a>
+        <a href="#education" class="text-sm text-gray-400 hover:text-lime-accent transition-colors">Education</a>
+        <a href="#skills" class="text-sm text-gray-400 hover:text-lime-accent transition-colors">Skills</a>
+        <a href="#projects" class="text-sm text-gray-400 hover:text-lime-accent transition-colors">Projects</a>
+        <a href="#contact" class="text-sm text-gray-400 hover:text-lime-accent transition-colors">Contact</a>
+      </div>
+
+      <a href="#contact" class="hidden md:inline-flex items-center gap-2 bg-lime-accent/10 border border-lime-accent/20 text-lime-accent px-4 py-2 rounded-lg text-sm font-medium hover:bg-lime-accent/20 transition-colors">
+        <span class="iconify" data-icon="lucide:mail" data-width="14"></span>
+        Contact
+      </a>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobileMenuBtn" class="md:hidden text-gray-400 p-2 hover:text-lime-accent transition-colors" aria-label="Open menu">
+        <span class="iconify" data-icon="lucide:menu" data-width="24"></span>
+      </button>
     </div>
-  </header>
 
-  <main>
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-      <div class="shape-bg">
-        <div class="shape shape1"></div>
-        <div class="shape shape2"></div>
-        <div class="shape shape3"></div>
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="md:hidden hidden bg-dark-800 border-t border-dark-600">
+      <div class="px-6 py-4 flex flex-col gap-2">
+        <a href="#home" class="text-gray-300 hover:text-lime-accent py-2 transition-colors mobile-link">Home</a>
+        <a href="#about" class="text-gray-300 hover:text-lime-accent py-2 transition-colors mobile-link">About</a>
+        <a href="#education" class="text-gray-300 hover:text-lime-accent py-2 transition-colors mobile-link">Education</a>
+        <a href="#skills" class="text-gray-300 hover:text-lime-accent py-2 transition-colors mobile-link">Skills</a>
+        <a href="#projects" class="text-gray-300 hover:text-lime-accent py-2 transition-colors mobile-link">Projects</a>
+        <a href="#contact" class="text-gray-300 hover:text-lime-accent py-2 transition-colors mobile-link">Contact</a>
+        <a href="#contact" class="bg-lime-accent/10 border border-lime-accent/20 text-lime-accent px-4 py-2 rounded-lg text-sm font-medium text-center hover:bg-lime-accent/20 transition-colors mt-2">Contact</a>
       </div>
-      <div class="container hero-grid">
-        <div class="hero-content">
-          <h1>Hi, I’m MD Hasib Hossain</h1>
-          <p class="hero-sub">Aspiring Business Intelligence & Data Analyst | BBA Student | Python, SQL, Excel, Machine Learning</p>
-          <div class="btn-group">
-            <button class="btn btn-primary" id="skillsBtn"><i class="fas fa-code"></i> View Skills</button>
-            <button class="btn btn-outline" id="contactBtn"><i class="fas fa-envelope"></i> Get in Touch</button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section id="home" class="relative min-h-screen flex items-center justify-center hero-grid overflow-hidden">
+    <!-- Floating shapes -->
+    <div class="float-shape w-16 h-16 rounded-lg top-[20%] left-[10%]"></div>
+    <div class="float-shape w-24 h-24 rounded-full top-[30%] right-[15%]"></div>
+    <div class="float-shape w-12 h-12 rounded-sm bottom-[25%] left-[20%]"></div>
+    <div class="float-shape w-20 h-20 rounded-lg bottom-[30%] right-[10%]"></div>
+    <div class="float-shape w-10 h-10 rounded-full top-[60%] left-[50%]"></div>
+
+    <div class="absolute inset-0 bg-gradient-to-b from-dark-900/60 via-transparent to-dark-900"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-lime-accent/3 blur-[100px] rounded-full"></div>
+
+    <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+      <!-- Profile Picture -->
+      <div class="mb-8 flex justify-center">
+        <div class="profile-ring w-32 h-32 md:w-40 md:h-40 rounded-full border border-lime-accent/30 p-1">
+          <div class="w-full h-full rounded-full bg-dark-700 overflow-hidden relative">
+            <img src="" alt="MD Hasib Hossain" class="absolute inset-0 w-full h-full object-cover object-[center_50%]" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="absolute inset-0 hidden items-center justify-center text-gray-500">
+              <span class="iconify" data-icon="lucide:user" data-width="40"></span>
+            </div>
           </div>
         </div>
-        <div class="profile-img">
-          <div class="profile-placeholder">
-            <!-- placeholder image – user will replace with actual photo -->
-            <img src="profile_picture.png">
-          </div>
-        </div>
       </div>
-    </section>
 
-    <!-- About Section -->
-    <section id="about">
-      <div class="container">
-        <div class="section-header">
-          <h2>About Me</h2>
-        </div>
-        <div class="card fade-up" style="max-width: 900px; margin: 0 auto; text-align: center;">
-          <p style="font-size: 1.2rem; margin-bottom: 1rem;">I am a university student pursuing a Bachelor of Business Administration at <strong>World University of Bangladesh</strong>. Passionate about data, I am building my analytical toolkit with Python, SQL, Excel, and machine learning. My goal is to become a Business Intelligence Analyst or Data Analyst, helping organizations turn raw data into actionable insights.</p>
-          <p style="color: var(--text-muted);">🎓 Currently in my 2nd year — expected graduation: 2029. I’m actively sharpening my skills and preparing for real‑world data challenges.</p>
-        </div>
+      <!-- Status badge -->
+      <div class="inline-flex items-center gap-2 bg-dark-700/40 border border-dark-500/30 rounded-full px-4 py-1.5 mb-6">
+        <span class="w-1.5 h-1.5 rounded-full bg-lime-accent/70"></span>
+        <span class="text-xs font-medium text-gray-400 tracking-wide uppercase">Open to Opportunities</span>
       </div>
-    </section>
 
-   <!-- Education Section -->
-      <section id="education">
-      <div class="container">
-        <div class="section-header">
-          <h2>Education</h2>
-        </div>
-        
-        <!-- BBA Summary Card -->
-        <div class="card education-card fade-up" style="text-align: center; margin-bottom: 2rem;">
-          <i class="fas fa-graduation-cap" style="font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem; display: inline-block;"></i>
-          <h3>Bachelor of Business Administration (BBA)</h3>
-          <p style="font-size: 1.2rem; margin: 0.5rem 0;">World University of Bangladesh</p>
-          <p><strong>2nd Year</strong> | Expected Graduation: 2029</p>
-          <div class="timeline">
-            <div class="timeline-step"><i class="fas fa-calendar-alt"></i> 2024 - Started BBA</div>
-            <div class="timeline-step"><i class="fas fa-chart-line"></i> 2nd Year (Current)</div>
-            <div class="timeline-step"><i class="fas fa-trophy"></i> 2029 - Graduation</div>
-          </div>
-        </div>
+      <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] mb-6">
+        Hi, I'm <span class="text-lime-accent">MD Hasib</span><br>
+        <span class="text-gray-400">Hossain</span>
+      </h1>
 
-        <!-- Small Table with Background/Group Column -->
-        <div class="card fade-up" style="max-width: 650px; margin: 0 auto; padding: 0; overflow-x: auto; background: var(--card-dark); border-radius: 20px;">
-          <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem; min-width: 500px;">
-            <thead>
-              <tr style="background: #0A0A0A; border-bottom: 2px solid var(--accent);">
-                <th style="padding: 0.75rem; text-align: center; color: var(--accent); font-weight: 600;">Exam</th>
-                <th style="padding: 0.75rem; text-align: center; color: var(--accent); font-weight: 600;">Board</th>
-                <th style="padding: 0.75rem; text-align: center; color: var(--accent); font-weight: 600;">Institution</th>
-                <th style="padding: 0.75rem; text-align: center; color: var(--accent); font-weight: 600;">Group/Background</th>
-                <th style="padding: 0.75rem; text-align: center; color: var(--accent); font-weight: 600;">Year</th>
-                <th style="padding: 0.75rem; text-align: center; color: var(--accent); font-weight: 600;">GPA</th>
-              </tr>
-            </thead>
-            <tbody>
-              <!-- HSC Row -->
-              <tr style="border-bottom: 1px solid #2A2A2A;">
-                <td style="padding: 0.7rem; text-align: center; font-weight: 500;">HSC</td>
-                <td style="padding: 0.7rem; text-align: center;">Dhaka</td>
-                <td style="padding: 0.7rem; text-align: center;">Tongi Govt. College</td>
-                <td style="padding: 0.7rem; text-align: center;">Business Studies</td>
-                <td style="padding: 0.7rem; text-align: center;">2024</td>
-                <td style="padding: 0.7rem; text-align: center; color: var(--accent); font-weight: 600;">4.67</td>
-              </tr>
-              <!-- SSC Row -->
-              <tr style="border-bottom: 1px solid #2A2A2A;">
-                <td style="padding: 0.7rem; text-align: center; font-weight: 500;">SSC</td>
-                <td style="padding: 0.7rem; text-align: center;">Dhaka</td>
-                <td style="padding: 0.7rem; text-align: center;">Shahees Ahsanullah Master High School</td>
-                <td style="padding: 0.7rem; text-align: center; color:">Business Studies</td>
-                <td style="padding: 0.7rem; text-align: center;">2022</td>
-                <td style="padding: 0.7rem; text-align: center; color: var(--accent); font-weight: 600;">4.94</td>
-               </tr>
-            </tbody>
-           </table>
+      <p class="text-base md:text-lg text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+        Aspiring Business Intelligence & Data Analyst <span class="text-lime-accent/60">|</span> BBA Student <span class="text-lime-accent/60">|</span> Python, SQL, Excel, ML
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#skills" class="group inline-flex items-center gap-2 bg-lime-accent/10 border border-lime-accent/20 text-lime-accent px-8 py-3.5 rounded-xl font-medium hover:bg-lime-accent/20 hover:border-lime-accent/40 transition-all duration-200">
+          View Skills
+          <span class="iconify group-hover:translate-x-1 transition-transform" data-icon="lucide:arrow-down" data-width="16"></span>
+        </a>
+        <a href="#contact" class="group inline-flex items-center gap-2 border border-dark-500 text-gray-300 px-8 py-3.5 rounded-xl font-medium hover:border-lime-accent/40 hover:text-lime-accent transition-all duration-200">
+          Get in Touch
+          <span class="iconify group-hover:translate-x-1 transition-transform" data-icon="lucide:arrow-right" data-width="16"></span>
+        </a>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
+        <span class="text-[10px] text-gray-600 uppercase tracking-widest">Scroll</span>
+        <span class="iconify text-lime-accent/40" data-icon="lucide:chevron-down" data-width="14"></span>
+      </div>
+    </div>
+  </section>
+
+<!-- ===== ABOUT SECTION ===== -->
+<section id="about" class="py-20 px-6 relative">
+  <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-dark-600 to-transparent"></div>
+  <div class="max-w-7xl mx-auto">
+    <div class="reveal grid md:grid-cols-2 gap-12 items-center">
+      <!-- Left -->
+      <div>
+        <div class="inline-flex items-center gap-2 bg-lime-accent/5 border border-lime-accent/10 rounded-full px-3 py-1 mb-4">
+          <span class="iconify text-lime-accent/70" data-icon="lucide:user" data-width="12"></span>
+          <span class="text-xs font-medium text-lime-accent/70 tracking-wide uppercase">About Me</span>
         </div>
-        
-        <p style="text-align: center; margin-top: 1rem; font-size: 0.8rem; color: var(--text-muted);">
-          <i class="fas fa-info-circle" style="color: var(--accent);"></i> BBA program in progress — expected completion in 2029
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">
+          Turning <span class="text-lime-accent">Curiosity</span> into<br>Data-Driven Insights
+        </h2>
+        <p class="text-gray-400 leading-relaxed mb-4">
+          I am a BBA student at <strong class="text-white">World University of Bangladesh</strong>. Passionate about data, I'm building my analytical toolkit with Python, SQL, Excel, and machine learning.
         </p>
-      </div>
-    </section>
-    
+        <p class="text-gray-400 leading-relaxed mb-8">
+          My goal is to become a <strong class="text-lime-accent">Business Intelligence Analyst</strong>, helping organizations turn raw data into actionable insights.
+        </p>
 
-<!-- Skills Section -->
-  <!-- Skills Section -->
-<section id="skills">
-  <div class="container">
-    <div class="section-header">
-      <h2>Technical & Professional Skills</h2>
-      <p style="color: var(--text-muted); margin-top: 0.8rem;">Continuously building expertise through courses and self‑study.</p>
-    </div>
-    
-    <!-- Technical Skills Grid -->
-    <div class="skills-grid">
-      <!-- Python -->
-      <div class="card skill-card fade-up">
-        <i class="fab fa-python"></i>
-        <h3>Python</h3>
-        <p>Pandas, NumPy, Matplotlib, Scikit-learn, data analysis & ML basics.</p>
-        <div class="skill-progress"><div class="progress-fill" data-progress="70"></div></div>
-        <span class="skill-note"><i class="fas fa-chalkboard-user"></i> Building proficiency</span>
+        <div class="grid grid-cols-3 gap-3">
+          <div class="bg-dark-700/30 border border-dark-600/30 rounded-xl p-4 text-center glow-hover transition-all duration-300">
+            <div class="text-2xl font-bold text-lime-accent">BBA</div>
+            <div class="text-xs text-gray-500 mt-1">Current Program</div>
+          </div>
+          <div class="bg-dark-700/30 border border-dark-600/30 rounded-xl p-4 text-center glow-hover transition-all duration-300">
+            <div class="text-2xl font-bold text-lime-accent">2029</div>
+            <div class="text-xs text-gray-500 mt-1">Graduation Year</div>
+          </div>
+          <div class="bg-dark-700/30 border border-dark-600/30 rounded-xl p-4 text-center glow-hover transition-all duration-300">
+            <div class="text-2xl font-bold text-lime-accent">6+</div>
+            <div class="text-xs text-gray-500 mt-1">Tech Skills</div>
+          </div>
+        </div>
       </div>
-      <!-- SQL -->
-      <div class="card skill-card fade-up">
-        <i class="fas fa-database"></i>
-        <h3>SQL</h3>
-        <p>Complex queries, joins, aggregations, database design, CTEs.</p>
-        <div class="skill-progress"><div class="progress-fill" data-progress="50"></div></div>
-        <span class="skill-note"><i class="fas fa-chart-simple"></i> Intermediate</span>
-      </div>
-      <!-- Excel -->
-      <div class="card skill-card fade-up">
-        <i class="fas fa-file-excel"></i>
-        <h3>Excel & Power Query</h3>
-        <p>Pivot tables, advanced formulas, dashboards, Power Pivot.</p>
-        <div class="skill-progress"><div class="progress-fill" data-progress="75"></div></div>
-        <span class="skill-note"><i class="fas fa-chart-line"></i> Strong foundation</span>
-      </div>
-      <!-- Power BI -->
-      <div class="card skill-card fade-up">
-        <i class="fas fa-chart-pie"></i>
-        <h3>Power BI</h3>
-        <p>DAX, data modeling, interactive dashboards, report publishing.</p>
-        <div class="skill-progress"><div class="progress-fill" data-progress="1"></div></div>
-        <span class="skill-note"><i class="fas fa-chart-simple"></i> Learning & practicing</span>
-      </div>
-      <!-- Machine Learning -->
-      <div class="card skill-card fade-up">
-        <i class="fas fa-brain"></i>
-        <h3>Machine Learning</h3>
-        <p>Regression, classification, model evaluation, feature engineering.</p>
-        <div class="skill-progress"><div class="progress-fill" data-progress="1"></div></div>
-        <span class="skill-note"><i class="fas fa-microchip"></i> Actively learning</span>
-      </div>
-      <!-- Statistics -->
-      <div class="card skill-card fade-up">
-        <i class="fas fa-chart-line"></i>
-        <h3>Statistics</h3>
-        <p>Hypothesis testing, distributions, A/B testing, descriptive stats.</p>
-        <div class="skill-progress"><div class="progress-fill" data-progress="75"></div></div>
-        <span class="skill-note"><i class="fas fa-calculator"></i> Core understanding</span>
-      </div>
-    </div>
 
-    <!-- Soft Skills -->
-    <div class="section-header" style="margin-top: 3rem;">
-      <h2>Soft Skills</h2>
-      <p style="color: #B0B0B0; margin-top: 0.8rem;">Core competencies that drive effective data analysis & teamwork</p>
-    </div>
-    
-    <div class="soft-skills-list" style="display: flex; flex-wrap: wrap; gap: 0.8rem; justify-content: center;">
-      <div class="soft-skill-item" style="background: #1E1E1E; border-radius: 40px; padding: 0.5rem 1.2rem; display: inline-flex; align-items: center; gap: 8px; border: 1px solid #2A2A2A;"><i class="fas fa-puzzle-piece" style="color: #BFFF00;"></i> Problem Solving</div>
-      <div class="soft-skill-item" style="background: #1E1E1E; border-radius: 40px; padding: 0.5rem 1.2rem; display: inline-flex; align-items: center; gap: 8px; border: 1px solid #2A2A2A;"><i class="fas fa-lightbulb" style="color: #BFFF00;"></i> Analytical Thinking</div>
-      <div class="soft-skill-item" style="background: #1E1E1E; border-radius: 40px; padding: 0.5rem 1.2rem; display: inline-flex; align-items: center; gap: 8px; border: 1px solid #2A2A2A;"><i class="fas fa-comment-dots" style="color: #BFFF00;"></i> Critical Thinking</div>
-      <div class="soft-skill-item" style="background: #1E1E1E; border-radius: 40px; padding: 0.5rem 1.2rem; display: inline-flex; align-items: center; gap: 8px; border: 1px solid #2A2A2A;"><i class="fas fa-graduation-cap" style="color: #BFFF00;"></i> Self-Learning</div>
-      <div class="soft-skill-item" style="background: #1E1E1E; border-radius: 40px; padding: 0.5rem 1.2rem; display: inline-flex; align-items: center; gap: 8px; border: 1px solid #2A2A2A;"><i class="fas fa-users" style="color: #BFFF00;"></i> Teamwork</div>
-      <div class="soft-skill-item" style="background: #1E1E1E; border-radius: 40px; padding: 0.5rem 1.2rem; display: inline-flex; align-items: center; gap: 8px; border: 1px solid #2A2A2A;"><i class="fas fa-clock" style="color: #BFFF00;"></i> Time Management</div>
-      <div class="soft-skill-item" style="background: #1E1E1E; border-radius: 40px; padding: 0.5rem 1.2rem; display: inline-flex; align-items: center; gap: 8px; border: 1px solid #2A2A2A;"><i class="fas fa-search" style="color: #BFFF00;"></i> Attention to Detail</div>
-      <div class="soft-skill-item" style="background: #1E1E1E; border-radius: 40px; padding: 0.5rem 1.2rem; display: inline-flex; align-items: center; gap: 8px; border: 1px solid #2A2A2A;"><i class="fas fa-chalkboard-user" style="color: #BFFF00;"></i> Communication</div>
-    </div>
+      <!-- Right: Timeline -->
+      <div class="relative">
+        <div class="bg-dark-700/20 border border-dark-600/30 rounded-2xl p-6">
+          <h3 class="text-base font-semibold mb-5 flex items-center gap-2">
+            <span class="iconify text-lime-accent/60" data-icon="lucide:route" data-width="18"></span>
+            My Academic Journey
+          </h3>
+          <div class="relative pl-8">
+            <div class="absolute left-3 top-2 bottom-2 w-px timeline-line"></div>
 
-    <div class="card" style="background: #111; margin-top: 2rem; text-align: center; border: 1px solid #2A2A2A; border-radius: 20px; padding: 1rem;">
-      <i class="fas fa-book-open" style="color: #BFFF00; font-size: 1.2rem;"></i>
-      <p style="margin-top: 0.3rem; font-size: 0.8rem;">📚 Daily learning: online courses, data challenges, and building a strong portfolio.</p>
+            <!-- SSC - 2022 -->
+            <div class="relative mb-6">
+              <div class="absolute -left-5 w-3 h-3 rounded-full bg-lime-accent border-2 border-dark-900"></div>
+              <div class="text-sm font-semibold text-white">2022</div>
+              <div class="text-sm text-white mt-0.5">SSC</div>
+              <div class="text-sm text-gray-500">Business Studies</div>
+              <div class="text-xs text-lime-accent/60 mt-0.5">GPA: 4.96</div>
+            </div>
+
+            <!-- HSC - 2024 -->
+            <div class="relative mb-6">
+              <div class="absolute -left-5 w-3 h-3 rounded-full bg-lime-accent/60 border-2 border-dark-900"></div>
+              <div class="text-sm font-semibold text-white">2024</div>
+              <div class="text-sm text-white mt-0.5">HSC</div>
+              <div class="text-sm text-gray-500">Business Studies</div>
+              <div class="text-xs text-lime-accent/60 mt-0.5">GPA: 4.67</div>
+            </div>
+
+            <!-- BBA - 2029 -->
+            <div class="relative">
+              <div class="absolute -left-5 w-3 h-3 rounded-full bg-lime-accent/30 border-2 border-dark-900"></div>
+              <div class="text-sm font-semibold text-white">2029</div>
+              <div class="text-sm text-white mt-0.5">Undergraduation Complete</div>
+              <div class="text-sm text-gray-500">BBA in <span class="text-lime-accent/70">MIS</span></div>
+              <div class="text-xs text-gray-500 mt-0.5">🎯 Goal: BI / Data Analyst</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
+  <!-- ===== EDUCATION SECTION ===== -->
+  <section id="education" class="py-20 px-6 relative">
+    <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-dark-600 to-transparent"></div>
+    <div class="max-w-7xl mx-auto">
+      <div class="reveal text-center mb-12">
+        <div class="inline-flex items-center gap-2 bg-lime-accent/5 border border-lime-accent/10 rounded-full px-3 py-1 mb-4">
+          <span class="iconify text-lime-accent/70" data-icon="lucide:graduation-cap" data-width="12"></span>
+          <span class="text-xs font-medium text-lime-accent/70 tracking-wide uppercase">Education</span>
+        </div>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight">
+          Academic <span class="text-lime-accent">Background</span>
+        </h2>
+      </div>
 
-    <!-- Projects Placeholder Section -->
-    <section id="projects">
-      <div class="container">
-        <div class="section-header">
-          <h2>Projects</h2>
-          <p style="color: #ccc;">First data projects are in the works — dashboards, Python analysis & ML models coming soon.</p>
-        </div>
-        <div class="projects-grid">
-          <div class="card project-card fade-up">
-            <div class="coming-badge"><i class="fas fa-hourglass-half"></i> Coming Soon</div>
-            <i class="fas fa-chart-bar" style="font-size: 2.8rem; color: var(--accent);"></i>
-            <h3 style="margin: 1rem 0;">Sales Dashboard (BI)</h3>
-            <p>Interactive dashboard with Python/Streamlit or Power BI – transforming raw sales data.</p>
+      <div class="reveal max-w-2xl mx-auto">
+        <div class="relative bg-dark-700/20 border border-lime-accent/15 rounded-2xl p-8 md:p-10 glow-hover transition-all duration-300 group">
+          <div class="absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-lime-accent/30 to-transparent"></div>
+
+          <div class="flex items-start gap-5">
+            <div class="hidden sm:flex w-14 h-14 rounded-xl bg-lime-accent/5 border border-lime-accent/10 items-center justify-center flex-shrink-0 group-hover:bg-lime-accent/10 transition-colors">
+              <span class="iconify text-lime-accent/60" data-icon="lucide:graduation-cap" data-width="24"></span>
+            </div>
+            <div class="flex-1">
+              <div class="flex flex-wrap items-center gap-3 mb-2">
+                <h3 class="text-lg font-bold text-white">Bachelor of Business Administration</h3>
+                <span class="bg-lime-accent/10 text-lime-accent/70 text-xs font-medium px-2.5 py-0.5 rounded-full border border-lime-accent/15">In Progress</span>
+              </div>
+              <p class="text-lime-accent/70 font-medium text-sm mb-2">World University of Bangladesh</p>
+              <div class="flex flex-wrap items-center gap-4 text-sm text-gray-500">
+                <span class="flex items-center gap-1.5">
+                  <span class="iconify" data-icon="lucide:calendar" data-width="13"></span>
+                  2nd Year
+                </span>
+                <span class="flex items-center gap-1.5">
+                  <span class="iconify" data-icon="lucide:target" data-width="13"></span>
+                  Expected: 2029
+                </span>
+              </div>
+              <p class="text-xs text-gray-500 mt-3 leading-relaxed">
+                Building a foundation in business principles, quantitative methods, and analytical thinking — complemented by self-directed data learning.
+              </p>
+            </div>
           </div>
-          <div class="card project-card fade-up">
-            <div class="coming-badge"><i class="fas fa-hourglass-half"></i> In Progress</div>
-            <i class="fas fa-database" style="font-size: 2.8rem; color: var(--accent);"></i>
-            <h3>SQL Data Exploration</h3>
-            <p>Advanced SQL queries on real datasets, uncovering business insights.</p>
-          </div>
-          <div class="card project-card fade-up">
-            <div class="coming-badge"><i class="fas fa-flask"></i> Concept Phase</div>
-            <i class="fas fa-chart-line" style="font-size: 2.8rem; color: var(--accent);"></i>
-            <h3>ML Predictive Model</h3>
-            <p>Regression analysis & classification using scikit-learn, showcasing predictive analytics.</p>
-          </div>
-        </div>
-        <div style="text-align: center; margin-top: 2rem;">
-          <p style="background: #1E1E1E; display: inline-block; padding: 0.5rem 1.5rem; border-radius: 40px;"><i class="fas fa-code-branch"></i> I'm currently working on my first data projects. Check back soon for real‑world dashboards, Python analyses, and machine learning models.</p>
         </div>
       </div>
-    </section>
-
-   <!-- Contact Section -->
-<div class="card" style="text-align: center; background: var(--card-dark); border-radius: 24px; padding: 1.5rem;">
-  <h3 style="margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
-    <i class="fas fa-link" style="color: var(--accent);"></i> 
-    Find Me Online
-  </h3>
-  <div style="display: flex; justify-content: center;">
-    <a href="https://www.kaggle.com/hasibhossain18" target="_blank" rel="noopener noreferrer" 
-       style="display: inline-flex; align-items: center; gap: 12px; background: #0A0A0A; padding: 12px 28px; border-radius: 50px; text-decoration: none; color: white; border: 1px solid #2A2A2A; transition: all 0.3s ease;"
-       onmouseover="this.style.borderColor='#BFFF00'; this.style.transform='translateY(-3px)'" 
-       onmouseout="this.style.borderColor='#2A2A2A'; this.style.transform='translateY(0)'">
-      <i class="fab fa-kaggle" style="font-size: 1.8rem; color: #20BEFF;"></i>
-      <span style="font-weight: 600;">Kaggle Profile</span>
-      <i class="fas fa-external-link-alt" style="font-size: 0.8rem; color: var(--accent);"></i>
-    </a>
-  </div>
-</div>
-    
-<section id="contact">
-  <div class="container">
-    <div class="section-header">
-      <h2>Get In Touch</h2>
     </div>
-    <div class="contact-grid">
-      <!-- Contact Info Card (Unchanged) -->
-      <div class="contact-info fade-up">
-        <div class="contact-item">
-          <i class="fas fa-envelope"></i>
-          <div><a href="mailto:hasib.contact.bd@gmail.com">hasib.contact.bd@gmail.com</a><br><a href="mailto:hasib.insights@gmail.com">hasib.insights@gmail.com</a></div>
+  </section>
+
+  <!-- ===== SKILLS SECTION ===== -->
+<section id="skills" class="py-20 px-6 relative">
+  <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-dark-600 to-transparent"></div>
+  <div class="max-w-7xl mx-auto">
+    <div class="reveal text-center mb-12">
+      <div class="inline-flex items-center gap-2 bg-lime-accent/5 border border-lime-accent/10 rounded-full px-3 py-1 mb-4">
+        <span class="iconify text-lime-accent/70" data-icon="lucide:zap" data-width="12"></span>
+        <span class="text-xs font-medium text-lime-accent/70 tracking-wide uppercase">Skills</span>
+      </div>
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-3">
+        Technical <span class="text-lime-accent">Arsenal</span>
+      </h2>
+      <p class="text-gray-500 max-w-xl mx-auto text-sm">Continuously building expertise through courses and self-study.</p>
+    </div>
+
+    <div class="reveal grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <!-- Python -->
+      <div class="group bg-dark-700/20 border border-dark-600/30 rounded-xl p-5 hover:border-lime-accent/20 glow-hover transition-all duration-300">
+        <div class="w-10 h-10 rounded-lg bg-lime-accent/5 border border-lime-accent/10 flex items-center justify-center mb-3 group-hover:bg-lime-accent/10 transition-colors">
+          <span class="iconify text-lime-accent/70" data-icon="lucide:terminal" data-width="18"></span>
         </div>
-        <div class="contact-item">
-          <i class="fab fa-linkedin"></i>
-          <a href="https://www.linkedin.com/in/md-hasib-hossain-053460390" target="_blank" rel="noopener noreferrer" class="linkedin-btn"><i class="fab fa-linkedin"></i> Connect on LinkedIn</a>
+        <h3 class="text-base font-bold text-white mb-0.5">Python</h3>
+        <p class="text-xs text-gray-500 mb-3">Data, automation & scripting</p>
+        <div class="w-full bg-dark-900 rounded-full h-1 overflow-hidden">
+          <div class="skill-bar-fill bg-lime-accent h-full rounded-full" data-width="55%"></div>
         </div>
-        <div class="contact-item">
-          <i class="fas fa-map-marker-alt"></i>
-          <span>Dhaka, Bangladesh</span>
+        <div class="text-[10px] text-gray-500 mt-1.5 text-right">Learning</div>
+      </div>
+
+      <!-- SQL -->
+      <div class="group bg-dark-700/20 border border-dark-600/30 rounded-xl p-5 hover:border-lime-accent/20 glow-hover transition-all duration-300">
+        <div class="w-10 h-10 rounded-lg bg-lime-accent/5 border border-lime-accent/10 flex items-center justify-center mb-3 group-hover:bg-lime-accent/10 transition-colors">
+          <span class="iconify text-lime-accent/70" data-icon="lucide:database" data-width="18"></span>
         </div>
-        <div style="margin-top: 2rem; border-top: 1px solid #2A2A2A; padding-top: 1.2rem;">
-          <i class="fas fa-paper-plane" style="color: var(--accent);"></i>
-          <p style="margin-top: 0.5rem;">Open to networking, data discussions, and internship opportunities.</p>
+        <h3 class="text-base font-bold text-white mb-0.5">SQL</h3>
+        <p class="text-xs text-gray-500 mb-3">Queries, joins & databases</p>
+        <div class="w-full bg-dark-900 rounded-full h-1 overflow-hidden">
+          <div class="skill-bar-fill bg-lime-accent h-full rounded-full" data-width="50%"></div>
+        </div>
+        <div class="text-[10px] text-gray-500 mt-1.5 text-right">Learning</div>
+      </div>
+
+      <!-- Excel -->
+      <div class="group bg-dark-700/20 border border-dark-600/30 rounded-xl p-5 hover:border-lime-accent/20 glow-hover transition-all duration-300">
+        <div class="w-10 h-10 rounded-lg bg-lime-accent/5 border border-lime-accent/10 flex items-center justify-center mb-3 group-hover:bg-lime-accent/10 transition-colors">
+          <span class="iconify text-lime-accent/70" data-icon="lucide:table" data-width="18"></span>
+        </div>
+        <h3 class="text-base font-bold text-white mb-0.5">Excel</h3>
+        <p class="text-xs text-gray-500 mb-3">Formulas, pivot & dashboards</p>
+        <div class="w-full bg-dark-900 rounded-full h-1 overflow-hidden">
+          <div class="skill-bar-fill bg-lime-accent h-full rounded-full" data-width="65%"></div>
+        </div>
+        <div class="text-[10px] text-gray-500 mt-1.5 text-right">Intermediate</div>
+      </div>
+
+      <!-- Machine Learning -->
+      <div class="group bg-dark-700/20 border border-dark-600/30 rounded-xl p-5 hover:border-lime-accent/20 glow-hover transition-all duration-300">
+        <div class="w-10 h-10 rounded-lg bg-lime-accent/5 border border-lime-accent/10 flex items-center justify-center mb-3 group-hover:bg-lime-accent/10 transition-colors">
+          <span class="iconify text-lime-accent/70" data-icon="lucide:brain" data-width="18"></span>
+        </div>
+        <h3 class="text-base font-bold text-white mb-0.5">Machine Learning</h3>
+        <p class="text-xs text-gray-500 mb-3">Foundations & model building</p>
+        <div class="w-full bg-dark-900 rounded-full h-1 overflow-hidden">
+          <div class="skill-bar-fill bg-lime-accent h-full rounded-full" data-width="35%"></div>
+        </div>
+        <div class="text-[10px] text-gray-500 mt-1.5 text-right">Beginner</div>
+      </div>
+
+      <!-- Power BI -->
+      <div class="group bg-dark-700/20 border border-dark-600/30 rounded-xl p-5 hover:border-lime-accent/20 glow-hover transition-all duration-300">
+        <div class="w-10 h-10 rounded-lg bg-lime-accent/5 border border-lime-accent/10 flex items-center justify-center mb-3 group-hover:bg-lime-accent/10 transition-colors">
+          <span class="iconify text-lime-accent/70" data-icon="lucide:bar-chart-4" data-width="18"></span>
+        </div>
+        <h3 class="text-base font-bold text-white mb-0.5">Power BI</h3>
+        <p class="text-xs text-gray-500 mb-3">DAX, dashboards & data modeling</p>
+        <div class="w-full bg-dark-900 rounded-full h-1 overflow-hidden">
+          <div class="skill-bar-fill bg-lime-accent h-full rounded-full" data-width="45%"></div>
+        </div>
+        <div class="text-[10px] text-gray-500 mt-1.5 text-right">Learning</div>
+      </div>
+
+      <!-- Pandas -->
+      <div class="group bg-dark-700/20 border border-dark-600/30 rounded-xl p-5 hover:border-lime-accent/20 glow-hover transition-all duration-300">
+        <div class="w-10 h-10 rounded-lg bg-lime-accent/5 border border-lime-accent/10 flex items-center justify-center mb-3 group-hover:bg-lime-accent/10 transition-colors">
+          <span class="iconify text-lime-accent/70" data-icon="lucide:table-2" data-width="18"></span>
+        </div>
+        <h3 class="text-base font-bold text-white mb-0.5">Pandas</h3>
+        <p class="text-xs text-gray-500 mb-3">Data manipulation & analysis</p>
+        <div class="w-full bg-dark-900 rounded-full h-1 overflow-hidden">
+          <div class="skill-bar-fill bg-lime-accent h-full rounded-full" data-width="50%"></div>
+        </div>
+        <div class="text-[10px] text-gray-500 mt-1.5 text-right">Learning</div>
+      </div>
+
+      <!-- NumPy -->
+      <div class="group bg-dark-700/20 border border-dark-600/30 rounded-xl p-5 hover:border-lime-accent/20 glow-hover transition-all duration-300">
+        <div class="w-10 h-10 rounded-lg bg-lime-accent/5 border border-lime-accent/10 flex items-center justify-center mb-3 group-hover:bg-lime-accent/10 transition-colors">
+          <span class="iconify text-lime-accent/70" data-icon="lucide:calculator" data-width="18"></span>
+        </div>
+        <h3 class="text-base font-bold text-white mb-0.5">NumPy</h3>
+        <p class="text-xs text-gray-500 mb-3">Array operations & math</p>
+        <div class="w-full bg-dark-900 rounded-full h-1 overflow-hidden">
+          <div class="skill-bar-fill bg-lime-accent h-full rounded-full" data-width="45%"></div>
+        </div>
+        <div class="text-[10px] text-gray-500 mt-1.5 text-right">Learning</div>
+      </div>
+
+      <!-- Data Visualization -->
+      <div class="group bg-dark-700/20 border border-dark-600/30 rounded-xl p-5 hover:border-lime-accent/20 glow-hover transition-all duration-300">
+        <div class="w-10 h-10 rounded-lg bg-lime-accent/5 border border-lime-accent/10 flex items-center justify-center mb-3 group-hover:bg-lime-accent/10 transition-colors">
+          <span class="iconify text-lime-accent/70" data-icon="lucide:chart-scatter" data-width="18"></span>
+        </div>
+        <h3 class="text-base font-bold text-white mb-0.5">Data Visualization</h3>
+        <p class="text-xs text-gray-500 mb-3">Charts, storytelling & dashboards</p>
+        <div class="w-full bg-dark-900 rounded-full h-1 overflow-hidden">
+          <div class="skill-bar-fill bg-lime-accent h-full rounded-full" data-width="40%"></div>
+        </div>
+        <div class="text-[10px] text-gray-500 mt-1.5 text-right">Learning</div>
+      </div>
+    </div>
+
+    <!-- Additional tools note -->
+    <div class="reveal mt-8 text-center">
+      <div class="inline-flex flex-wrap items-center justify-center gap-2 bg-dark-700/20 border border-dark-600/30 rounded-full px-5 py-2.5">
+        <span class="iconify text-lime-accent/50" data-icon="lucide:sparkles" data-width="14"></span>
+        <span class="text-xs text-gray-500">Also exploring: <span class="text-gray-300">Statistics</span> · <span class="text-gray-300">Tableau</span> · <span class="text-gray-300">Matplotlib</span> · <span class="text-gray-300">Seaborn</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- ===== PROJECTS SECTION ===== -->
+  <section id="projects" class="py-20 px-6 relative">
+    <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-dark-600 to-transparent"></div>
+    <div class="max-w-7xl mx-auto">
+      <div class="reveal text-center mb-12">
+        <div class="inline-flex items-center gap-2 bg-lime-accent/5 border border-lime-accent/10 rounded-full px-3 py-1 mb-4">
+          <span class="iconify text-lime-accent/70" data-icon="lucide:folder-open" data-width="12"></span>
+          <span class="text-xs font-medium text-lime-accent/70 tracking-wide uppercase">Projects</span>
+        </div>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-3">
+          My <span class="text-lime-accent">Portfolio</span>
+        </h2>
+      </div>
+
+      <div class="reveal grid md:grid-cols-3 gap-5">
+        <div class="relative bg-dark-700/20 border border-dark-600/30 border-dashed rounded-xl p-8 flex flex-col items-center text-center min-h-[240px] justify-center overflow-hidden">
+          <div class="shimmer absolute inset-0 rounded-xl"></div>
+          <div class="relative z-10">
+            <div class="w-12 h-12 rounded-lg bg-dark-600/30 border border-dark-500/30 flex items-center justify-center mb-3 mx-auto">
+              <span class="iconify text-gray-500" data-icon="lucide:pie-chart" data-width="20"></span>
+            </div>
+            <h3 class="text-sm font-semibold text-gray-400 mb-1.5">Dashboard Project</h3>
+            <span class="inline-flex items-center gap-1.5 bg-lime-accent/10 text-lime-accent/70 text-[10px] font-medium px-3 py-1 rounded-full border border-lime-accent/15">
+              <span class="w-1 h-1 rounded-full bg-lime-accent/70"></span>
+              Coming Soon
+            </span>
+          </div>
+        </div>
+
+        <div class="relative bg-dark-700/20 border border-dark-600/30 border-dashed rounded-xl p-8 flex flex-col items-center text-center min-h-[240px] justify-center overflow-hidden">
+          <div class="shimmer absolute inset-0 rounded-xl" style="animation-delay: 0.5s;"></div>
+          <div class="relative z-10">
+            <div class="w-12 h-12 rounded-lg bg-dark-600/30 border border-dark-500/30 flex items-center justify-center mb-3 mx-auto">
+              <span class="iconify text-gray-500" data-icon="lucide:code-2" data-width="20"></span>
+            </div>
+            <h3 class="text-sm font-semibold text-gray-400 mb-1.5">Python Analysis</h3>
+            <span class="inline-flex items-center gap-1.5 bg-lime-accent/10 text-lime-accent/70 text-[10px] font-medium px-3 py-1 rounded-full border border-lime-accent/15">
+              <span class="w-1 h-1 rounded-full bg-lime-accent/70"></span>
+              Coming Soon
+            </span>
+          </div>
+        </div>
+
+        <div class="relative bg-dark-700/20 border border-dark-600/30 border-dashed rounded-xl p-8 flex flex-col items-center text-center min-h-[240px] justify-center overflow-hidden">
+          <div class="shimmer absolute inset-0 rounded-xl" style="animation-delay: 1s;"></div>
+          <div class="relative z-10">
+            <div class="w-12 h-12 rounded-lg bg-dark-600/30 border border-dark-500/30 flex items-center justify-center mb-3 mx-auto">
+              <span class="iconify text-gray-500" data-icon="lucide:brain" data-width="20"></span>
+            </div>
+            <h3 class="text-sm font-semibold text-gray-400 mb-1.5">ML Model</h3>
+            <span class="inline-flex items-center gap-1.5 bg-lime-accent/10 text-lime-accent/70 text-[10px] font-medium px-3 py-1 rounded-full border border-lime-accent/15">
+              <span class="w-1 h-1 rounded-full bg-lime-accent/70"></span>
+              Coming Soon
+            </span>
+          </div>
         </div>
       </div>
 
-      <!-- Updated Formspree Form (Vanilla JS + AJAX) -->
-      <div class="fade-up">
-        <!-- Success & Error message containers -->
-        <div data-fs-success style="background: rgba(191,255,0,0.1); border-left: 3px solid #BFFF00; padding: 1rem; border-radius: 16px; margin-bottom: 1rem; display: none;"></div>
-        <div data-fs-error style="background: rgba(255,100,100,0.1); border-left: 3px solid #ff6b6b; padding: 1rem; border-radius: 16px; margin-bottom: 1rem; display: none;"></div>
+      <div class="reveal mt-8 text-center">
+        <div class="bg-dark-700/20 border border-lime-accent/10 rounded-xl p-5 max-w-2xl mx-auto">
+          <span class="iconify text-lime-accent/50 mb-2" data-icon="lucide:construction" data-width="18" style="display:inline-block;"></span>
+          <p class="text-sm text-gray-500 leading-relaxed">
+            I'm currently working on my first data projects. Check back soon for <strong class="text-white">dashboards</strong>, <strong class="text-white">Python analyses</strong>, and <strong class="text-white">ML models</strong>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <form id="contact-form" class="card" style="background: #111;">
-          <div class="form-group">
-            <input type="text" id="name" name="name" placeholder="Your Name" data-fs-field required>
-            <span data-fs-error="name" style="color: #ff6b6b; font-size: 0.75rem;"></span>
+  <!-- ===== CONTACT SECTION ===== -->
+  <section id="contact" class="py-20 px-6 relative">
+    <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-dark-600 to-transparent"></div>
+    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-lime-accent/2 blur-[100px] rounded-full"></div>
+
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="reveal text-center mb-12">
+        <div class="inline-flex items-center gap-2 bg-lime-accent/5 border border-lime-accent/10 rounded-full px-3 py-1 mb-4">
+          <span class="iconify text-lime-accent/70" data-icon="lucide:mail" data-width="12"></span>
+          <span class="text-xs font-medium text-lime-accent/70 tracking-wide uppercase">Contact</span>
+        </div>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-3">
+          Let's <span class="text-lime-accent">Connect</span>
+        </h2>
+        <p class="text-gray-500 max-w-xl mx-auto text-sm">Interested in collaborating? I'd love to hear from you.</p>
+      </div>
+
+      <div class="reveal grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <!-- Left: Contact Info -->
+        <div class="space-y-4">
+          <a href="mailto:hasib.contact.bd@gmail.com" class="group flex items-center gap-4 bg-dark-700/20 border border-dark-600/30 rounded-xl p-4 hover:border-lime-accent/20 transition-all duration-300 glow-hover">
+            <div class="w-10 h-10 rounded-lg bg-lime-accent/5 border border-lime-accent/10 flex items-center justify-center flex-shrink-0 group-hover:bg-lime-accent/10 transition-colors">
+              <span class="iconify text-lime-accent/60" data-icon="lucide:mail" data-width="16"></span>
+            </div>
+            <div>
+              <div class="text-[10px] text-gray-500 mb-0.5">Primary Email</div>
+              <div class="text-sm font-medium text-gray-300 group-hover:text-lime-accent transition-colors">hasib.contact.bd@gmail.com</div>
+            </div>
+          </a>
+
+          <a href="mailto:hasib.insights@gmail.com" class="group flex items-center gap-4 bg-dark-700/20 border border-dark-600/30 rounded-xl p-4 hover:border-lime-accent/20 transition-all duration-300 glow-hover">
+            <div class="w-10 h-10 rounded-lg bg-lime-accent/5 border border-lime-accent/10 flex items-center justify-center flex-shrink-0 group-hover:bg-lime-accent/10 transition-colors">
+              <span class="iconify text-lime-accent/60" data-icon="lucide:sparkles" data-width="16"></span>
+            </div>
+            <div>
+              <div class="text-[10px] text-gray-500 mb-0.5">Insights Email</div>
+              <div class="text-sm font-medium text-gray-300 group-hover:text-lime-accent transition-colors">hasib.insights@gmail.com</div>
+            </div>
+          </a>
+
+          <a href="https://www.linkedin.com/in/md-hasib-hossain-053460390" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-4 bg-dark-700/20 border border-dark-600/30 rounded-xl p-4 hover:border-lime-accent/20 transition-all duration-300 glow-hover">
+            <div class="w-10 h-10 rounded-lg bg-lime-accent/5 border border-lime-accent/10 flex items-center justify-center flex-shrink-0 group-hover:bg-lime-accent/10 transition-colors">
+              <span class="iconify text-lime-accent/60" data-icon="lucide:linkedin" data-width="16"></span>
+            </div>
+            <div>
+              <div class="text-[10px] text-gray-500 mb-0.5">LinkedIn</div>
+              <div class="text-sm font-medium text-gray-300 group-hover:text-lime-accent transition-colors">MD Hasib Hossain</div>
+            </div>
+            <span class="iconify text-gray-500 group-hover:text-lime-accent ml-auto transition-colors" data-icon="lucide:external-link" data-width="14"></span>
+          </a>
+        </div>
+
+        <!-- Right: Contact Form -->
+        <form id="contactForm" class="bg-dark-700/20 border border-dark-600/30 rounded-xl p-6">
+          <h3 class="text-base font-semibold mb-5 flex items-center gap-2">
+            <span class="iconify text-lime-accent/60" data-icon="lucide:send" data-width="16"></span>
+            Send a Message
+          </h3>
+          <div class="space-y-3.5">
+            <div>
+              <label for="name" class="text-[10px] text-gray-500 block mb-1">Your Name</label>
+              <input type="text" id="name" name="name" required placeholder="John Doe" class="w-full bg-dark-900/50 border border-dark-600/30 rounded-lg px-3.5 py-2 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-lime-accent/30 transition-colors">
+            </div>
+            <div>
+              <label for="email" class="text-[10px] text-gray-500 block mb-1">Your Email</label>
+              <input type="email" id="email" name="email" required placeholder="john@example.com" class="w-full bg-dark-900/50 border border-dark-600/30 rounded-lg px-3.5 py-2 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-lime-accent/30 transition-colors">
+            </div>
+            <div>
+              <label for="message" class="text-[10px] text-gray-500 block mb-1">Message</label>
+              <textarea id="message" name="message" rows="3" required placeholder="Your message..." class="w-full bg-dark-900/50 border border-dark-600/30 rounded-lg px-3.5 py-2 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-lime-accent/30 transition-colors resize-none"></textarea>
+            </div>
+            <button type="submit" class="w-full bg-lime-accent/10 border border-lime-accent/20 text-lime-accent py-2.5 rounded-lg font-medium hover:bg-lime-accent/20 transition-all duration-200 flex items-center justify-center gap-2 text-sm">
+              <span class="iconify" data-icon="lucide:send" data-width="14"></span>
+              Send Message
+            </button>
           </div>
-          <div class="form-group">
-            <input type="email" id="email" name="email" placeholder="Email Address" data-fs-field required>
-            <span data-fs-error="email" style="color: #ff6b6b; font-size: 0.75rem;"></span>
-          </div>
-          <div class="form-group">
-            <textarea id="message" name="message" rows="4" placeholder="Your message..." data-fs-field required></textarea>
-            <span data-fs-error="message" style="color: #ff6b6b; font-size: 0.75rem;"></span>
-          </div>
-          <button type="submit" data-fs-submit-btn style="background: var(--accent); color: black; font-weight: bold; border: none; width: 100%; padding: 14px; border-radius: 40px; font-size: 1rem; cursor: pointer; transition: 0.2s;">
-            <i class="fas fa-paper-plane"></i> Send Message
-          </button>
         </form>
       </div>
     </div>
+  </section>
+
+  
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="border-t border-dark-600 py-8 px-6 relative">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <div class="w-7 h-7 rounded-lg bg-lime-accent/10 border border-lime-accent/20 flex items-center justify-center">
+          <span class="text-lime-accent font-bold text-xs">H</span>
+        </div>
+        <span class="text-xs text-gray-500">© 2026 MD Hasib Hossain – Aspiring Data Analyst</span>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a href="mailto:hasib.contact.bd@gmail.com" class="text-gray-500 hover:text-lime-accent transition-colors" aria-label="Email">
+          <span class="iconify" data-icon="lucide:mail" data-width="16"></span>
+        </a>
+        <a href="https://www.linkedin.com/in/md-hasib-hossain-053460390" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-lime-accent transition-colors" aria-label="LinkedIn">
+          <span class="iconify" data-icon="lucide:linkedin" data-width="16"></span>
+        </a>
+        <button onclick="window.scrollTo({top:0,behavior:'smooth'})" class="ml-1 w-7 h-7 rounded-full border border-dark-500/50 flex items-center justify-center text-gray-500 hover:text-lime-accent hover:border-lime-accent/30 transition-all" aria-label="Back to top">
+          <span class="iconify" data-icon="lucide:chevron-up" data-width="14"></span>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== TOAST ===== -->
+  <div id="toast" class="toast fixed bottom-6 right-6 z-50 bg-dark-800 border border-lime-accent/20 rounded-xl px-4 py-3 flex items-center gap-3 shadow-[0_0_20px_rgba(191,255,0,0.05)]">
+    <span class="iconify text-lime-accent" data-icon="lucide:check-circle-2" data-width="18"></span>
+    <span class="text-sm text-white font-medium" id="toastMessage">Message sent!</span>
   </div>
-</section>
-    
+
+  <!-- ===== SCRIPTS ===== -->
   <script>
-    // Mobile menu toggle
-    const mobileBtn = document.getElementById('mobileMenuBtn');
-    const navLinks = document.getElementById('navLinks');
-    mobileBtn.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-    // close mobile menu on link click
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      link.addEventListener('click', () => navLinks.classList.remove('active'));
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    let menuOpen = false;
+
+    mobileMenuBtn.addEventListener('click', () => {
+      menuOpen = !menuOpen;
+      mobileMenu.classList.toggle('hidden', !menuOpen);
+      mobileMenuBtn.innerHTML = menuOpen
+        ? '<span class="iconify" data-icon="lucide:x" data-width="24"></span>'
+        : '<span class="iconify" data-icon="lucide:menu" data-width="24"></span>';
     });
 
-    // smooth scroll for buttons
-    document.getElementById('skillsBtn').addEventListener('click', () => {
-      document.getElementById('skills').scrollIntoView({ behavior: 'smooth' });
-    });
-    document.getElementById('contactBtn').addEventListener('click', () => {
-      document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        menuOpen = false;
+        mobileMenu.classList.add('hidden');
+        mobileMenuBtn.innerHTML = '<span class="iconify" data-icon="lucide:menu" data-width="24"></span>';
+      });
     });
 
-    // Back to top
-    const backTop = document.getElementById('backToTop');
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 400) backTop.classList.add('show');
-      else backTop.classList.remove('show');
-    });
-
-    // Progress bars animation on scroll (fill widths)
-    const progressBars = document.querySelectorAll('.progress-fill');
-    function animateProgress() {
-      progressBars.forEach(bar => {
-        const progressValue = bar.getAttribute('data-progress');
-        const rect = bar.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 100 && !bar.style.width) {
-          bar.style.width = progressValue + '%';
-        }
-      });
-    }
-    window.addEventListener('scroll', animateProgress);
-    window.addEventListener('load', animateProgress);
-
-    // Intersection Observer for fade-up elements
-    const fadeElements = document.querySelectorAll('.fade-up');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1 });
-    fadeElements.forEach(el => observer.observe(el));
-
-    // Contact form simulation
-    const form = document.getElementById('contactForm');
-    const feedback = document.getElementById('formFeedback');
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const message = document.getElementById('message').value.trim();
-      if (name && email && message) {
-        feedback.innerHTML = '<span style="color:#BFFF00;"><i class="fas fa-check-circle"></i> Thanks for reaching out! I’ll get back to you soon.</span>';
-        form.reset();
-        setTimeout(() => { feedback.innerHTML = ''; }, 4000);
+      if (window.scrollY > 50) {
+        navbar.style.background = 'rgba(10,10,10,0.95)';
+        navbar.style.borderBottom = '1px solid rgba(45,45,45,0.3)';
       } else {
-        feedback.innerHTML = '<span style="color:#ff6b6b;">Please fill all fields.</span>';
-        setTimeout(() => { feedback.innerHTML = ''; }, 2500);
+        navbar.style.background = 'rgba(10,10,10,0.85)';
+        navbar.style.borderBottom = 'none';
       }
     });
 
-    // small preload fix for progress fill initial visible check
-    setTimeout(() => { animateProgress(); }, 300);
-    // make sure shape background remains behind
+    // Scroll reveal
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    // Skill bars
+    const skillBars = document.querySelectorAll('.skill-bar-fill');
+    const skillObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const targetWidth = entry.target.getAttribute('data-width');
+          entry.target.style.width = targetWidth;
+        }
+      });
+    }, { threshold: 0.5 });
+    skillBars.forEach(bar => skillObserver.observe(bar));
+
+    // Contact form
+    const contactForm = document.getElementById('contactForm');
+    const toast = document.getElementById('toast');
+    const toastMessage = document.getElementById('toastMessage');
+
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      if (!name || !email || !message) {
+        toastMessage.textContent = 'Please fill in all fields.';
+        toast.querySelector('.iconify').setAttribute('data-icon', 'lucide:alert-circle');
+        toast.querySelector('.iconify').style.color = '#FF6B6B';
+        toast.style.borderColor = 'rgba(255,107,107,0.2)';
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 3000);
+        return;
+      }
+
+      const btn = contactForm.querySelector('button[type="submit"]');
+      const originalHTML = btn.innerHTML;
+      btn.innerHTML = '<span class="iconify animate-spin" data-icon="lucide:loader-2" data-width="14"></span> Sending...';
+      btn.disabled = true;
+
+      setTimeout(() => {
+        btn.innerHTML = originalHTML;
+        btn.disabled = false;
+        contactForm.reset();
+        toastMessage.textContent = 'Message sent successfully! I\'ll get back to you soon.';
+        toast.querySelector('.iconify').setAttribute('data-icon', 'lucide:check-circle-2');
+        toast.querySelector('.iconify').style.color = '#BFFF00';
+        toast.style.borderColor = 'rgba(191,255,0,0.2)';
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 4000);
+      }, 1200);
+    });
+
+    // Active nav link
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('nav a[href^="#"]');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        if (scrollY >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+      navLinks.forEach(link => {
+        link.classList.remove('text-lime-accent');
+        link.classList.add('text-gray-400');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.remove('text-gray-400');
+          link.classList.add('text-lime-accent');
+        }
+      });
+    });
   </script>
-    <!-- Formspree AJAX Integration -->
-<script>
-  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
-  formspree('initForm', { formElement: '#contact-form', formId: 'xjglbnqg' });
-</script>
-<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </body>
 </html>
