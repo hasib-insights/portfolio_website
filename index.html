@@ -603,22 +603,39 @@
         </a>
       </div>
 
-      <!-- Right: Contact Form with Formspree -->
-      <form action="https://formspree.io/f/xjglbnqg" method="POST" class="bg-dark-700/20 border border-dark-600/30 rounded-xl p-6">
-        <h3 class="text-base font-semibold mb-5 flex items-center gap-2">
-          <span class="iconify text-lime-accent/60" data-icon="lucide:send" data-width="16"></span>
-          Send a Message
-        </h3>
-        <div class="space-y-3.5">
-          <input type="text" name="name" required placeholder="Your Name" class="w-full bg-dark-900/50 border border-dark-600/30 rounded-lg px-3.5 py-2 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-lime-accent/30 transition-colors">
-          <input type="email" name="email" required placeholder="Your Email" class="w-full bg-dark-900/50 border border-dark-600/30 rounded-lg px-3.5 py-2 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-lime-accent/30 transition-colors">
-          <textarea name="message" rows="3" required placeholder="Your message..." class="w-full bg-dark-900/50 border border-dark-600/30 rounded-lg px-3.5 py-2 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-lime-accent/30 transition-colors resize-none"></textarea>
-          <button type="submit" class="w-full bg-lime-accent/10 border border-lime-accent/20 text-lime-accent py-2.5 rounded-lg font-medium hover:bg-lime-accent/20 transition-all duration-200 flex items-center justify-center gap-2 text-sm">
-            <span class="iconify" data-icon="lucide:send" data-width="14"></span>
-            Send Message
-          </button>
-        </div>
-      </form>
+      <!-- Right: Contact Form with Formspree AJAX -->
+      <div>
+        <!-- Success Message -->
+        <div data-fs-success class="hidden bg-lime-accent/10 border border-lime-accent/20 text-lime-accent px-4 py-3 rounded-lg mb-4 text-sm"></div>
+        
+        <!-- Error Message -->
+        <div data-fs-error class="hidden bg-red-500/10 border border-red-500/20 text-red-400 px-4 py-3 rounded-lg mb-4 text-sm"></div>
+
+        <form id="contactForm" class="bg-dark-700/20 border border-dark-600/30 rounded-xl p-6">
+          <h3 class="text-base font-semibold mb-5 flex items-center gap-2">
+            <span class="iconify text-lime-accent/60" data-icon="lucide:send" data-width="16"></span>
+            Send a Message
+          </h3>
+          <div class="space-y-3.5">
+            <div>
+              <input type="text" name="name" id="name" placeholder="Your Name" data-fs-field required class="w-full bg-dark-900/50 border border-dark-600/30 rounded-lg px-3.5 py-2 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-lime-accent/30 transition-colors">
+              <span data-fs-error="name" class="text-red-400 text-xs mt-1 block"></span>
+            </div>
+            <div>
+              <input type="email" name="email" id="email" placeholder="Your Email" data-fs-field required class="w-full bg-dark-900/50 border border-dark-600/30 rounded-lg px-3.5 py-2 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-lime-accent/30 transition-colors">
+              <span data-fs-error="email" class="text-red-400 text-xs mt-1 block"></span>
+            </div>
+            <div>
+              <textarea name="message" id="message" rows="3" placeholder="Your message..." data-fs-field required class="w-full bg-dark-900/50 border border-dark-600/30 rounded-lg px-3.5 py-2 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-lime-accent/30 transition-colors resize-none"></textarea>
+              <span data-fs-error="message" class="text-red-400 text-xs mt-1 block"></span>
+            </div>
+            <button type="submit" data-fs-submit-btn class="w-full bg-lime-accent/10 border border-lime-accent/20 text-lime-accent py-2.5 rounded-lg font-medium hover:bg-lime-accent/20 transition-all duration-200 flex items-center justify-center gap-2 text-sm">
+              <span class="iconify" data-icon="lucide:send" data-width="14"></span>
+              Send Message
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 </section>
@@ -774,5 +791,15 @@
       });
     });
   </script>
+  
+  <!-- Formspree AJAX Integration -->
+<script>
+  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+  formspree('initForm', { 
+    formElement: '#contactForm', 
+    formId: 'xojodblj' 
+  });
+</script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </body>
 </html>
