@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +6,7 @@
   <title>MD Hasib Hossain – Aspiring Data Analyst</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/index.min.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <script>
     tailwind.config = {
@@ -139,7 +139,7 @@
         <a href="#contact" class="text-sm text-gray-400 hover:text-lime-accent transition-colors">Contact</a>
       </div>
 
-      <a href="#contact" class="hidden md:inline-flex items-center gap-2 bg-lime-accent/10 border border-lime-accent/20 text-lime-accent px-4 py-2 rounded-lg text-sm font-medium hover:bg-lime-accent/20 transition-colors">
+      <a href="#contact" class="hidden md:inline-flex items-center gap-2 bg-lime-accent/10 border border-lime-accent/20 text-lime-accent px-4 py-2 rounded-lg text-sm font-medium hover:bg-lime-accent/20 hover:border-lime-accent/40 transition-all">
         <span class="iconify" data-icon="lucide:mail" data-width="14"></span>
         Contact
       </a>
@@ -181,7 +181,7 @@
       <div class="mb-8 flex justify-center">
         <div class="profile-ring w-32 h-32 md:w-40 md:h-40 rounded-full border border-lime-accent/30 p-1">
           <div class="w-full h-full rounded-full bg-dark-700 overflow-hidden relative">
-            <img src="figures /profile_picture.png" alt="MD Hasib Hossain" class="absolute inset-0 w-full h-full object-cover object-[center_50%]" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <img src="figures /profile_picture.png" alt="MD Hasib Hossain" class="absolute inset-0 w-full h-full object-cover object-[center_50%]" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden')">
             <div class="absolute inset-0 hidden items-center justify-center text-gray-500">
               <span class="iconify" data-icon="lucide:user" data-width="40"></span>
             </div>
@@ -205,11 +205,11 @@
       </p>
 
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="#skills" class="group inline-flex items-center gap-2 bg-lime-accent/10 border border-lime-accent/20 text-lime-accent px-8 py-3.5 rounded-xl font-medium hover:bg-lime-accent/20 hover:border-lime-accent/40 transition-all duration-200">
+        <a href="#skills" class="group inline-flex items-center gap-2 bg-lime-accent/10 border border-lime-accent/20 text-lime-accent px-8 py-3.5 rounded-xl font-medium hover:bg-lime-accent/20 hover:border-lime-accent/40 transition-all">
           View Skills
           <span class="iconify group-hover:translate-x-1 transition-transform" data-icon="lucide:arrow-down" data-width="16"></span>
         </a>
-        <a href="#contact" class="group inline-flex items-center gap-2 border border-dark-500 text-gray-300 px-8 py-3.5 rounded-xl font-medium hover:border-lime-accent/40 hover:text-lime-accent transition-all duration-200">
+        <a href="#contact" class="group inline-flex items-center gap-2 border border-dark-500 text-gray-300 px-8 py-3.5 rounded-xl font-medium hover:border-lime-accent/40 hover:text-lime-accent transition-all">
           Get in Touch
           <span class="iconify group-hover:translate-x-1 transition-transform" data-icon="lucide:arrow-right" data-width="16"></span>
         </a>
@@ -294,7 +294,7 @@
               <div class="text-sm font-semibold text-white">2029</div>
               <div class="text-sm text-white mt-0.5">Undergraduation Complete</div>
               <div class="text-sm text-gray-500">BBA in <span class="text-lime-accent/70">MIS</span></div>
-              <div class="text-xs text-gray-500 mt-0.5">Goal: BI / Data Analyst</div>
+              <div class="text-xs text-gray-500 mt-0.5"> Goal: BI / Data Analyst</div>
             </div>
           </div>
         </div>
@@ -435,7 +435,7 @@
       <!-- Pandas -->
       <div class="group bg-dark-700/20 border border-dark-600/30 rounded-xl p-5 hover:border-lime-accent/20 glow-hover transition-all duration-300">
         <div class="w-10 h-10 rounded-lg bg-lime-accent/5 border border-lime-accent/10 flex items-center justify-center mb-3 group-hover:bg-lime-accent/10 transition-colors">
-          <span class="iconify text-lime-accent/70" data-icon="lucide:table-2" data-width="1"></span>
+          <span class="iconify text-lime-accent/70" data-icon="lucide:table-2" data-width="18"></span>
         </div>
         <h3 class="text-base font-bold text-white mb-0.5">Pandas</h3>
         <p class="text-xs text-gray-500 mb-3">Data manipulation & analysis</p>
@@ -476,7 +476,7 @@
     <div class="reveal mt-8 text-center">
       <div class="inline-flex flex-wrap items-center justify-center gap-2 bg-dark-700/20 border border-dark-600/30 rounded-full px-5 py-2.5">
         <span class="iconify text-lime-accent/50" data-icon="lucide:sparkles" data-width="14"></span>
-        <span class="text-xs text-gray-500">Also exploring: <span class="text-gray-300">Statistics</span> · <span class="text-gray-300">Tableau</span> · <span class="text-gray-300">Matplotlib</span> · <span class="text-gray-300">Seaborn</span></span>
+        <span class="text-xs text-gray-500">Also exploring: <span class="text-gray-300">Statistics</span> · <span class="text-gray-300">Tableau</span> · <span class="text-gray-300">Matplotlib</span> · <span class="text-gray-300">Advanced Excel</span></span>
       </div>
     </div>
   </div>
@@ -571,7 +571,7 @@
       <div class="reveal grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
         <!-- Left: Contact Info -->
         <div class="space-y-4">
-          <a href="mailto:hasib.contact.bd@gmail.com" class="group flex items-center gap-4 bg-dark-700/20 border border-dark-600/30 rounded-xl p-4 hover:border-lime-accent/20 transition-all duration-300 glow-hover">
+          <a href="mailto:hasib.contact.bd@gmail.com" class="group flex items-center gap-4 bg-dark-700/20 border border-dark-600/30 rounded-xl p-4 hover:border-lime-accent/20 transition-all duration-300">
             <div class="w-10 h-10 rounded-lg bg-lime-accent/5 border border-lime-accent/10 flex items-center justify-center flex-shrink-0 group-hover:bg-lime-accent/10 transition-colors">
               <span class="iconify text-lime-accent/60" data-icon="lucide:mail" data-width="16"></span>
             </div>
@@ -581,7 +581,7 @@
             </div>
           </a>
 
-          <a href="mailto:hasib.insights@gmail.com" class="group flex items-center gap-4 bg-dark-700/20 border border-dark-600/30 rounded-xl p-4 hover:border-lime-accent/20 transition-all duration-300 glow-hover">
+          <a href="mailto:hasib.insights@gmail.com" class="group flex items-center gap-4 bg-dark-700/20 border border-dark-600/30 rounded-xl p-4 hover:border-lime-accent/20 transition-all duration-300">
             <div class="w-10 h-10 rounded-lg bg-lime-accent/5 border border-lime-accent/10 flex items-center justify-center flex-shrink-0 group-hover:bg-lime-accent/10 transition-colors">
               <span class="iconify text-lime-accent/60" data-icon="lucide:sparkles" data-width="16"></span>
             </div>
@@ -591,7 +591,7 @@
             </div>
           </a>
 
-          <a href="https://www.linkedin.com/in/md-hasib-hossain-053460390" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-4 bg-dark-700/20 border border-dark-600/30 rounded-xl p-4 hover:border-lime-accent/20 transition-all duration-300 glow-hover">
+          <a href="https://www.linkedin.com/in/md-hasib-hossain-053460390" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-4 bg-dark-700/20 border border-dark-600/30 rounded-xl p-4 hover:border-lime-accent/20 transition-all duration-300">
             <div class="w-10 h-10 rounded-lg bg-lime-accent/5 border border-lime-accent/10 flex items-center justify-center flex-shrink-0 group-hover:bg-lime-accent/10 transition-colors">
               <span class="iconify text-lime-accent/60" data-icon="lucide:linkedin" data-width="16"></span>
             </div>
@@ -612,17 +612,17 @@
           <div class="space-y-3.5">
             <div>
               <label for="name" class="text-[10px] text-gray-500 block mb-1">Your Name</label>
-              <input type="text" id="name" name="name" required placeholder="John Doe" class="w-full bg-dark-900/50 border border-dark-600/30 rounded-lg px-3.5 py-2 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-lime-accent/30 transition-colors">
+              <input type="text" id="name" name="name" required placeholder="John Doe" class="w-full bg-dark-900/50 border border-dark-600/30 rounded-lg px-3.5 py-2 text-sm text-white placeholder-gray-600 focus:border-lime-accent/40 focus:outline-none transition-colors">
             </div>
             <div>
               <label for="email" class="text-[10px] text-gray-500 block mb-1">Your Email</label>
-              <input type="email" id="email" name="email" required placeholder="john@example.com" class="w-full bg-dark-900/50 border border-dark-600/30 rounded-lg px-3.5 py-2 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-lime-accent/30 transition-colors">
+              <input type="email" id="email" name="email" required placeholder="john@example.com" class="w-full bg-dark-900/50 border border-dark-600/30 rounded-lg px-3.5 py-2 text-sm text-white placeholder-gray-600 focus:border-lime-accent/40 focus:outline-none transition-colors">
             </div>
             <div>
               <label for="message" class="text-[10px] text-gray-500 block mb-1">Message</label>
-              <textarea id="message" name="message" rows="3" required placeholder="Your message..." class="w-full bg-dark-900/50 border border-dark-600/30 rounded-lg px-3.5 py-2 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-lime-accent/30 transition-colors resize-none"></textarea>
+              <textarea id="message" name="message" rows="3" required placeholder="Your message..." class="w-full bg-dark-900/50 border border-dark-600/30 rounded-lg px-3.5 py-2 text-sm text-white placeholder-gray-600 focus:border-lime-accent/40 focus:outline-none transition-colors resize-none"></textarea>
             </div>
-            <button type="submit" class="w-full bg-lime-accent/10 border border-lime-accent/20 text-lime-accent py-2.5 rounded-lg font-medium hover:bg-lime-accent/20 transition-all duration-200 flex items-center justify-center gap-2 text-sm">
+            <button type="submit" class="w-full bg-lime-accent/10 border border-lime-accent/20 text-lime-accent py-2.5 rounded-lg font-medium hover:bg-lime-accent/20 transition-all duration-200 flex items-center justify-center gap-2">
               <span class="iconify" data-icon="lucide:send" data-width="14"></span>
               Send Message
             </button>
@@ -631,8 +631,6 @@
       </div>
     </div>
   </section>
-
-  
 
   <!-- ===== FOOTER ===== -->
   <footer class="border-t border-dark-600 py-8 px-6 relative">
@@ -651,7 +649,7 @@
         <a href="https://www.linkedin.com/in/md-hasib-hossain-053460390" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-lime-accent transition-colors" aria-label="LinkedIn">
           <span class="iconify" data-icon="lucide:linkedin" data-width="16"></span>
         </a>
-        <button onclick="window.scrollTo({top:0,behavior:'smooth'})" class="ml-1 w-7 h-7 rounded-full border border-dark-500/50 flex items-center justify-center text-gray-500 hover:text-lime-accent hover:border-lime-accent/30 transition-all" aria-label="Back to top">
+        <button onclick="window.scrollTo({top:0,behavior:'smooth'})" class="ml-1 w-7 h-7 rounded-full border border-dark-500/50 flex items-center justify-center text-gray-500 hover:text-lime-accent hover:border-lime-accent/40 transition-colors">
           <span class="iconify" data-icon="lucide:chevron-up" data-width="14"></span>
         </button>
       </div>
@@ -666,6 +664,9 @@
 
   <!-- ===== SCRIPTS ===== -->
   <script>
+    // Initialize EmailJS
+    emailjs.init('YOUR_PUBLIC_KEY_HERE'); // Replace with your EmailJS public key
+
     // Mobile menu
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
@@ -722,12 +723,12 @@
     }, { threshold: 0.5 });
     skillBars.forEach(bar => skillObserver.observe(bar));
 
-    // Contact form
+    // Contact form with EmailJS
     const contactForm = document.getElementById('contactForm');
     const toast = document.getElementById('toast');
     const toastMessage = document.getElementById('toastMessage');
 
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
 
       const name = document.getElementById('name').value.trim();
@@ -735,12 +736,7 @@
       const message = document.getElementById('message').value.trim();
 
       if (!name || !email || !message) {
-        toastMessage.textContent = 'Please fill in all fields.';
-        toast.querySelector('.iconify').setAttribute('data-icon', 'lucide:alert-circle');
-        toast.querySelector('.iconify').style.color = '#FF6B6B';
-        toast.style.borderColor = 'rgba(255,107,107,0.2)';
-        toast.classList.add('show');
-        setTimeout(() => toast.classList.remove('show'), 3000);
+        showToast('Please fill in all fields.', 'error');
         return;
       }
 
@@ -749,18 +745,47 @@
       btn.innerHTML = '<span class="iconify animate-spin" data-icon="lucide:loader-2" data-width="14"></span> Sending...';
       btn.disabled = true;
 
-      setTimeout(() => {
+      try {
+        await emailjs.send(
+          'YOUR_SERVICE_ID_HERE',  // Replace with your Service ID
+          'YOUR_TEMPLATE_ID_HERE', // Replace with your Template ID
+          {
+            from_name: name,
+            from_email: email,
+            message: message,
+            to_email: 'hasib.contact.bd@gmail.com' // Your email
+          }
+        );
+
+        contactForm.reset();
+        showToast('Message sent successfully! I\'ll get back to you soon.', 'success');
+      } catch (error) {
+        console.error('EmailJS error:', error);
+        showToast('Failed to send message. Please try again.', 'error');
+      } finally {
         btn.innerHTML = originalHTML;
         btn.disabled = false;
-        contactForm.reset();
-        toastMessage.textContent = 'Message sent successfully! I\'ll get back to you soon.';
-        toast.querySelector('.iconify').setAttribute('data-icon', 'lucide:check-circle-2');
-        toast.querySelector('.iconify').style.color = '#BFFF00';
-        toast.style.borderColor = 'rgba(191,255,0,0.2)';
-        toast.classList.add('show');
-        setTimeout(() => toast.classList.remove('show'), 4000);
-      }, 1200);
+      }
     });
+
+    // Toast helper function
+    function showToast(message, type = 'success') {
+      toastMessage.textContent = message;
+      const icon = toast.querySelector('.iconify');
+      
+      if (type === 'error') {
+        icon.setAttribute('data-icon', 'lucide:alert-circle');
+        icon.style.color = '#FF6B6B';
+        toast.style.borderColor = 'rgba(255,107,107,0.2)';
+      } else {
+        icon.setAttribute('data-icon', 'lucide:check-circle-2');
+        icon.style.color = '#BFFF00';
+        toast.style.borderColor = 'rgba(191,255,0,0.2)';
+      }
+      
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 4000);
+    }
 
     // Active nav link
     const sections = document.querySelectorAll('section[id]');
