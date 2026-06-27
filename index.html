@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -180,7 +181,7 @@
       <div class="mb-8 flex justify-center">
         <div class="profile-ring w-32 h-32 md:w-40 md:h-40 rounded-full border border-lime-accent/30 p-1">
           <div class="w-full h-full rounded-full bg-dark-700 overflow-hidden relative">
-            <img src="figures /profile_picture.png" alt="MD Hasib Hossain" class="absolute inset-0 w-full h-full object-cover object-[center_50%]" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <img src="profile_picture.png" alt="MD Hasib Hossain" class="absolute inset-0 w-full h-full object-cover object-[center_50%]" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
             <div class="absolute inset-0 hidden items-center justify-center text-gray-500">
               <span class="iconify" data-icon="lucide:user" data-width="40"></span>
             </div>
@@ -293,7 +294,7 @@
               <div class="text-sm font-semibold text-white">2029</div>
               <div class="text-sm text-white mt-0.5">Undergraduation Complete</div>
               <div class="text-sm text-gray-500">BBA in <span class="text-lime-accent/70">MIS</span></div>
-              <div class="text-xs text-gray-500 mt-0.5"> Goal: BI / Data Analyst</div>
+              <div class="text-xs text-gray-500 mt-0.5">🎯 Goal: BI / Data Analyst</div>
             </div>
           </div>
         </div>
@@ -387,7 +388,7 @@
         <h3 class="text-base font-bold text-white mb-0.5">SQL</h3>
         <p class="text-xs text-gray-500 mb-3">Queries, joins & databases</p>
         <div class="w-full bg-dark-900 rounded-full h-1 overflow-hidden">
-          <div class="skill-bar-fill bg-lime-accent h-full rounded-full" data-width="10%"></div>
+          <div class="skill-bar-fill bg-lime-accent h-full rounded-full" data-width="50%"></div>
         </div>
         <div class="text-[10px] text-gray-500 mt-1.5 text-right">Learning</div>
       </div>
@@ -400,7 +401,7 @@
         <h3 class="text-base font-bold text-white mb-0.5">Excel</h3>
         <p class="text-xs text-gray-500 mb-3">Formulas, pivot & dashboards</p>
         <div class="w-full bg-dark-900 rounded-full h-1 overflow-hidden">
-          <div class="skill-bar-fill bg-lime-accent h-full rounded-full" data-width="50%"></div>
+          <div class="skill-bar-fill bg-lime-accent h-full rounded-full" data-width="65%"></div>
         </div>
         <div class="text-[10px] text-gray-500 mt-1.5 text-right">Intermediate</div>
       </div>
@@ -413,7 +414,7 @@
         <h3 class="text-base font-bold text-white mb-0.5">Machine Learning</h3>
         <p class="text-xs text-gray-500 mb-3">Foundations & model building</p>
         <div class="w-full bg-dark-900 rounded-full h-1 overflow-hidden">
-          <div class="skill-bar-fill bg-lime-accent h-full rounded-full" data-width="1%"></div>
+          <div class="skill-bar-fill bg-lime-accent h-full rounded-full" data-width="35%"></div>
         </div>
         <div class="text-[10px] text-gray-500 mt-1.5 text-right">Beginner</div>
       </div>
@@ -426,7 +427,7 @@
         <h3 class="text-base font-bold text-white mb-0.5">Power BI</h3>
         <p class="text-xs text-gray-500 mb-3">DAX, dashboards & data modeling</p>
         <div class="w-full bg-dark-900 rounded-full h-1 overflow-hidden">
-          <div class="skill-bar-fill bg-lime-accent h-full rounded-full" data-width="2%"></div>
+          <div class="skill-bar-fill bg-lime-accent h-full rounded-full" data-width="45%"></div>
         </div>
         <div class="text-[10px] text-gray-500 mt-1.5 text-right">Learning</div>
       </div>
@@ -439,7 +440,7 @@
         <h3 class="text-base font-bold text-white mb-0.5">Pandas</h3>
         <p class="text-xs text-gray-500 mb-3">Data manipulation & analysis</p>
         <div class="w-full bg-dark-900 rounded-full h-1 overflow-hidden">
-          <div class="skill-bar-fill bg-lime-accent h-full rounded-full" data-width="30%"></div>
+          <div class="skill-bar-fill bg-lime-accent h-full rounded-full" data-width="50%"></div>
         </div>
         <div class="text-[10px] text-gray-500 mt-1.5 text-right">Learning</div>
       </div>
@@ -452,7 +453,7 @@
         <h3 class="text-base font-bold text-white mb-0.5">NumPy</h3>
         <p class="text-xs text-gray-500 mb-3">Array operations & math</p>
         <div class="w-full bg-dark-900 rounded-full h-1 overflow-hidden">
-          <div class="skill-bar-fill bg-lime-accent h-full rounded-full" data-width="50%"></div>
+          <div class="skill-bar-fill bg-lime-accent h-full rounded-full" data-width="45%"></div>
         </div>
         <div class="text-[10px] text-gray-500 mt-1.5 text-right">Learning</div>
       </div>
@@ -722,37 +723,45 @@
     skillBars.forEach(bar => skillObserver.observe(bar));
 
     // Contact form
-// <!-- Right: Contact Form -->
-<form id="contactForm" class="bg-dark-700/20 border border-dark-600/30 rounded-xl p-6" data-fs-form>
-  <h3 class="text-base font-semibold mb-5 flex items-center gap-2">
-    <span class="iconify text-lime-accent/60" data-icon="lucide:send" data-width="16"></span>
-    Send a Message
-  </h3>
-  <div class="space-y-3.5">
-    <div>
-      <label for="name" class="text-[10px] text-gray-500 block mb-1">Your Name</label>
-      <input type="text" id="name" name="name" required placeholder="John Doe" class="w-full bg-dark-900/50 border border-dark-600/30 rounded-lg px-3.5 py-2 text-sm text-white placeholder-gray-600 focus:outline-none focus:ring-1 focus:ring-lime-accent/30 focus:border-lime-accent/30 transition-colors" data-fs-field />
-      <span class="text-[10px] text-red-400 mt-1 hidden" data-fs-error="name"></span>
-    </div>
-    <div>
-      <label for="email" class="text-[10px] text-gray-500 block mb-1">Your Email</label>
-      <input type="email" id="email" name="email" required placeholder="john@example.com" class="w-full bg-dark-900/50 border border-dark-600/30 rounded-lg px-3.5 py-2 text-sm text-white placeholder-gray-600 focus:outline-none focus:ring-1 focus:ring-lime-accent/30 focus:border-lime-accent/30 transition-colors" data-fs-field />
-      <span class="text-[10px] text-red-400 mt-1 hidden" data-fs-error="email"></span>
-    </div>
-    <div>
-      <label for="message" class="text-[10px] text-gray-500 block mb-1">Message</label>
-      <textarea id="message" name="message" rows="3" required placeholder="Your message..." class="w-full bg-dark-900/50 border border-dark-600/30 rounded-lg px-3.5 py-2 text-sm text-white placeholder-gray-600 focus:outline-none focus:ring-1 focus:ring-lime-accent/30 focus:border-lime-accent/30 transition-colors resize-none" data-fs-field></textarea>
-      <span class="text-[10px] text-red-400 mt-1 hidden" data-fs-error="message"></span>
-    </div>
-    <button type="submit" class="w-full bg-lime-accent/10 border border-lime-accent/20 text-lime-accent py-2.5 rounded-lg font-medium hover:bg-lime-accent/20 transition-all duration-200 flex items-center justify-center gap-2" data-fs-submit-btn>
-      <span class="iconify" data-icon="lucide:send" data-width="14"></span>
-      Send Message
-    </button>
-  </div>
-  <div class="mt-4 text-sm text-lime-accent hidden" data-fs-success>✓ Message sent successfully! I'll get back to you soon.</div>
-</form>
-    
-    
+    const contactForm = document.getElementById('contactForm');
+    const toast = document.getElementById('toast');
+    const toastMessage = document.getElementById('toastMessage');
+
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      if (!name || !email || !message) {
+        toastMessage.textContent = 'Please fill in all fields.';
+        toast.querySelector('.iconify').setAttribute('data-icon', 'lucide:alert-circle');
+        toast.querySelector('.iconify').style.color = '#FF6B6B';
+        toast.style.borderColor = 'rgba(255,107,107,0.2)';
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 3000);
+        return;
+      }
+
+      const btn = contactForm.querySelector('button[type="submit"]');
+      const originalHTML = btn.innerHTML;
+      btn.innerHTML = '<span class="iconify animate-spin" data-icon="lucide:loader-2" data-width="14"></span> Sending...';
+      btn.disabled = true;
+
+      setTimeout(() => {
+        btn.innerHTML = originalHTML;
+        btn.disabled = false;
+        contactForm.reset();
+        toastMessage.textContent = 'Message sent successfully! I\'ll get back to you soon.';
+        toast.querySelector('.iconify').setAttribute('data-icon', 'lucide:check-circle-2');
+        toast.querySelector('.iconify').style.color = '#BFFF00';
+        toast.style.borderColor = 'rgba(191,255,0,0.2)';
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 4000);
+      }, 1200);
+    });
+
     // Active nav link
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('nav a[href^="#"]');
