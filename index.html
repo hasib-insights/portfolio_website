@@ -1,13 +1,23 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MD Hasib Hossain – Aspiring Data Analyst</title>
+  
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Iconify -->
   <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+  
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- External CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Tailwind Config -->
   <script>
     tailwind.config = {
       theme: {
@@ -26,96 +36,6 @@
       }
     }
   </script>
-  <style>
-    * { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-    ::selection { background: rgba(191,255,0,0.15); color: #BFFF00; }
-
-    ::-webkit-scrollbar { width: 4px; }
-    ::-webkit-scrollbar-track { background: #0A0A0A; }
-    ::-webkit-scrollbar-thumb { background: rgba(191,255,0,0.3); border-radius: 2px; }
-    ::-webkit-scrollbar-thumb:hover { background: #BFFF00; }
-
-    /* Subtle grid background - lightweight */
-    .hero-grid {
-      background-image:
-        linear-gradient(rgba(191,255,0,0.02) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(191,255,0,0.02) 1px, transparent 1px);
-      background-size: 60px 60px;
-    }
-
-    /* Floating shapes - very subtle */
-    .float-shape {
-      position: absolute;
-      border: 1px solid rgba(191,255,0,0.04);
-      animation: floatShape 12s ease-in-out infinite;
-    }
-    .float-shape:nth-child(2) { animation-delay: -3s; animation-duration: 14s; }
-    .float-shape:nth-child(3) { animation-delay: -6s; animation-duration: 10s; }
-    .float-shape:nth-child(4) { animation-delay: -2s; animation-duration: 16s; }
-    .float-shape:nth-child(5) { animation-delay: -8s; animation-duration: 11s; }
-    @keyframes floatShape {
-      0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.2; }
-      50% { transform: translateY(-20px) rotate(90deg); opacity: 0.5; }
-    }
-
-    /* Fade in on scroll */
-    .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Skill progress */
-    .skill-bar-fill {
-      transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-      width: 0%;
-    }
-
-    /* Subtle glow on hover */
-    .glow-hover:hover {
-      box-shadow: 0 0 20px rgba(191,255,0,0.06), 0 0 40px rgba(191,255,0,0.02);
-    }
-
-    /* Profile ring - subtle pulse */
-    .profile-ring {
-      animation: profilePulse 4s ease-in-out infinite;
-    }
-    @keyframes profilePulse {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(191,255,0,0.15); }
-      50% { box-shadow: 0 0 0 8px rgba(191,255,0,0); }
-    }
-
-    /* Shimmer */
-    .shimmer {
-      background: linear-gradient(90deg, transparent 0%, rgba(191,255,0,0.04) 50%, transparent 100%);
-      background-size: 200% 100%;
-      animation: shimmer 3s infinite;
-    }
-    @keyframes shimmer {
-      0% { background-position: -200% 0; }
-      100% { background-position: 200% 0; }
-    }
-
-    /* Toast */
-    .toast {
-      transform: translateX(100%);
-      opacity: 0;
-      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .toast.show {
-      transform: translateX(0);
-      opacity: 1;
-    }
-
-    /* Timeline */
-    .timeline-line {
-      background: linear-gradient(to bottom, rgba(191,255,0,0.3), rgba(191,255,0,0.03));
-    }
-  </style>
 </head>
 <body class="bg-dark-900 text-white antialiased overflow-x-hidden">
 
@@ -181,7 +101,7 @@
       <div class="mb-8 flex justify-center">
         <div class="profile-ring w-32 h-32 md:w-40 md:h-40 rounded-full border border-lime-accent/30 p-1">
           <div class="w-full h-full rounded-full bg-dark-700 overflow-hidden relative">
-            <img src="figures /profile_picture.png" alt="MD Hasib Hossain" class="absolute inset-0 w-full h-full object-cover object-[center_50%]" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <img src="figures/profile_picture.png" alt="MD Hasib Hossain" class="absolute inset-0 w-full h-full object-cover object-[center_50%]" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
             <div class="absolute inset-0 hidden items-center justify-center text-gray-500">
               <span class="iconify" data-icon="lucide:user" data-width="40"></span>
             </div>
@@ -201,7 +121,7 @@
       </h1>
 
       <p class="text-base md:text-lg text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-         Data Analytics
+        Data Analytics
       </p>
 
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -214,7 +134,8 @@
           <span class="iconify group-hover:translate-x-1 transition-transform" data-icon="lucide:arrow-right" data-width="16"></span>
         </a>
       </div>
- <!-- Scroll indicator -->
+
+      <!-- Scroll indicator -->
       <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
         <span class="text-[10px] text-gray-600 uppercase tracking-widest">Scroll</span>
         <span class="iconify text-lime-accent/40" data-icon="lucide:chevron-down" data-width="14"></span>
@@ -222,86 +143,86 @@
     </div>
   </section>
 
-<!-- ===== ABOUT SECTION ===== -->
-<section id="about" class="py-20 px-6 relative">
-  <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-dark-600 to-transparent"></div>
-  <div class="max-w-7xl mx-auto">
-    <div class="reveal grid md:grid-cols-2 gap-12 items-center">
-      
-     <!-- Left -->
-      <div>
-        <div class="inline-flex items-center gap-2 bg-lime-accent/5 border border-lime-accent/10 rounded-full px-3 py-1 mb-4">
-          <span class="iconify text-lime-accent/70" data-icon="lucide:user" data-width="12"></span>
-          <span class="text-xs font-medium text-lime-accent/70 tracking-wide uppercase">About Me</span>
-        </div>
-        <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">
-          Turning <span class="text-lime-accent">Curiosity</span> into<br>Data-Driven Insights
-        </h2>
-        <p class="text-gray-400 leading-relaxed mb-4">
-          I am a BBA student at <strong class="text-white">World University of Bangladesh</strong>. Passionate about data, I'm building my analytical toolkit with Python, SQL, Excel, and machine learning.
-        </p>
-        <p class="text-gray-400 leading-relaxed mb-8">
-  My goal is to become a <strong class="text-lime-accent">Data Scientist</strong>, helping organizations turn raw data into actionable insights.        </p>
+  <!-- ===== ABOUT SECTION ===== -->
+  <section id="about" class="py-20 px-6 relative">
+    <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-dark-600 to-transparent"></div>
+    <div class="max-w-7xl mx-auto">
+      <div class="reveal grid md:grid-cols-2 gap-12 items-center">
+        
+        <!-- Left -->
+        <div>
+          <div class="inline-flex items-center gap-2 bg-lime-accent/5 border border-lime-accent/10 rounded-full px-3 py-1 mb-4">
+            <span class="iconify text-lime-accent/70" data-icon="lucide:user" data-width="12"></span>
+            <span class="text-xs font-medium text-lime-accent/70 tracking-wide uppercase">About Me</span>
+          </div>
+          <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">
+            Turning <span class="text-lime-accent">Curiosity</span> into<br>Data-Driven Insights
+          </h2>
+          <p class="text-gray-400 leading-relaxed mb-4">
+            I am a BBA student at <strong class="text-white">World University of Bangladesh</strong>. Passionate about data, I'm building my analytical toolkit with Python, SQL, Excel, and machine learning.
+          </p>
+          <p class="text-gray-400 leading-relaxed mb-8">
+            My goal is to become a <strong class="text-lime-accent">Data Scientist</strong>, helping organizations turn raw data into actionable insights.
+          </p>
 
-        <div class="grid grid-cols-3 gap-3">
-          <div class="bg-dark-700/30 border border-dark-600/30 rounded-xl p-4 text-center glow-hover transition-all duration-300">
-            <div class="text-2xl font-bold text-lime-accent">BBA</div>
-            <div class="text-xs text-gray-500 mt-1">Current Program</div>
-          </div>
-          <div class="bg-dark-700/30 border border-dark-600/30 rounded-xl p-4 text-center glow-hover transition-all duration-300">
-            <div class="text-2xl font-bold text-lime-accent">Data Scientist</div>
-            <div class="text-xs text-gray-500 mt-1">Goal</div>
-          </div>
-          <div class="bg-dark-700/30 border border-dark-600/30 rounded-xl p-4 text-center glow-hover transition-all duration-300">
-            <div class="text-2xl font-bold text-lime-accent">6+</div>
-            <div class="text-xs text-gray-500 mt-1">Tech Skills</div>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Right: Timeline -->
-      <div class="relative">
-        <div class="bg-dark-700/20 border border-dark-600/30 rounded-2xl p-6">
-          <h3 class="text-base font-semibold mb-5 flex items-center gap-2">
-            <span class="iconify text-lime-accent/60" data-icon="lucide:route" data-width="18"></span>
-            My Academic Journey
-          </h3>
-          <div class="relative pl-8">
-            <div class="absolute left-3 top-2 bottom-2 w-px timeline-line"></div>
-
-            <!-- SSC - 2022 -->
-            <div class="relative mb-6">
-              <div class="absolute -left-5 w-3 h-3 rounded-full bg-lime-accent/30 border-2 border-dark-900"></div>
-              <div class="text-sm font-semibold text-white">2022</div>
-              <div class="text-sm text-white mt-0.5">SSC</div>
-              <div class="text-sm text-gray-500">Business Studies</div>
-              <div class="text-xs text-lime-accent/60 mt-0.5">GPA: 4.96</div>
+          <div class="grid grid-cols-3 gap-3">
+            <div class="bg-dark-700/30 border border-dark-600/30 rounded-xl p-4 text-center glow-hover transition-all duration-300">
+              <div class="text-2xl font-bold text-lime-accent">BBA</div>
+              <div class="text-xs text-gray-500 mt-1">Current Program</div>
             </div>
-
-            <!-- HSC - 2024 -->
-            <div class="relative mb-6">
-              <div class="absolute -left-5 w-3 h-3 rounded-full bg-lime-accent/60 border-2 border-dark-900"></div>
-              <div class="text-sm font-semibold text-white">2024</div>
-              <div class="text-sm text-white mt-0.5">HSC</div>
-              <div class="text-sm text-gray-500">Business Studies</div>
-              <div class="text-xs text-lime-accent/60 mt-0.5">GPA: 4.67</div>
+            <div class="bg-dark-700/30 border border-dark-600/30 rounded-xl p-4 text-center glow-hover transition-all duration-300">
+              <div class="text-2xl font-bold text-lime-accent">Data Scientist</div>
+              <div class="text-xs text-gray-500 mt-1">Goal</div>
             </div>
+            <div class="bg-dark-700/30 border border-dark-600/30 rounded-xl p-4 text-center glow-hover transition-all duration-300">
+              <div class="text-2xl font-bold text-lime-accent">6+</div>
+              <div class="text-xs text-gray-500 mt-1">Tech Skills</div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Right: Timeline -->
+        <div class="relative">
+          <div class="bg-dark-700/20 border border-dark-600/30 rounded-2xl p-6">
+            <h3 class="text-base font-semibold mb-5 flex items-center gap-2">
+              <span class="iconify text-lime-accent/60" data-icon="lucide:route" data-width="18"></span>
+              My Academic Journey
+            </h3>
+            <div class="relative pl-8">
+              <div class="absolute left-3 top-2 bottom-2 w-px timeline-line"></div>
 
-            <!-- BBA - 2029 -->
-            <div class="relative">
-              <div class="absolute -left-5 w-3 h-3 rounded-full bg-lime-accent border-2 border-dark-900"></div>
-              <div class="text-sm font-semibold text-white">2029</div>
-              <div class="text-sm text-white mt-0.5">Bachelor of Business Administration</div>
-              <div class="text-sm text-gray-500">Major in  <span class="text-lime-accent/70">MIS</span></div>
-              <div class="text-xs text-lime-accent/60 mt-0.5">Current CGPA: 3.73</div>
+              <!-- SSC - 2022 -->
+              <div class="relative mb-6">
+                <div class="absolute -left-5 w-3 h-3 rounded-full bg-lime-accent/30 border-2 border-dark-900"></div>
+                <div class="text-sm font-semibold text-white">2022</div>
+                <div class="text-sm text-white mt-0.5">SSC</div>
+                <div class="text-sm text-gray-500">Business Studies</div>
+                <div class="text-xs text-lime-accent/60 mt-0.5">GPA: 4.96</div>
+              </div>
+
+              <!-- HSC - 2024 -->
+              <div class="relative mb-6">
+                <div class="absolute -left-5 w-3 h-3 rounded-full bg-lime-accent/60 border-2 border-dark-900"></div>
+                <div class="text-sm font-semibold text-white">2024</div>
+                <div class="text-sm text-white mt-0.5">HSC</div>
+                <div class="text-sm text-gray-500">Business Studies</div>
+                <div class="text-xs text-lime-accent/60 mt-0.5">GPA: 4.67</div>
+              </div>
+
+              <!-- BBA - 2029 -->
+              <div class="relative">
+                <div class="absolute -left-5 w-3 h-3 rounded-full bg-lime-accent border-2 border-dark-900"></div>
+                <div class="text-sm font-semibold text-white">2029</div>
+                <div class="text-sm text-white mt-0.5">Bachelor of Business Administration</div>
+                <div class="text-sm text-gray-500">Major in <span class="text-lime-accent/70">MIS</span></div>
+                <div class="text-xs text-lime-accent/60 mt-0.5">Current CGPA: 3.73</div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
-
+  </section>
 
   <!-- ===== EDUCATION SECTION ===== -->
   <section id="education" class="py-20 px-6 relative">
@@ -352,135 +273,135 @@
   </section>
 
   <!-- ===== SKILLS SECTION ===== -->
-<section id="skills" class="py-20 px-6 relative">
-  <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-dark-600 to-transparent"></div>
-  <div class="max-w-7xl mx-auto">
-    <div class="reveal text-center mb-12">
-      <div class="inline-flex items-center gap-2 bg-lime-accent/5 border border-lime-accent/10 rounded-full px-3 py-1 mb-4">
-        <span class="iconify text-lime-accent/70" data-icon="lucide:zap" data-width="12"></span>
-        <span class="text-xs font-medium text-lime-accent/70 tracking-wide uppercase">Skills</span>
+  <section id="skills" class="py-20 px-6 relative">
+    <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-dark-600 to-transparent"></div>
+    <div class="max-w-7xl mx-auto">
+      <div class="reveal text-center mb-12">
+        <div class="inline-flex items-center gap-2 bg-lime-accent/5 border border-lime-accent/10 rounded-full px-3 py-1 mb-4">
+          <span class="iconify text-lime-accent/70" data-icon="lucide:zap" data-width="12"></span>
+          <span class="text-xs font-medium text-lime-accent/70 tracking-wide uppercase">Skills</span>
+        </div>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-3">
+          Technical <span class="text-lime-accent">Arsenal</span>
+        </h2>
+        <p class="text-gray-500 max-w-xl mx-auto text-sm">Continuously building expertise through courses and self-study.</p>
       </div>
-      <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-3">
-        Technical <span class="text-lime-accent">Arsenal</span>
-      </h2>
-      <p class="text-gray-500 max-w-xl mx-auto text-sm">Continuously building expertise through courses and self-study.</p>
+
+      <div class="reveal grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <!-- Python -->
+        <div class="group bg-dark-700/20 border border-dark-600/30 rounded-xl p-5 hover:border-lime-accent/20 glow-hover transition-all duration-300">
+          <div class="w-10 h-10 rounded-lg bg-lime-accent/5 border border-lime-accent/10 flex items-center justify-center mb-3 group-hover:bg-lime-accent/10 transition-colors">
+            <span class="iconify text-lime-accent/70" data-icon="lucide:terminal" data-width="18"></span>
+          </div>
+          <h3 class="text-base font-bold text-white mb-0.5">Python</h3>
+          <p class="text-xs text-gray-500 mb-3">Data, automation & scripting</p>
+          <div class="w-full bg-dark-900 rounded-full h-1 overflow-hidden">
+            <div class="skill-bar-fill bg-lime-accent h-full rounded-full" data-width="60%"></div>
+          </div>
+          <div class="text-[10px] text-gray-500 mt-1.5 text-right">Learning</div>
+        </div>
+
+        <!-- SQL -->
+        <div class="group bg-dark-700/20 border border-dark-600/30 rounded-xl p-5 hover:border-lime-accent/20 glow-hover transition-all duration-300">
+          <div class="w-10 h-10 rounded-lg bg-lime-accent/5 border border-lime-accent/10 flex items-center justify-center mb-3 group-hover:bg-lime-accent/10 transition-colors">
+            <span class="iconify text-lime-accent/70" data-icon="lucide:database" data-width="18"></span>
+          </div>
+          <h3 class="text-base font-bold text-white mb-0.5">SQL</h3>
+          <p class="text-xs text-gray-500 mb-3">Queries, joins & databases</p>
+          <div class="w-full bg-dark-900 rounded-full h-1 overflow-hidden">
+            <div class="skill-bar-fill bg-lime-accent h-full rounded-full" data-width="10%"></div>
+          </div>
+          <div class="text-[10px] text-gray-500 mt-1.5 text-right">Learning</div>
+        </div>
+
+        <!-- Excel -->
+        <div class="group bg-dark-700/20 border border-dark-600/30 rounded-xl p-5 hover:border-lime-accent/20 glow-hover transition-all duration-300">
+          <div class="w-10 h-10 rounded-lg bg-lime-accent/5 border border-lime-accent/10 flex items-center justify-center mb-3 group-hover:bg-lime-accent/10 transition-colors">
+            <span class="iconify text-lime-accent/70" data-icon="lucide:table" data-width="18"></span>
+          </div>
+          <h3 class="text-base font-bold text-white mb-0.5">Excel</h3>
+          <p class="text-xs text-gray-500 mb-3">Formulas, pivot & dashboards</p>
+          <div class="w-full bg-dark-900 rounded-full h-1 overflow-hidden">
+            <div class="skill-bar-fill bg-lime-accent h-full rounded-full" data-width="65%"></div>
+          </div>
+          <div class="text-[10px] text-gray-500 mt-1.5 text-right">Intermediate</div>
+        </div>
+
+        <!-- Machine Learning -->
+        <div class="group bg-dark-700/20 border border-dark-600/30 rounded-xl p-5 hover:border-lime-accent/20 glow-hover transition-all duration-300">
+          <div class="w-10 h-10 rounded-lg bg-lime-accent/5 border border-lime-accent/10 flex items-center justify-center mb-3 group-hover:bg-lime-accent/10 transition-colors">
+            <span class="iconify text-lime-accent/70" data-icon="lucide:brain" data-width="18"></span>
+          </div>
+          <h3 class="text-base font-bold text-white mb-0.5">Machine Learning</h3>
+          <p class="text-xs text-gray-500 mb-3">Foundations & model building</p>
+          <div class="w-full bg-dark-900 rounded-full h-1 overflow-hidden">
+            <div class="skill-bar-fill bg-lime-accent h-full rounded-full" data-width="1%"></div>
+          </div>
+          <div class="text-[10px] text-gray-500 mt-1.5 text-right">Beginner</div>
+        </div>
+
+        <!-- Power BI -->
+        <div class="group bg-dark-700/20 border border-dark-600/30 rounded-xl p-5 hover:border-lime-accent/20 glow-hover transition-all duration-300">
+          <div class="w-10 h-10 rounded-lg bg-lime-accent/5 border border-lime-accent/10 flex items-center justify-center mb-3 group-hover:bg-lime-accent/10 transition-colors">
+            <span class="iconify text-lime-accent/70" data-icon="lucide:bar-chart-4" data-width="18"></span>
+          </div>
+          <h3 class="text-base font-bold text-white mb-0.5">Power BI</h3>
+          <p class="text-xs text-gray-500 mb-3">DAX, dashboards & data modeling</p>
+          <div class="w-full bg-dark-900 rounded-full h-1 overflow-hidden">
+            <div class="skill-bar-fill bg-lime-accent h-full rounded-full" data-width="5%"></div>
+          </div>
+          <div class="text-[10px] text-gray-500 mt-1.5 text-right">Learning</div>
+        </div>
+
+        <!-- Pandas -->
+        <div class="group bg-dark-700/20 border border-dark-600/30 rounded-xl p-5 hover:border-lime-accent/20 glow-hover transition-all duration-300">
+          <div class="w-10 h-10 rounded-lg bg-lime-accent/5 border border-lime-accent/10 flex items-center justify-center mb-3 group-hover:bg-lime-accent/10 transition-colors">
+            <span class="iconify text-lime-accent/70" data-icon="lucide:table-2" data-width="18"></span>
+          </div>
+          <h3 class="text-base font-bold text-white mb-0.5">Pandas</h3>
+          <p class="text-xs text-gray-500 mb-3">Data manipulation & analysis</p>
+          <div class="w-full bg-dark-900 rounded-full h-1 overflow-hidden">
+            <div class="skill-bar-fill bg-lime-accent h-full rounded-full" data-width="50%"></div>
+          </div>
+          <div class="text-[10px] text-gray-500 mt-1.5 text-right">Learning</div>
+        </div>
+
+        <!-- NumPy -->
+        <div class="group bg-dark-700/20 border border-dark-600/30 rounded-xl p-5 hover:border-lime-accent/20 glow-hover transition-all duration-300">
+          <div class="w-10 h-10 rounded-lg bg-lime-accent/5 border border-lime-accent/10 flex items-center justify-center mb-3 group-hover:bg-lime-accent/10 transition-colors">
+            <span class="iconify text-lime-accent/70" data-icon="lucide:calculator" data-width="18"></span>
+          </div>
+          <h3 class="text-base font-bold text-white mb-0.5">NumPy</h3>
+          <p class="text-xs text-gray-500 mb-3">Array operations & math</p>
+          <div class="w-full bg-dark-900 rounded-full h-1 overflow-hidden">
+            <div class="skill-bar-fill bg-lime-accent h-full rounded-full" data-width="65%"></div>
+          </div>
+          <div class="text-[10px] text-gray-500 mt-1.5 text-right">Learning</div>
+        </div>
+
+        <!-- Data Visualization -->
+        <div class="group bg-dark-700/20 border border-dark-600/30 rounded-xl p-5 hover:border-lime-accent/20 glow-hover transition-all duration-300">
+          <div class="w-10 h-10 rounded-lg bg-lime-accent/5 border border-lime-accent/10 flex items-center justify-center mb-3 group-hover:bg-lime-accent/10 transition-colors">
+            <span class="iconify text-lime-accent/70" data-icon="lucide:chart-scatter" data-width="18"></span>
+          </div>
+          <h3 class="text-base font-bold text-white mb-0.5">Data Visualization</h3>
+          <p class="text-xs text-gray-500 mb-3">Charts, storytelling & dashboards</p>
+          <div class="w-full bg-dark-900 rounded-full h-1 overflow-hidden">
+            <div class="skill-bar-fill bg-lime-accent h-full rounded-full" data-width="40%"></div>
+          </div>
+          <div class="text-[10px] text-gray-500 mt-1.5 text-right">Learning</div>
+        </div>
+      </div>
+
+      <!-- Additional tools note -->
+      <div class="reveal mt-8 text-center">
+        <div class="inline-flex flex-wrap items-center justify-center gap-2 bg-dark-700/20 border border-dark-600/30 rounded-full px-5 py-2.5">
+          <span class="iconify text-lime-accent/50" data-icon="lucide:sparkles" data-width="14"></span>
+          <span class="text-xs text-gray-500">Also exploring: <span class="text-gray-300">Statistics</span> · <span class="text-gray-300">Tableau</span> · <span class="text-gray-300">Matplotlib</span> · <span class="text-gray-300">Seaborn</span></span>
+        </div>
+      </div>
     </div>
-
-    <div class="reveal grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-      <!-- Python -->
-      <div class="group bg-dark-700/20 border border-dark-600/30 rounded-xl p-5 hover:border-lime-accent/20 glow-hover transition-all duration-300">
-        <div class="w-10 h-10 rounded-lg bg-lime-accent/5 border border-lime-accent/10 flex items-center justify-center mb-3 group-hover:bg-lime-accent/10 transition-colors">
-          <span class="iconify text-lime-accent/70" data-icon="lucide:terminal" data-width="18"></span>
-        </div>
-        <h3 class="text-base font-bold text-white mb-0.5">Python</h3>
-        <p class="text-xs text-gray-500 mb-3">Data, automation & scripting</p>
-        <div class="w-full bg-dark-900 rounded-full h-1 overflow-hidden">
-          <div class="skill-bar-fill bg-lime-accent h-full rounded-full" data-width="60%"></div>
-        </div>
-        <div class="text-[10px] text-gray-500 mt-1.5 text-right">Learning</div>
-      </div>
-
-      <!-- SQL -->
-      <div class="group bg-dark-700/20 border border-dark-600/30 rounded-xl p-5 hover:border-lime-accent/20 glow-hover transition-all duration-300">
-        <div class="w-10 h-10 rounded-lg bg-lime-accent/5 border border-lime-accent/10 flex items-center justify-center mb-3 group-hover:bg-lime-accent/10 transition-colors">
-          <span class="iconify text-lime-accent/70" data-icon="lucide:database" data-width="18"></span>
-        </div>
-        <h3 class="text-base font-bold text-white mb-0.5">SQL</h3>
-        <p class="text-xs text-gray-500 mb-3">Queries, joins & databases</p>
-        <div class="w-full bg-dark-900 rounded-full h-1 overflow-hidden">
-          <div class="skill-bar-fill bg-lime-accent h-full rounded-full" data-width="10%"></div>
-        </div>
-        <div class="text-[10px] text-gray-500 mt-1.5 text-right">Learning</div>
-      </div>
-
-      <!-- Excel -->
-      <div class="group bg-dark-700/20 border border-dark-600/30 rounded-xl p-5 hover:border-lime-accent/20 glow-hover transition-all duration-300">
-        <div class="w-10 h-10 rounded-lg bg-lime-accent/5 border border-lime-accent/10 flex items-center justify-center mb-3 group-hover:bg-lime-accent/10 transition-colors">
-          <span class="iconify text-lime-accent/70" data-icon="lucide:table" data-width="18"></span>
-        </div>
-        <h3 class="text-base font-bold text-white mb-0.5">Excel</h3>
-        <p class="text-xs text-gray-500 mb-3">Formulas, pivot & dashboards</p>
-        <div class="w-full bg-dark-900 rounded-full h-1 overflow-hidden">
-          <div class="skill-bar-fill bg-lime-accent h-full rounded-full" data-width="65%"></div>
-        </div>
-        <div class="text-[10px] text-gray-500 mt-1.5 text-right">Intermediate</div>
-      </div>
-
-      <!-- Machine Learning -->
-      <div class="group bg-dark-700/20 border border-dark-600/30 rounded-xl p-5 hover:border-lime-accent/20 glow-hover transition-all duration-300">
-        <div class="w-10 h-10 rounded-lg bg-lime-accent/5 border border-lime-accent/10 flex items-center justify-center mb-3 group-hover:bg-lime-accent/10 transition-colors">
-          <span class="iconify text-lime-accent/70" data-icon="lucide:brain" data-width="18"></span>
-        </div>
-        <h3 class="text-base font-bold text-white mb-0.5">Machine Learning</h3>
-        <p class="text-xs text-gray-500 mb-3">Foundations & model building</p>
-        <div class="w-full bg-dark-900 rounded-full h-1 overflow-hidden">
-          <div class="skill-bar-fill bg-lime-accent h-full rounded-full" data-width="1%"></div>
-        </div>
-        <div class="text-[10px] text-gray-500 mt-1.5 text-right">Beginner</div>
-      </div>
-
-      <!-- Power BI -->
-      <div class="group bg-dark-700/20 border border-dark-600/30 rounded-xl p-5 hover:border-lime-accent/20 glow-hover transition-all duration-300">
-        <div class="w-10 h-10 rounded-lg bg-lime-accent/5 border border-lime-accent/10 flex items-center justify-center mb-3 group-hover:bg-lime-accent/10 transition-colors">
-          <span class="iconify text-lime-accent/70" data-icon="lucide:bar-chart-4" data-width="18"></span>
-        </div>
-        <h3 class="text-base font-bold text-white mb-0.5">Power BI</h3>
-        <p class="text-xs text-gray-500 mb-3">DAX, dashboards & data modeling</p>
-        <div class="w-full bg-dark-900 rounded-full h-1 overflow-hidden">
-          <div class="skill-bar-fill bg-lime-accent h-full rounded-full" data-width="5%"></div>
-        </div>
-        <div class="text-[10px] text-gray-500 mt-1.5 text-right">Learning</div>
-      </div>
-
-      <!-- Pandas -->
-      <div class="group bg-dark-700/20 border border-dark-600/30 rounded-xl p-5 hover:border-lime-accent/20 glow-hover transition-all duration-300">
-        <div class="w-10 h-10 rounded-lg bg-lime-accent/5 border border-lime-accent/10 flex items-center justify-center mb-3 group-hover:bg-lime-accent/10 transition-colors">
-          <span class="iconify text-lime-accent/70" data-icon="lucide:table-2" data-width="1"></span>
-        </div>
-        <h3 class="text-base font-bold text-white mb-0.5">Pandas</h3>
-        <p class="text-xs text-gray-500 mb-3">Data manipulation & analysis</p>
-        <div class="w-full bg-dark-900 rounded-full h-1 overflow-hidden">
-          <div class="skill-bar-fill bg-lime-accent h-full rounded-full" data-width="50%"></div>
-        </div>
-        <div class="text-[10px] text-gray-500 mt-1.5 text-right">Learning</div>
-      </div>
-
-      <!-- NumPy -->
-      <div class="group bg-dark-700/20 border border-dark-600/30 rounded-xl p-5 hover:border-lime-accent/20 glow-hover transition-all duration-300">
-        <div class="w-10 h-10 rounded-lg bg-lime-accent/5 border border-lime-accent/10 flex items-center justify-center mb-3 group-hover:bg-lime-accent/10 transition-colors">
-          <span class="iconify text-lime-accent/70" data-icon="lucide:calculator" data-width="18"></span>
-        </div>
-        <h3 class="text-base font-bold text-white mb-0.5">NumPy</h3>
-        <p class="text-xs text-gray-500 mb-3">Array operations & math</p>
-        <div class="w-full bg-dark-900 rounded-full h-1 overflow-hidden">
-          <div class="skill-bar-fill bg-lime-accent h-full rounded-full" data-width="65%"></div>
-        </div>
-        <div class="text-[10px] text-gray-500 mt-1.5 text-right">Learning</div>
-      </div>
-
-      <!-- Data Visualization -->
-      <div class="group bg-dark-700/20 border border-dark-600/30 rounded-xl p-5 hover:border-lime-accent/20 glow-hover transition-all duration-300">
-        <div class="w-10 h-10 rounded-lg bg-lime-accent/5 border border-lime-accent/10 flex items-center justify-center mb-3 group-hover:bg-lime-accent/10 transition-colors">
-          <span class="iconify text-lime-accent/70" data-icon="lucide:chart-scatter" data-width="18"></span>
-        </div>
-        <h3 class="text-base font-bold text-white mb-0.5">Data Visualization</h3>
-        <p class="text-xs text-gray-500 mb-3">Charts, storytelling & dashboards</p>
-        <div class="w-full bg-dark-900 rounded-full h-1 overflow-hidden">
-          <div class="skill-bar-fill bg-lime-accent h-full rounded-full" data-width="40%"></div>
-        </div>
-        <div class="text-[10px] text-gray-500 mt-1.5 text-right">Learning</div>
-      </div>
-    </div>
-
-    <!-- Additional tools note -->
-    <div class="reveal mt-8 text-center">
-      <div class="inline-flex flex-wrap items-center justify-center gap-2 bg-dark-700/20 border border-dark-600/30 rounded-full px-5 py-2.5">
-        <span class="iconify text-lime-accent/50" data-icon="lucide:sparkles" data-width="14"></span>
-        <span class="text-xs text-gray-500">Also exploring: <span class="text-gray-300">Statistics</span> · <span class="text-gray-300">Tableau</span> · <span class="text-gray-300">Matplotlib</span> · <span class="text-gray-300">Seaborn</span></span>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
   <!-- ===== PROJECTS SECTION ===== -->
   <section id="projects" class="py-20 px-6 relative">
@@ -552,137 +473,139 @@
   </section>
 
   <!-- ===== FIND ME ONLINE SECTION ===== -->
-<section id="findme" class="py-16 px-6 relative">
-  <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-dark-600 to-transparent"></div>
-  
-  <div class="max-w-4xl mx-auto">
-    <div class="reveal text-center mb-10">
-      <div class="inline-flex items-center gap-2 bg-lime-accent/5 border border-lime-accent/10 rounded-full px-3 py-1 mb-4">
-        <span class="iconify text-lime-accent/70" data-icon="lucide:link" data-width="12"></span>
-        <span class="text-xs font-medium text-lime-accent/70 tracking-wide uppercase">Connect</span>
+  <section id="findme" class="py-16 px-6 relative">
+    <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-dark-600 to-transparent"></div>
+    
+    <div class="max-w-4xl mx-auto">
+      <div class="reveal text-center mb-10">
+        <div class="inline-flex items-center gap-2 bg-lime-accent/5 border border-lime-accent/10 rounded-full px-3 py-1 mb-4">
+          <span class="iconify text-lime-accent/70" data-icon="lucide:link" data-width="12"></span>
+          <span class="text-xs font-medium text-lime-accent/70 tracking-wide uppercase">Connect</span>
+        </div>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight">
+          Find Me <span class="text-lime-accent">Online</span>
+        </h2>
+        <p class="text-gray-500 max-w-xl mx-auto text-sm mt-3">Follow my data science journey and explore my work</p>
       </div>
-      <h2 class="text-3xl md:text-4xl font-bold tracking-tight">
-        Find Me <span class="text-lime-accent">Online</span>
-      </h2>
-      <p class="text-gray-500 max-w-xl mx-auto text-sm mt-3">Follow my data science journey and explore my work</p>
-    </div>
 
-    <div class="reveal flex flex-wrap items-center justify-center gap-6">
-      <!-- Kaggle -->
-      <a href="https://www.kaggle.com/hasibhossain18" target="_blank" rel="noopener noreferrer" 
-         class="group flex items-center gap-4 bg-dark-700/20 border border-dark-600/30 rounded-2xl px-6 py-4 hover:border-lime-accent/30 transition-all duration-300 glow-hover min-w-[200px]">
-        <div class="w-12 h-12 rounded-xl bg-lime-accent/5 border border-lime-accent/10 flex items-center justify-center flex-shrink-0 group-hover:bg-lime-accent/10 transition-colors">
-          <span class="iconify text-[#20BEFF]" data-icon="simple-icons:kaggle" data-width="28"></span>
-        </div>
-        <div class="text-left">
-          <div class="text-sm font-semibold text-white group-hover:text-lime-accent transition-colors">Kaggle</div>
-          <div class="text-xs text-gray-500">Data Science Portfolio</div>
-        </div>
-        <span class="iconify text-gray-500 group-hover:text-lime-accent ml-auto transition-colors" data-icon="lucide:external-link" data-width="16"></span>
-      </a>
-
-      <!-- GitHub -->
-      <a href="https://github.com/hasib-insights" target="_blank" rel="noopener noreferrer" 
-         class="group flex items-center gap-4 bg-dark-700/20 border border-dark-600/30 rounded-2xl px-6 py-4 hover:border-lime-accent/30 transition-all duration-300 glow-hover min-w-[200px]">
-        <div class="w-12 h-12 rounded-xl bg-lime-accent/5 border border-lime-accent/10 flex items-center justify-center flex-shrink-0 group-hover:bg-lime-accent/10 transition-colors">
-          <span class="iconify text-white" data-icon="simple-icons:github" data-width="28"></span>
-        </div>
-        <div class="text-left">
-          <div class="text-sm font-semibold text-white group-hover:text-lime-accent transition-colors">GitHub</div>
-          <div class="text-xs text-gray-500">Code & Projects</div>
-        </div>
-        <span class="iconify text-gray-500 group-hover:text-lime-accent ml-auto transition-colors" data-icon="lucide:external-link" data-width="16"></span>
-      </a>
-
- <!-- ===== CONTACT SECTION ===== -->
-<section id="contact" class="py-20 px-6 relative">
-  <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-dark-600 to-transparent"></div>
-  <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-lime-accent/2 blur-[100px] rounded-full"></div>
-
-  <div class="max-w-7xl mx-auto relative z-10">
-    <div class="reveal text-center mb-12">
-      <div class="inline-flex items-center gap-2 bg-lime-accent/5 border border-lime-accent/10 rounded-full px-3 py-1 mb-4">
-        <span class="iconify text-lime-accent/70" data-icon="lucide:mail" data-width="12"></span>
-        <span class="text-xs font-medium text-lime-accent/70 tracking-wide uppercase">Contact</span>
-      </div>
-      <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-3">
-        Let's <span class="text-lime-accent">Connect</span>
-      </h2>
-      <p class="text-gray-500 max-w-xl mx-auto text-sm">Interested in collaborating? I'd love to hear from you.</p>
-    </div>
-
-    <div class="reveal grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-      <!-- Left: Contact Info -->
-      <div class="space-y-4">
-        <a href="mailto:hasib.contact.bd@gmail.com" class="group flex items-center gap-4 bg-dark-700/20 border border-dark-600/30 rounded-xl p-4 hover:border-lime-accent/20 transition-all duration-300 glow-hover">
-          <div class="w-10 h-10 rounded-lg bg-lime-accent/5 border border-lime-accent/10 flex items-center justify-center flex-shrink-0 group-hover:bg-lime-accent/10 transition-colors">
-            <span class="iconify text-lime-accent/60" data-icon="lucide:mail" data-width="16"></span>
+      <div class="reveal flex flex-wrap items-center justify-center gap-6">
+        <!-- Kaggle -->
+        <a href="https://www.kaggle.com/hasibhossain18" target="_blank" rel="noopener noreferrer" 
+           class="group flex items-center gap-4 bg-dark-700/20 border border-dark-600/30 rounded-2xl px-6 py-4 hover:border-lime-accent/30 transition-all duration-300 glow-hover min-w-[200px]">
+          <div class="w-12 h-12 rounded-xl bg-lime-accent/5 border border-lime-accent/10 flex items-center justify-center flex-shrink-0 group-hover:bg-lime-accent/10 transition-colors">
+            <span class="iconify text-[#20BEFF]" data-icon="simple-icons:kaggle" data-width="28"></span>
           </div>
-          <div>
-            <div class="text-[10px] text-gray-500 mb-0.5">Primary Email</div>
-            <div class="text-sm font-medium text-gray-300 group-hover:text-lime-accent transition-colors">hasib.contact.bd@gmail.com</div>
+          <div class="text-left">
+            <div class="text-sm font-semibold text-white group-hover:text-lime-accent transition-colors">Kaggle</div>
+            <div class="text-xs text-gray-500">Data Science Portfolio</div>
           </div>
+          <span class="iconify text-gray-500 group-hover:text-lime-accent ml-auto transition-colors" data-icon="lucide:external-link" data-width="16"></span>
         </a>
 
-        <a href="mailto:hasib.insights@gmail.com" class="group flex items-center gap-4 bg-dark-700/20 border border-dark-600/30 rounded-xl p-4 hover:border-lime-accent/20 transition-all duration-300 glow-hover">
-          <div class="w-10 h-10 rounded-lg bg-lime-accent/5 border border-lime-accent/10 flex items-center justify-center flex-shrink-0 group-hover:bg-lime-accent/10 transition-colors">
-            <span class="iconify text-lime-accent/60" data-icon="lucide:sparkles" data-width="16"></span>
+        <!-- GitHub -->
+        <a href="https://github.com/hasib-insights" target="_blank" rel="noopener noreferrer" 
+           class="group flex items-center gap-4 bg-dark-700/20 border border-dark-600/30 rounded-2xl px-6 py-4 hover:border-lime-accent/30 transition-all duration-300 glow-hover min-w-[200px]">
+          <div class="w-12 h-12 rounded-xl bg-lime-accent/5 border border-lime-accent/10 flex items-center justify-center flex-shrink-0 group-hover:bg-lime-accent/10 transition-colors">
+            <span class="iconify text-white" data-icon="simple-icons:github" data-width="28"></span>
           </div>
-          <div>
-            <div class="text-[10px] text-gray-500 mb-0.5">Insights Email</div>
-            <div class="text-sm font-medium text-gray-300 group-hover:text-lime-accent transition-colors">hasib.insights@gmail.com</div>
+          <div class="text-left">
+            <div class="text-sm font-semibold text-white group-hover:text-lime-accent transition-colors">GitHub</div>
+            <div class="text-xs text-gray-500">Code & Projects</div>
           </div>
+          <span class="iconify text-gray-500 group-hover:text-lime-accent ml-auto transition-colors" data-icon="lucide:external-link" data-width="16"></span>
         </a>
-
-        <a href="https://www.linkedin.com/in/md-hasib-hossain-053460390" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-4 bg-dark-700/20 border border-dark-600/30 rounded-xl p-4 hover:border-lime-accent/20 transition-all duration-300 glow-hover">
-          <div class="w-10 h-10 rounded-lg bg-lime-accent/5 border border-lime-accent/10 flex items-center justify-center flex-shrink-0 group-hover:bg-lime-accent/10 transition-colors">
-            <span class="iconify text-lime-accent/60" data-icon="lucide:linkedin" data-width="16"></span>
-          </div>
-          <div>
-            <div class="text-[10px] text-gray-500 mb-0.5">LinkedIn</div>
-            <div class="text-sm font-medium text-gray-300 group-hover:text-lime-accent transition-colors">MD Hasib Hossain</div>
-          </div>
-          <span class="iconify text-gray-500 group-hover:text-lime-accent ml-auto transition-colors" data-icon="lucide:external-link" data-width="14"></span>
-        </a>
-      </div>
-
-      <!-- Right: Contact Form with Formspree AJAX -->
-      <div>
-        <!-- Success Message -->
-        <div data-fs-success class="hidden bg-lime-accent/10 border border-lime-accent/20 text-lime-accent px-4 py-3 rounded-lg mb-4 text-sm"></div>
-        
-        <!-- Error Message -->
-        <div data-fs-error class="hidden bg-red-500/10 border border-red-500/20 text-red-400 px-4 py-3 rounded-lg mb-4 text-sm"></div>
-
-        <form id="contactForm" class="bg-dark-700/20 border border-dark-600/30 rounded-xl p-6">
-          <h3 class="text-base font-semibold mb-5 flex items-center gap-2">
-            <span class="iconify text-lime-accent/60" data-icon="lucide:send" data-width="16"></span>
-            Send a Message
-          </h3>
-          <div class="space-y-3.5">
-            <div>
-              <input type="text" name="name" id="name" placeholder="Your Name" data-fs-field required class="w-full bg-dark-900/50 border border-dark-600/30 rounded-lg px-3.5 py-2 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-lime-accent/30 transition-colors">
-              <span data-fs-error="name" class="text-red-400 text-xs mt-1 block"></span>
-            </div>
-            <div>
-              <input type="email" name="email" id="email" placeholder="Your Email" data-fs-field required class="w-full bg-dark-900/50 border border-dark-600/30 rounded-lg px-3.5 py-2 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-lime-accent/30 transition-colors">
-              <span data-fs-error="email" class="text-red-400 text-xs mt-1 block"></span>
-            </div>
-            <div>
-              <textarea name="message" id="message" rows="3" placeholder="Your message..." data-fs-field required class="w-full bg-dark-900/50 border border-dark-600/30 rounded-lg px-3.5 py-2 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-lime-accent/30 transition-colors resize-none"></textarea>
-              <span data-fs-error="message" class="text-red-400 text-xs mt-1 block"></span>
-            </div>
-            <button type="submit" data-fs-submit-btn class="w-full bg-lime-accent/10 border border-lime-accent/20 text-lime-accent py-2.5 rounded-lg font-medium hover:bg-lime-accent/20 transition-all duration-200 flex items-center justify-center gap-2 text-sm">
-              <span class="iconify" data-icon="lucide:send" data-width="14"></span>
-              Send Message
-            </button>
-          </div>
-        </form>
       </div>
     </div>
-  </div>
-</section>
-  
+  </section>
+
+  <!-- ===== CONTACT SECTION ===== -->
+  <section id="contact" class="py-20 px-6 relative">
+    <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-dark-600 to-transparent"></div>
+    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-lime-accent/2 blur-[100px] rounded-full"></div>
+
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="reveal text-center mb-12">
+        <div class="inline-flex items-center gap-2 bg-lime-accent/5 border border-lime-accent/10 rounded-full px-3 py-1 mb-4">
+          <span class="iconify text-lime-accent/70" data-icon="lucide:mail" data-width="12"></span>
+          <span class="text-xs font-medium text-lime-accent/70 tracking-wide uppercase">Contact</span>
+        </div>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-3">
+          Let's <span class="text-lime-accent">Connect</span>
+        </h2>
+        <p class="text-gray-500 max-w-xl mx-auto text-sm">Interested in collaborating? I'd love to hear from you.</p>
+      </div>
+
+      <div class="reveal grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <!-- Left: Contact Info -->
+        <div class="space-y-4">
+          <a href="mailto:hasib.contact.bd@gmail.com" class="group flex items-center gap-4 bg-dark-700/20 border border-dark-600/30 rounded-xl p-4 hover:border-lime-accent/20 transition-all duration-300 glow-hover">
+            <div class="w-10 h-10 rounded-lg bg-lime-accent/5 border border-lime-accent/10 flex items-center justify-center flex-shrink-0 group-hover:bg-lime-accent/10 transition-colors">
+              <span class="iconify text-lime-accent/60" data-icon="lucide:mail" data-width="16"></span>
+            </div>
+            <div>
+              <div class="text-[10px] text-gray-500 mb-0.5">Primary Email</div>
+              <div class="text-sm font-medium text-gray-300 group-hover:text-lime-accent transition-colors">hasib.contact.bd@gmail.com</div>
+            </div>
+          </a>
+
+          <a href="mailto:hasib.insights@gmail.com" class="group flex items-center gap-4 bg-dark-700/20 border border-dark-600/30 rounded-xl p-4 hover:border-lime-accent/20 transition-all duration-300 glow-hover">
+            <div class="w-10 h-10 rounded-lg bg-lime-accent/5 border border-lime-accent/10 flex items-center justify-center flex-shrink-0 group-hover:bg-lime-accent/10 transition-colors">
+              <span class="iconify text-lime-accent/60" data-icon="lucide:sparkles" data-width="16"></span>
+            </div>
+            <div>
+              <div class="text-[10px] text-gray-500 mb-0.5">Insights Email</div>
+              <div class="text-sm font-medium text-gray-300 group-hover:text-lime-accent transition-colors">hasib.insights@gmail.com</div>
+            </div>
+          </a>
+
+          <a href="https://www.linkedin.com/in/md-hasib-hossain-053460390" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-4 bg-dark-700/20 border border-dark-600/30 rounded-xl p-4 hover:border-lime-accent/20 transition-all duration-300 glow-hover">
+            <div class="w-10 h-10 rounded-lg bg-lime-accent/5 border border-lime-accent/10 flex items-center justify-center flex-shrink-0 group-hover:bg-lime-accent/10 transition-colors">
+              <span class="iconify text-lime-accent/60" data-icon="lucide:linkedin" data-width="16"></span>
+            </div>
+            <div>
+              <div class="text-[10px] text-gray-500 mb-0.5">LinkedIn</div>
+              <div class="text-sm font-medium text-gray-300 group-hover:text-lime-accent transition-colors">MD Hasib Hossain</div>
+            </div>
+            <span class="iconify text-gray-500 group-hover:text-lime-accent ml-auto transition-colors" data-icon="lucide:external-link" data-width="14"></span>
+          </a>
+        </div>
+
+        <!-- Right: Contact Form -->
+        <div>
+          <!-- Success Message -->
+          <div data-fs-success class="hidden bg-lime-accent/10 border border-lime-accent/20 text-lime-accent px-4 py-3 rounded-lg mb-4 text-sm"></div>
+          
+          <!-- Error Message -->
+          <div data-fs-error class="hidden bg-red-500/10 border border-red-500/20 text-red-400 px-4 py-3 rounded-lg mb-4 text-sm"></div>
+
+          <form id="contactForm" class="bg-dark-700/20 border border-dark-600/30 rounded-xl p-6">
+            <h3 class="text-base font-semibold mb-5 flex items-center gap-2">
+              <span class="iconify text-lime-accent/60" data-icon="lucide:send" data-width="16"></span>
+              Send a Message
+            </h3>
+            <div class="space-y-3.5">
+              <div>
+                <input type="text" name="name" id="name" placeholder="Your Name" data-fs-field required class="w-full bg-dark-900/50 border border-dark-600/30 rounded-lg px-3.5 py-2 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-lime-accent/30 transition-colors">
+                <span data-fs-error="name" class="text-red-400 text-xs mt-1 block"></span>
+              </div>
+              <div>
+                <input type="email" name="email" id="email" placeholder="Your Email" data-fs-field required class="w-full bg-dark-900/50 border border-dark-600/30 rounded-lg px-3.5 py-2 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-lime-accent/30 transition-colors">
+                <span data-fs-error="email" class="text-red-400 text-xs mt-1 block"></span>
+              </div>
+              <div>
+                <textarea name="message" id="message" rows="3" placeholder="Your message..." data-fs-field required class="w-full bg-dark-900/50 border border-dark-600/30 rounded-lg px-3.5 py-2 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-lime-accent/30 transition-colors resize-none"></textarea>
+                <span data-fs-error="message" class="text-red-400 text-xs mt-1 block"></span>
+              </div>
+              <button type="submit" data-fs-submit-btn class="w-full bg-lime-accent/10 border border-lime-accent/20 text-lime-accent py-2.5 rounded-lg font-medium hover:bg-lime-accent/20 transition-all duration-200 flex items-center justify-center gap-2 text-sm">
+                <span class="iconify" data-icon="lucide:send" data-width="14"></span>
+                Send Message
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- ===== FOOTER ===== -->
   <footer class="border-t border-dark-600 py-8 px-6 relative">
@@ -715,134 +638,16 @@
   </div>
 
   <!-- ===== SCRIPTS ===== -->
-  <script>
-    // Mobile menu
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    let menuOpen = false;
-
-    mobileMenuBtn.addEventListener('click', () => {
-      menuOpen = !menuOpen;
-      mobileMenu.classList.toggle('hidden', !menuOpen);
-      mobileMenuBtn.innerHTML = menuOpen
-        ? '<span class="iconify" data-icon="lucide:x" data-width="24"></span>'
-        : '<span class="iconify" data-icon="lucide:menu" data-width="24"></span>';
-    });
-
-    document.querySelectorAll('.mobile-link').forEach(link => {
-      link.addEventListener('click', () => {
-        menuOpen = false;
-        mobileMenu.classList.add('hidden');
-        mobileMenuBtn.innerHTML = '<span class="iconify" data-icon="lucide:menu" data-width="24"></span>';
-      });
-    });
-
-    // Navbar scroll effect
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) {
-        navbar.style.background = 'rgba(10,10,10,0.95)';
-        navbar.style.borderBottom = '1px solid rgba(45,45,45,0.3)';
-      } else {
-        navbar.style.background = 'rgba(10,10,10,0.85)';
-        navbar.style.borderBottom = 'none';
-      }
-    });
-
-    // Scroll reveal
-    const revealElements = document.querySelectorAll('.reveal');
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active');
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    revealElements.forEach(el => revealObserver.observe(el));
-
-    // Skill bars
-    const skillBars = document.querySelectorAll('.skill-bar-fill');
-    const skillObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const targetWidth = entry.target.getAttribute('data-width');
-          entry.target.style.width = targetWidth;
-        }
-      });
-    }, { threshold: 0.5 });
-    skillBars.forEach(bar => skillObserver.observe(bar));
-
-    // Contact form
-    const contactForm = document.getElementById('contactForm');
-    const toast = document.getElementById('toast');
-    const toastMessage = document.getElementById('toastMessage');
-
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const message = document.getElementById('message').value.trim();
-
-      if (!name || !email || !message) {
-        toastMessage.textContent = 'Please fill in all fields.';
-        toast.querySelector('.iconify').setAttribute('data-icon', 'lucide:alert-circle');
-        toast.querySelector('.iconify').style.color = '#FF6B6B';
-        toast.style.borderColor = 'rgba(255,107,107,0.2)';
-        toast.classList.add('show');
-        setTimeout(() => toast.classList.remove('show'), 3000);
-        return;
-      }
-
-      const btn = contactForm.querySelector('button[type="submit"]');
-      const originalHTML = btn.innerHTML;
-      btn.innerHTML = '<span class="iconify animate-spin" data-icon="lucide:loader-2" data-width="14"></span> Sending...';
-      btn.disabled = true;
-
-      setTimeout(() => {
-        btn.innerHTML = originalHTML;
-        btn.disabled = false;
-        contactForm.reset();
-        toastMessage.textContent = 'Message sent successfully! I\'ll get back to you soon.';
-        toast.querySelector('.iconify').setAttribute('data-icon', 'lucide:check-circle-2');
-        toast.querySelector('.iconify').style.color = '#BFFF00';
-        toast.style.borderColor = 'rgba(191,255,0,0.2)';
-        toast.classList.add('show');
-        setTimeout(() => toast.classList.remove('show'), 4000);
-      }, 1200);
-    });
-
-    // Active nav link
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('nav a[href^="#"]');
-
-    window.addEventListener('scroll', () => {
-      let current = '';
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop - 100;
-        if (scrollY >= sectionTop) {
-          current = section.getAttribute('id');
-        }
-      });
-      navLinks.forEach(link => {
-        link.classList.remove('text-lime-accent');
-        link.classList.add('text-gray-400');
-        if (link.getAttribute('href') === '#' + current) {
-          link.classList.remove('text-gray-400');
-          link.classList.add('text-lime-accent');
-        }
-      });
-    });
-  </script>
+  <script src="js/main.js"></script>
   
   <!-- Formspree AJAX Integration -->
-<script>
-  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
-  formspree('initForm', { 
-    formElement: '#contactForm', 
-    formId: 'xojodblj' 
-  });
-</script>
-<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+  <script>
+    window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+    formspree('initForm', { 
+      formElement: '#contactForm', 
+      formId: 'xojodblj' 
+    });
+  </script>
+  <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </body>
 </html>
