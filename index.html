@@ -160,7 +160,7 @@
 
           <!-- Role -->
           <p class="text-lg md:text-xl text-gray-400 mb-6 leading-relaxed">
-            Aspiring <span class="text-lime-accent font-medium">Data Analyst</span> · BBA Student
+            <span class="text-lime-accent font-medium">Data Analyst</span> · BBA Student
           </p>
 
           <!-- Short bio  -->
@@ -475,24 +475,75 @@
         <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-3">
           My <span class="text-lime-accent">Portfolio</span>
         </h2>
+        <p class="text-gray-500 max-w-xl mx-auto text-sm">Real projects showcasing my data analysis skills.</p>
       </div>
 
       <div class="reveal grid md:grid-cols-3 gap-5">
-        <div class="relative bg-dark-700/20 border border-dark-600/30 border-dashed rounded-xl p-8 flex flex-col items-center text-center min-h-[240px] justify-center overflow-hidden">
-          <div class="shimmer absolute inset-0 rounded-xl"></div>
-          <div class="relative z-10">
-            <div class="w-12 h-12 rounded-lg bg-dark-600/30 border border-dark-500/30 flex items-center justify-center mb-3 mx-auto">
-              <span class="iconify text-gray-500" data-icon="lucide:pie-chart" data-width="20"></span>
-            </div>
-            <h3 class="text-sm font-semibold text-gray-400 mb-1.5">Dashboard Project</h3>
-            <span class="inline-flex items-center gap-1.5 bg-lime-accent/10 text-lime-accent/70 text-[10px] font-medium px-3 py-1 rounded-full border border-lime-accent/15">
-              <span class="w-1 h-1 rounded-full bg-lime-accent/70"></span>
-              Coming Soon
+        
+        <!-- ===== FEATURED PROJECT: Excel Dashboard ===== -->
+        <div class="group relative bg-dark-700/20 border border-lime-accent/20 rounded-xl overflow-hidden hover:border-lime-accent/40 glow-hover transition-all duration-300 md:col-span-1">
+          
+          <!-- Featured Badge -->
+          <div class="absolute top-4 right-4 z-20">
+            <span class="inline-flex items-center gap-1 bg-lime-accent/20 text-lime-accent text-[10px] font-semibold px-2.5 py-1 rounded-full border border-lime-accent/30 backdrop-blur-sm">
+              <span class="iconify" data-icon="lucide:star" data-width="10"></span>
+              FEATURED
             </span>
+          </div>
+
+          <!-- Project Image/Thumbnail -->
+          <div class="relative h-40 bg-gradient-to-br from-dark-800 to-dark-700 overflow-hidden">
+            <img src="figures/excel_dashboard.png" 
+                 alt="Excel Dashboard Preview" 
+                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <!-- Fallback if image not found -->
+            <div class="absolute inset-0 hidden items-center justify-center bg-gradient-to-br from-dark-800 to-dark-700">
+              <span class="iconify text-lime-accent/40" data-icon="lucide:bar-chart-3" data-width="48"></span>
+            </div>
+            <!-- Overlay gradient -->
+            <div class="absolute inset-0 bg-gradient-to-t from-dark-900/80 via-transparent to-transparent"></div>
+          </div>
+
+          <!-- Project Content -->
+          <div class="p-5">
+            <!-- Icon + Title -->
+            <div class="flex items-start gap-3 mb-3">
+              <div class="w-9 h-9 rounded-lg bg-lime-accent/10 border border-lime-accent/20 flex items-center justify-center flex-shrink-0 group-hover:bg-lime-accent/20 transition-colors">
+                <span class="iconify text-lime-accent/80" data-icon="lucide:table" data-width="16"></span>
+              </div>
+              <div class="flex-1 min-w-0">
+                <h3 class="text-base font-bold text-white leading-tight mb-0.5">
+                  Sales Dashboard
+                </h3>
+                <p class="text-xs text-lime-accent/70 font-medium">Microsoft Excel</p>
+              </div>
+            </div>
+
+            <!-- Description -->
+            <p class="text-xs text-gray-500 leading-relaxed mb-4">
+              Interactive sales dashboard with pivot tables, charts, slicers & KPI cards to track revenue, profit and regional performance.
+            </p>
+
+            <!-- Tech Tags -->
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              <span class="text-[10px] px-2 py-0.5 rounded-md bg-dark-600/40 text-gray-400 border border-dark-500/30">Pivot Tables</span>
+              <span class="text-[10px] px-2 py-0.5 rounded-md bg-dark-600/40 text-gray-400 border border-dark-500/30">Charts</span>
+              <span class="text-[10px] px-2 py-0.5 rounded-md bg-dark-600/40 text-gray-400 border border-dark-500/30">Slicers</span>
+              <span class="text-[10px] px-2 py-0.5 rounded-md bg-dark-600/40 text-gray-400 border border-dark-500/30">KPIs</span>
+            </div>
+
+            <!-- Action Button -->
+            <a href="https://github.com/hasib-insights" target="_blank" rel="noopener noreferrer"
+               class="w-full inline-flex items-center justify-center gap-2 bg-lime-accent/10 border border-lime-accent/20 text-lime-accent py-2 rounded-lg font-medium hover:bg-lime-accent/20 transition-all duration-200 text-xs">
+              <span class="iconify" data-icon="lucide:external-link" data-width="12"></span>
+              View Project
+            </a>
           </div>
         </div>
 
-        <div class="relative bg-dark-700/20 border border-dark-600/30 border-dashed rounded-xl p-8 flex flex-col items-center text-center min-h-[240px] justify-center overflow-hidden">
+        <!-- ===== Coming Soon: Python Analysis ===== -->
+        <div class="relative bg-dark-700/20 border border-dark-600/30 border-dashed rounded-xl p-8 flex flex-col items-center text-center min-h-[320px] justify-center overflow-hidden">
           <div class="shimmer absolute inset-0 rounded-xl" style="animation-delay: 0.5s;"></div>
           <div class="relative z-10">
             <div class="w-12 h-12 rounded-lg bg-dark-600/30 border border-dark-500/30 flex items-center justify-center mb-3 mx-auto">
@@ -506,7 +557,8 @@
           </div>
         </div>
 
-        <div class="relative bg-dark-700/20 border border-dark-600/30 border-dashed rounded-xl p-8 flex flex-col items-center text-center min-h-[240px] justify-center overflow-hidden">
+        <!-- ===== Coming Soon: ML Model ===== -->
+        <div class="relative bg-dark-700/20 border border-dark-600/30 border-dashed rounded-xl p-8 flex flex-col items-center text-center min-h-[320px] justify-center overflow-hidden">
           <div class="shimmer absolute inset-0 rounded-xl" style="animation-delay: 1s;"></div>
           <div class="relative z-10">
             <div class="w-12 h-12 rounded-lg bg-dark-600/30 border border-dark-500/30 flex items-center justify-center mb-3 mx-auto">
@@ -519,13 +571,15 @@
             </span>
           </div>
         </div>
+
       </div>
 
+      <!-- Bottom Note -->
       <div class="reveal mt-8 text-center">
         <div class="bg-dark-700/20 border border-lime-accent/10 rounded-xl p-5 max-w-2xl mx-auto">
           <span class="iconify text-lime-accent/50 mb-2" data-icon="lucide:construction" data-width="18" style="display:inline-block;"></span>
           <p class="text-sm text-gray-500 leading-relaxed">
-            I'm currently working on my first data projects. Check back soon for <strong class="text-white">dashboards</strong>, <strong class="text-white">Python analyses</strong>, and <strong class="text-white">ML models</strong>.
+            More <strong class="text-white">dashboards</strong>, <strong class="text-white">Python analyses</strong>, and <strong class="text-white">ML models</strong> coming soon.
           </p>
         </div>
       </div>
