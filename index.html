@@ -14,12 +14,21 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   
+  <!-- Theme Init (FOUC prevent) — MUST be before CSS -->
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
+  </script>
+  
   <!-- External CSS -->
   <link rel="stylesheet" href="css/style.css">
   
   <!-- Tailwind Config -->
   <script>
     tailwind.config = {
+      darkMode: 'class',
       theme: {
         extend: {
           colors: {
@@ -59,10 +68,21 @@
         <a href="#contact" class="text-sm text-gray-400 hover:text-lime-accent transition-colors">Contact</a>
       </div>
 
-      <a href="#contact" class="hidden md:inline-flex items-center gap-2 bg-lime-accent/10 border border-lime-accent/20 text-lime-accent px-4 py-2 rounded-lg text-sm font-medium hover:bg-lime-accent/20 transition-colors">
-        <span class="iconify" data-icon="lucide:mail" data-width="14"></span>
-        Contact
-      </a>
+      <!-- Desktop Theme Toggle + Contact -->
+      <div class="hidden md:flex items-center gap-3">
+        <!-- Theme Toggle Button -->
+        <button id="themeToggle" 
+                class="w-9 h-9 rounded-lg bg-dark-700/40 border border-dark-600/40 flex items-center justify-center text-gray-400 hover:text-lime-accent hover:border-lime-accent/30 transition-all duration-300" 
+                aria-label="Toggle theme">
+          <span class="iconify theme-icon-dark" data-icon="lucide:sun" data-width="16"></span>
+          <span class="iconify theme-icon-light hidden" data-icon="lucide:moon" data-width="16"></span>
+        </button>
+
+        <a href="#contact" class="inline-flex items-center gap-2 bg-lime-accent/10 border border-lime-accent/20 text-lime-accent px-4 py-2 rounded-lg text-sm font-medium hover:bg-lime-accent/20 transition-colors">
+          <span class="iconify" data-icon="lucide:mail" data-width="14"></span>
+          Contact
+        </a>
+      </div>
 
       <!-- Mobile Menu Button -->
       <button id="mobileMenuBtn" class="md:hidden text-gray-400 p-2 hover:text-lime-accent transition-colors" aria-label="Open menu">
@@ -79,6 +99,15 @@
         <a href="#skills" class="text-gray-300 hover:text-lime-accent py-2 transition-colors mobile-link">Skills</a>
         <a href="#projects" class="text-gray-300 hover:text-lime-accent py-2 transition-colors mobile-link">Projects</a>
         <a href="#contact" class="text-gray-300 hover:text-lime-accent py-2 transition-colors mobile-link">Contact</a>
+        
+        <!-- Mobile Theme Toggle -->
+        <button id="themeToggleMobile" 
+                class="flex items-center gap-2 text-gray-300 hover:text-lime-accent py-2 transition-colors text-left mobile-link">
+          <span class="iconify theme-icon-dark" data-icon="lucide:sun" data-width="16"></span>
+          <span class="iconify theme-icon-light hidden" data-icon="lucide:moon" data-width="16"></span>
+          <span class="theme-label">Light Mode</span>
+        </button>
+        
         <a href="#contact" class="bg-lime-accent/10 border border-lime-accent/20 text-lime-accent px-4 py-2 rounded-lg text-sm font-medium text-center hover:bg-lime-accent/20 transition-colors mt-2">Contact</a>
       </div>
     </div>
