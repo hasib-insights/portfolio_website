@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MD Hasib Hossain – Data Analyst</title>
+  <title>MD Hasib Hossain – Aspiring Data Analyst</title>
   
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -113,7 +113,7 @@
     </div>
   </nav>
 
-   <!-- ===== HERO SECTION (GitHub-style) ===== -->
+  <!-- ===== HERO SECTION (GitHub-style) ===== -->
   <section id="home" class="relative min-h-screen flex items-center hero-grid overflow-hidden pt-24 pb-16">
     <!-- Floating shapes -->
     <div class="float-shape w-16 h-16 rounded-lg top-[20%] left-[10%]"></div>
@@ -129,8 +129,10 @@
       <!-- GitHub-style: Pic left, Text right (desktop) -->
       <div class="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-10">
         
-        <!-- ===== LEFT: Profile Picture ===== -->
-        <div class="flex-shrink-0">
+        <!-- ===== LEFT: Profile Picture + Name ===== -->
+        <div class="flex-shrink-0 flex flex-col items-center text-center">
+          
+          <!-- Profile Picture -->
           <div class="profile-ring w-40 h-40 md:w-52 md:h-52 lg:w-56 lg:h-56 rounded-full border-2 border-lime-accent/30 p-1.5">
             <div class="w-full h-full rounded-full bg-dark-700 overflow-hidden relative">
               <img src="figures/profile_picture.png" 
@@ -142,6 +144,17 @@
               </div>
             </div>
           </div>
+
+          <!-- Name under picture (GitHub-style) -->
+          <div class="mt-4 md:mt-5">
+            <h3 class="text-lg md:text-xl font-bold text-white tracking-tight">
+              MD Hasib Hossain
+            </h3>
+            <p class="text-xs md:text-sm text-gray-500 mt-0.5 font-normal">
+              hasib-insights
+            </p>
+          </div>
+
         </div>
 
         <!-- ===== RIGHT: Text Content ===== -->
@@ -168,9 +181,9 @@
 
           <!-- Short bio -->
           <div class="text-sm md:text-base text-gray-500 max-w-xl mx-auto md:mx-0 mb-8 leading-relaxed space-y-1">
-            <p>Passionate about turning raw data into meaningful insights.</p>
-            <p>Learning Python, SQL, Excel & Machine Learning.</p>
-            <p>Goal: Become a Data Scientist.</p>
+            <p>- Passionate about turning raw data into meaningful insights.</p>
+            <p>- Learning Python, SQL, Excel & Machine Learning.</p>
+            <p>- Goal: Become a Data Scientist.</p>
           </div>
 
           <!-- Buttons -->
@@ -212,8 +225,6 @@
     </div>
   </section>
 
-
-
   <!-- ===== ABOUT SECTION ===== -->
   <section id="about" class="py-20 px-6 relative">
     <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-dark-600 to-transparent"></div>
@@ -229,24 +240,24 @@
           <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">
             Turning <span class="text-lime-accent">Curiosity</span> into<br>Data-Driven Insights
           </h2>
-          <p class="text-gray-400 leading-relaxed mb-4">
+          <p class="text-sm text-gray-400 leading-relaxed mb-4">
             I am a BBA student at <strong class="text-white">World University of Bangladesh</strong>. Passionate about data, I'm building my analytical toolkit with Python, SQL, Excel, and machine learning.
           </p>
-          <p class="text-gray-400 leading-relaxed mb-8">
+          <p class="text-sm text-gray-400 leading-relaxed mb-8">
             My goal is to become a <strong class="text-lime-accent">Data Scientist</strong>, helping organizations turn raw data into actionable insights.
           </p>
 
           <div class="grid grid-cols-3 gap-3">
             <div class="bg-dark-700/30 border border-dark-600/30 rounded-xl p-4 text-center glow-hover transition-all duration-300">
-              <div class="text-2xl font-bold text-lime-accent">BBA</div>
+              <div class="text-lg font-bold text-lime-accent">BBA</div>
               <div class="text-xs text-gray-500 mt-1">Current Program</div>
             </div>
             <div class="bg-dark-700/30 border border-dark-600/30 rounded-xl p-4 text-center glow-hover transition-all duration-300">
-            <div class="text-lg font-bold text-lime-accent">Data Scientist</div>
+              <div class="text-lg font-bold text-lime-accent">Data Scientist</div>
               <div class="text-xs text-gray-500 mt-1">Goal</div>
             </div>
             <div class="bg-dark-700/30 border border-dark-600/30 rounded-xl p-4 text-center glow-hover transition-all duration-300">
-              <div class="text-2xl font-bold text-lime-accent">6+</div>
+              <div class="text-lg font-bold text-lime-accent">6+</div>
               <div class="text-xs text-gray-500 mt-1">Tech Skills</div>
             </div>
           </div>
@@ -492,7 +503,7 @@
       <div class="reveal grid md:grid-cols-3 gap-5">
         
         <!-- ===== FEATURED PROJECT: Excel Dashboard ===== -->
-        <div class="group relative bg-dark-700/20 border border-lime-accent/20 rounded-xl overflow-hidden hover:border-lime-accent/40 glow-hover transition-all duration-300 md:col-span-1">
+        <div class="group relative bg-dark-700/20 border border-lime-accent/20 rounded-xl overflow-hidden hover:border-lime-accent/40 glow-hover transition-all duration-300">
           
           <!-- Featured Badge -->
           <div class="absolute top-4 right-4 z-20">
@@ -504,21 +515,18 @@
 
           <!-- Project Image/Thumbnail -->
           <div class="relative h-40 bg-gradient-to-br from-dark-800 to-dark-700 overflow-hidden">
-            <img src="figures/Excel_Dashbord.png" 
+            <img src="figures/excel_dashboard.png" 
                  alt="Excel Dashboard Preview" 
                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <!-- Fallback if image not found -->
             <div class="absolute inset-0 hidden items-center justify-center bg-gradient-to-br from-dark-800 to-dark-700">
               <span class="iconify text-lime-accent/40" data-icon="lucide:bar-chart-3" data-width="48"></span>
             </div>
-            <!-- Overlay gradient -->
             <div class="absolute inset-0 bg-gradient-to-t from-dark-900/80 via-transparent to-transparent"></div>
           </div>
 
           <!-- Project Content -->
           <div class="p-5">
-            <!-- Icon + Title -->
             <div class="flex items-start gap-3 mb-3">
               <div class="w-9 h-9 rounded-lg bg-lime-accent/10 border border-lime-accent/20 flex items-center justify-center flex-shrink-0 group-hover:bg-lime-accent/20 transition-colors">
                 <span class="iconify text-lime-accent/80" data-icon="lucide:table" data-width="16"></span>
@@ -531,12 +539,10 @@
               </div>
             </div>
 
-            <!-- Description -->
             <p class="text-xs text-gray-500 leading-relaxed mb-4">
               Interactive sales dashboard with pivot tables, charts, slicers & KPI cards to track revenue, profit and regional performance.
             </p>
 
-            <!-- Tech Tags -->
             <div class="flex flex-wrap gap-1.5 mb-4">
               <span class="text-[10px] px-2 py-0.5 rounded-md bg-dark-600/40 text-gray-400 border border-dark-500/30">Pivot Tables</span>
               <span class="text-[10px] px-2 py-0.5 rounded-md bg-dark-600/40 text-gray-400 border border-dark-500/30">Charts</span>
@@ -544,7 +550,6 @@
               <span class="text-[10px] px-2 py-0.5 rounded-md bg-dark-600/40 text-gray-400 border border-dark-500/30">KPIs</span>
             </div>
 
-            <!-- Action Button -->
             <a href="https://github.com/hasib-insights/excel-sales-performance-dashboard" target="_blank" rel="noopener noreferrer"
                class="w-full inline-flex items-center justify-center gap-2 bg-lime-accent/10 border border-lime-accent/20 text-lime-accent py-2 rounded-lg font-medium hover:bg-lime-accent/20 transition-all duration-200 text-xs">
               <span class="iconify" data-icon="lucide:external-link" data-width="12"></span>
@@ -585,7 +590,6 @@
 
       </div>
 
-      <!-- Bottom Note -->
       <div class="reveal mt-8 text-center">
         <div class="bg-dark-700/20 border border-lime-accent/10 rounded-xl p-5 max-w-2xl mx-auto">
           <span class="iconify text-lime-accent/50 mb-2" data-icon="lucide:construction" data-width="18" style="display:inline-block;"></span>
@@ -697,10 +701,7 @@
 
         <!-- Right: Contact Form -->
         <div>
-          <!-- Success Message -->
           <div data-fs-success class="hidden bg-lime-accent/10 border border-lime-accent/20 text-lime-accent px-4 py-3 rounded-lg mb-4 text-sm"></div>
-          
-          <!-- Error Message -->
           <div data-fs-error class="hidden bg-red-500/10 border border-red-500/20 text-red-400 px-4 py-3 rounded-lg mb-4 text-sm"></div>
 
           <form id="contactForm" class="bg-dark-700/20 border border-dark-600/30 rounded-xl p-6">
@@ -739,7 +740,7 @@
         <div class="w-7 h-7 rounded-lg bg-lime-accent/10 border border-lime-accent/20 flex items-center justify-center">
           <span class="text-lime-accent font-bold text-xs">H</span>
         </div>
-        <span class="text-xs text-gray-500">© 2026 MD Hasib Hossain – Data Analyst</span>
+        <span class="text-xs text-gray-500">© 2026 MD Hasib Hossain – Aspiring Data Analyst</span>
       </div>
 
       <div class="flex items-center gap-3">
