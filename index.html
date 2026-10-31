@@ -14,10 +14,11 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   
-  <!-- Theme Init (FOUC prevent) — MUST be before CSS -->
+  <!-- Theme Init (FOUC prevent) — MUST be before CSS. Light is the default. -->
   <script>
     (function() {
-      const savedTheme = localStorage.getItem('theme') || 'dark';
+      var savedTheme = 'light';
+      try { savedTheme = localStorage.getItem('theme') || 'light'; } catch (e) {}
       document.documentElement.setAttribute('data-theme', savedTheme);
     })();
   </script>
@@ -25,20 +26,28 @@
   <!-- External CSS -->
   <link rel="stylesheet" href="css/style.css">
   
-  <!-- Tailwind Config -->
+  <!-- Tailwind Config (colors are driven by CSS variables in css/style.css) -->
   <script>
     tailwind.config = {
-      darkMode: 'class',
       theme: {
         extend: {
           colors: {
-            lime: { 
-              accent: '#BFFF00',
-              light: '#D4FF4D',
-              subtle: 'rgba(191,255,0,0.06)',
-              border: 'rgba(191,255,0,0.12)',
+            white: 'rgb(var(--c-heading) / <alpha-value>)',
+            gray: {
+              200: 'rgb(var(--c-g200) / <alpha-value>)',
+              300: 'rgb(var(--c-g300) / <alpha-value>)',
+              400: 'rgb(var(--c-g400) / <alpha-value>)',
+              500: 'rgb(var(--c-g500) / <alpha-value>)',
+              600: 'rgb(var(--c-g600) / <alpha-value>)'
             },
-            dark: { 900: '#0A0A0A', 800: '#111111', 700: '#1E1E1E', 600: '#2D2D2D', 500: '#3A3A3A' }
+            lime: { accent: 'rgb(var(--accent-rgb) / <alpha-value>)' },
+            dark: {
+              900: 'rgb(var(--c-page) / <alpha-value>)',
+              800: 'rgb(var(--c-card) / <alpha-value>)',
+              700: 'rgb(var(--c-card) / <alpha-value>)',
+              600: 'rgb(var(--c-chip) / <alpha-value>)',
+              500: 'rgb(var(--c-line) / <alpha-value>)'
+            }
           },
           fontFamily: { inter: ['Inter', 'sans-serif'] }
         }
@@ -49,7 +58,7 @@
 <body class="bg-dark-900 text-white antialiased overflow-x-hidden">
 
   <!-- ===== NAVIGATION ===== -->
-  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" style="background: rgba(10,10,10,0.85); backdrop-filter: blur(10px);">
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50">
     <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
       <a href="#home" class="flex items-center gap-2 group">
         <div class="w-8 h-8 rounded-lg bg-lime-accent/10 border border-lime-accent/20 flex items-center justify-center group-hover:bg-lime-accent/20 transition-colors">
@@ -105,7 +114,7 @@
                 class="flex items-center gap-2 text-gray-300 hover:text-lime-accent py-2 transition-colors text-left mobile-link">
           <span class="iconify theme-icon-dark" data-icon="lucide:sun" data-width="16"></span>
           <span class="iconify theme-icon-light hidden" data-icon="lucide:moon" data-width="16"></span>
-          <span class="theme-label">Light Mode</span>
+          <span class="theme-label">Dark Mode</span>
         </button>
         
         <a href="#contact" class="bg-lime-accent/10 border border-lime-accent/20 text-lime-accent px-4 py-2 rounded-lg text-sm font-medium text-center hover:bg-lime-accent/20 transition-colors mt-2">Contact</a>
@@ -114,16 +123,7 @@
   </nav>
 
   <!-- ===== HERO SECTION (GitHub-style) ===== -->
-  <section id="home" class="relative min-h-screen flex items-center hero-grid overflow-hidden pt-24 pb-16">
-    <!-- Floating shapes -->
-    <div class="float-shape w-16 h-16 rounded-lg top-[20%] left-[10%]"></div>
-    <div class="float-shape w-24 h-24 rounded-full top-[30%] right-[15%]"></div>
-    <div class="float-shape w-12 h-12 rounded-sm bottom-[25%] left-[20%]"></div>
-    <div class="float-shape w-20 h-20 rounded-lg bottom-[30%] right-[10%]"></div>
-    <div class="float-shape w-10 h-10 rounded-full top-[60%] left-[50%]"></div>
-
-    <div class="absolute inset-0 bg-gradient-to-b from-dark-900/60 via-transparent to-dark-900"></div>
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-lime-accent/3 blur-[100px] rounded-full"></div>
+  <section id="home" class="relative min-h-screen flex items-center overflow-hidden pt-24 pb-16">
 
     <div class="relative z-10 max-w-6xl mx-auto px-6 w-full">
       <!-- GitHub-style: Pic left, Text right (desktop) -->
@@ -217,7 +217,7 @@
     </div>
 
     <!-- Scroll indicator -->
-    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
+    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
       <span class="text-[10px] text-gray-600 uppercase tracking-widest">Scroll</span>
       <span class="iconify text-lime-accent/40" data-icon="lucide:chevron-down" data-width="14"></span>
     </div>
@@ -505,7 +505,7 @@
           
           <!-- Featured Badge -->
           <div class="absolute top-4 right-4 z-20">
-            <span class="inline-flex items-center gap-1 bg-lime-accent/20 text-lime-accent text-[10px] font-semibold px-2.5 py-1 rounded-full border border-lime-accent/30 backdrop-blur-sm">
+            <span class="inline-flex items-center gap-1 bg-lime-accent/20 text-lime-accent text-[10px] font-semibold px-2.5 py-1 rounded-full border border-lime-accent/30">
               <span class="iconify" data-icon="lucide:star" data-width="10"></span>
               FEATURED
             </span>
@@ -515,12 +515,11 @@
           <div class="relative h-40 bg-gradient-to-br from-dark-800 to-dark-700 overflow-hidden">
             <img src="figures/Excel_Dashbord.png" 
                  alt="Excel Dashboard Preview" 
-                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                 class="w-full h-full object-cover"
                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
             <div class="absolute inset-0 hidden items-center justify-center bg-gradient-to-br from-dark-800 to-dark-700">
               <span class="iconify text-lime-accent/40" data-icon="lucide:bar-chart-3" data-width="48"></span>
             </div>
-            <div class="absolute inset-0 bg-gradient-to-t from-dark-900/80 via-transparent to-transparent"></div>
           </div>
 
           <!-- Project Content -->
@@ -558,7 +557,6 @@
 
         <!-- ===== Coming Soon: Python Analysis ===== -->
         <div class="relative bg-dark-700/20 border border-dark-600/30 border-dashed rounded-xl p-8 flex flex-col items-center text-center min-h-[320px] justify-center overflow-hidden">
-          <div class="shimmer absolute inset-0 rounded-xl" style="animation-delay: 0.5s;"></div>
           <div class="relative z-10">
             <div class="w-12 h-12 rounded-lg bg-dark-600/30 border border-dark-500/30 flex items-center justify-center mb-3 mx-auto">
               <span class="iconify text-gray-500" data-icon="lucide:code-2" data-width="20"></span>
@@ -573,7 +571,6 @@
 
         <!-- ===== Coming Soon: ML Model ===== -->
         <div class="relative bg-dark-700/20 border border-dark-600/30 border-dashed rounded-xl p-8 flex flex-col items-center text-center min-h-[320px] justify-center overflow-hidden">
-          <div class="shimmer absolute inset-0 rounded-xl" style="animation-delay: 1s;"></div>
           <div class="relative z-10">
             <div class="w-12 h-12 rounded-lg bg-dark-600/30 border border-dark-500/30 flex items-center justify-center mb-3 mx-auto">
               <span class="iconify text-gray-500" data-icon="lucide:brain" data-width="20"></span>
@@ -648,7 +645,6 @@
   <!-- ===== CONTACT SECTION ===== -->
   <section id="contact" class="py-20 px-6 relative">
     <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-dark-600 to-transparent"></div>
-    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-lime-accent/2 blur-[100px] rounded-full"></div>
 
     <div class="max-w-7xl mx-auto relative z-10">
       <div class="reveal text-center mb-12">
@@ -756,7 +752,7 @@
   </footer>
 
   <!-- ===== TOAST ===== -->
-  <div id="toast" class="toast fixed bottom-6 right-6 z-50 bg-dark-800 border border-lime-accent/20 rounded-xl px-4 py-3 flex items-center gap-3 shadow-[0_0_20px_rgba(191,255,0,0.05)]">
+  <div id="toast" class="toast fixed bottom-6 right-6 z-50 bg-dark-800 border border-lime-accent/20 rounded-xl px-4 py-3 flex items-center gap-3">
     <span class="iconify text-lime-accent" data-icon="lucide:check-circle-2" data-width="18"></span>
     <span class="text-sm text-white font-medium" id="toastMessage">Message sent!</span>
   </div>
